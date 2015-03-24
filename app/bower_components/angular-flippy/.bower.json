@@ -1,0 +1,14 @@
+{
+  "name": "angular-flippy",
+  "homepage": "https://github.com/zwacky/angular-flippy",
+  "_release": "d7442b9c5c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d7442b9c5c8129b32872ac41b52cd3431454be98"
+  },
+  "_source": "git://github.com/zwacky/angular-flippy.git",
+  "_target": "*",
+  "_originalSource": "angular-flippy",
+  "_direct": true
+}
