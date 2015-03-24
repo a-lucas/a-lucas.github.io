@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="Antoine_Lucas_CV" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>My AngularJS App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--custom-->
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+        <link rel="stylesheet" href="bower_components/ng-slider/dist/css/ng-slider.min.css">
+        <link rel="stylesheet" href="bower_components/angular-flippy/dist/css/flippy.min.css">
+        <link rel="stylesheet" href="bower_components/angular-flippy/dist/css/flippy-fancy.min.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+
+        <!--end Custom-->
+        <!--
+                <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+                <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+                <link rel="stylesheet" href="app.css">
+                <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+        -->
+        <style type="text/css">
+
+            flippy.my-fancy{
+                width:100%;
+                margin : 0px;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+            }
+            flippy.my-fancy flippy-back,flippy.my-fancy flippy-front{
+                text-align: center !important;
+                border-radius : 10px !important;
+                background-color: #EBEBEB !important;
+                border : 1px solid #EBEBEB !important;
+                color: #6C6662 !important;
+                font: 14px/20px 'PT Sans','Helvetica Neue','Arial','Helvetica',sans-serif !important;
+                padding : 10px !important;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+            }
+            flippy h2{
+                margin-top: 0px !important;
+            }
+            flippy p{
+                text-align: justify;
+            }
+            .my-fancy img{
+                height : 138px !important;
+                width : 138px !important;
+            }
+
+
+            .animate-show {
+                height: auto;
+                opacity: 1;
+
+            }
+
+            .animate-show.ng-hide-add.ng-hide-add-active,
+            .animate-show.ng-hide-remove.ng-hide-remove-active {
+                -webkit-transition: all linear 1s;
+                transition: all linear 1s;
+            }
+
+            .animate-show.ng-hide {
+                height: 0px;
+                opacity: 0;
+            }
+
+
+
+            html{
+                height: 100%;
+            }
+            body{
+                background : url("img/diamonds.png") repeat;
+                color: #747474;
+                min-height : 100%;
+            }
+            .bg-view{
+                background : url("img/diamonds.png") repeat;
+                color: #747474;
+
+            }
+
+            .logo{
+                text-align: center;
+                font-family: 'Yanone Kaffeesatz', sans-serif;
+
+            }
+            .logo h2 {
+                font-weight: bold;
+                line-height: 40px;
+                margin-top: 20px;
+
+                font-size: 40px;
+            }
+            .btn-content{
+                width: 100px;
+                text-align: left;
+                margin: auto;
+            }
+            .btn-content i{
+                width : 30px;
+            }
+            .btn-content span{
+                margin-left : 5px;
+            }
+
+            .logo h2 span {
+                display: block;
+                font-size: 18px;
+                font-weight: normal;
+            }
+
+            .intro h2,.intro h2 span {
+                font-weight: bold;
+                font-family: 'Yanone Kaffeesatz', sans-serif;
+                line-height: 60px;
+                text-transform: uppercase;
+            }
+            h2 {
+                font-size: 31.5px;
+            }
+            .intro h3 {
+                font-family: PT Sans;
+                font-size: 1.5em;
+                font-weight: normal;
+            }
+            .intro {
+                text-align: center;
+            }
+            .section {
+                padding-bottom: 60px;
+                padding-top: 60px;
+            }
+            .nicesection h2{
+                color: #373432;
+                font-family: PT Sans;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                margin-top: 40px;
+                text-align: center;
+                text-transform: uppercase;
+
+            }
+            .timeline {
+                background: url("img/line.gif") repeat-y scroll 154px 0 transparent;
+                margin-left: 15px;
+
+            }
+            .timeline-item {
+                margin-bottom: 30px;
+                overflow: hidden;
+                position: relative;
+            }
+            .timeline-item-date {
+                float: left;
+                margin-top: 31px;
+                width: 129px;
+                font-family: PT Sans;
+                font-size: 13px;
+            }
+            .timeline-item-trigger {
+                background: none repeat scroll 0 0 #3BC2C8;
+                border-radius: 130px 125px 130px 125px;
+                color: #FFFFFF;
+                cursor: pointer;
+                float: left;
+                font-size: 28px;
+                height: 44px;
+                line-height: 44px;
+                margin-top: 20px;
+                text-align: center;
+                width: 46px;
+            }
+            .timeline-arrow {
+                display: block;
+                position: relative;
+            }
+            .timeline-arrow i {
+                background: none repeat scroll 0 0 #F5F5F5;
+                border-left: 1px solid #CCCCCC;
+                border-top: 1px solid #CCCCCC;
+                display: block;
+                height: 10px;
+                left: 10px;
+                position: absolute;
+                top: 37px;
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                width: 10px;
+                z-index: 10;
+            }
+            .timeline-head-content{
+
+                float:left;
+            }
+            .timeline-head-content h3{
+                padding-top : 15px;
+                margin-left : 20px;
+                text-transform: uppercase;
+                color: #FBA24E;
+            } 
+            .timeline-head {
+                background: none repeat scroll 0 0 #FBA24E;
+                border-radius: 136px 136px 136px 136px;
+                color: #FFFFFF;
+                cursor: pointer;
+                float: left;
+                font-size: 28px;
+                height: 46px;
+                line-height: 46px;
+                margin-top: 20px;
+                text-align: center;
+                width: 46px;
+                margin-left: 130px;
+            }
+            .timeline-item-content {
+                background-color: #F5F5F5 !important;
+                border: 1px solid #CCCCCC !important;
+                border-radius: 5px 5px 5px 5px !important;
+                margin-bottom : 10px;
+                margin-right : 10px;
+                margin-left: 15px !important;
+                padding: 10px 30px !important;
+                position: relative;
+            }
+
+            .timeline-item-content p{
+                font-size : 14px;
+                font-family: PT Sans;
+            }
+            .timeline-item-content  h3{
+
+                font-family: PT Sans !important;
+                font-size : 20px !important;
+                padding : 0px !important;
+                margin : 0px !important;
+                padding-top : 10px !important;
+                padding-bottom : 5px; 
+                line-height : 40px;
+            }
+
+
+            .nicesection {
+                background: #FFFFFF;
+                border-left: 1px solid #CCCCCC;
+                border-right: 1px solid #CCCCCC;
+                border-top: 1px solid #CCCCCC;
+                box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+                -ms-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+                -o-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+                padding: 0 0 1px;
+                position: relative;
+                z-index: 9;
+                margin-bottom: 100px;
+            }
+            .nicesection:before {
+                background: #FFFFFF;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: -2px;
+                transform: rotate(1deg);
+                -moz-transform: rotate(1deg);
+                -webkit-transform: rotate(1deg);
+                -ms-transform: rotate(1deg);
+                -o-transform: rotate(1deg);
+                width: 100%;
+                z-index: -1;
+            }
+            .nicesection:after {
+                background: #FFFFFF;
+                border: 1px solid rgba(0, 0, 0, 0.15);
+                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                content: "";
+                height: 100%;
+                left: -2px;
+                position: absolute;
+                top: 1px;
+                transform: rotate(359deg);
+                -moz-transform: rotate(359deg);
+                -webkit-transform: rotate(359deg);
+                -ms-transform: rotate(359deg);
+                -o-transform: rotate(359deg);
+                width: 100%;
+                z-index: -2;
+            }
+
+            .tag {
+                font-family: Helvetica, Arial, sans-serif;
+                background: #588fe5;
+                display: inline-block;
+                font-size : 12px;
+                color: #fff;
+                position: relative;
+                padding: 8px;
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+                margin: 0 30px 0 0;
+                margin-top : 5px;
+                text-decoration: none;
+            }
+
+            .tag:hover {
+                background-color: #739fe4;
+            }
+
+            .tag:before {
+                background: #fff;
+                width: 10px;
+                height: 10px;
+                content: "";
+                display: inline-block;
+                border-radius: 20px;
+                margin: 0 5px 0 0;
+            }
+
+            .tag:after {
+                display: inline-block;
+                border: 15px solid;
+                border-color: transparent transparent transparent #588fe5;
+                height: 0;
+                width: 0;
+                position: absolute;
+                right: -29px;
+                top: 0;
+                content: "";
+                display: inline-block;
+            }
+
+
+            .tag:hover:after {
+                border-color: transparent transparent transparent #739fe4;
+            }
+            
+            .score-red{
+                background-color: red !important;
+                color: white;
+            }
+            .score-yellow{
+                background-color: yellow !important;
+                color: black;
+            }
+            .score-green{
+                background-color: green !important;
+                color: white;
+            }
+
+        </style>
+    </head>
+    <body >
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div ng-view class="bg-view"></div>
+
+
+        <!-- In production use:
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+        -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bower-tagcanvas/tagcanvas.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-material/angular-material.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/ng-slider/dist/ng-slider.min.js"></script>
+        <script src="bower_components/angular-flippy/dist/js/flippy.min.js"></script>
+
+
+        <script src="directives/slide.js"></script>
+        <script src="directives/unsafeHtml.js"></script>
+
+        <script src="app.js"></script>
+        <script src="services.js"></script>
+        <script src="controllers/education.js"></script>
+        <script src="controllers/portfolio.js"></script>
+        <script src="controllers/professional.js"></script>
+        <script src="controllers/services.js"></script>
+    </body>
+</html>

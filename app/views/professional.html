@@ -1,0 +1,108 @@
+
+<section>
+    <md-content hide show-lg>Large</md-content>
+    <md-content hide show-gt-lg>>Large</md-content>
+    <md-content hide show-md>MEdium</md-content>
+    <md-content hide show-sm>Small</md-content>
+</section>
+<section class="timeline">
+    <div class="timeline-item" style="margin-bottom:0px !important">
+        <div class="timeline-head" hide-sm hide-md>
+            <i class="fa fa-lightbulb-o"></i>
+        </div>
+        <div class="timeline-head-content">
+            <h3>Work Experience</h3>
+        </div>
+    </div>
+</section>
+
+<section layout="row" ng-repeat='(i,xp) in experience' >
+
+    <md-content  flex class='timeline' hide show-gt-sm>
+        <div>
+            <div class="timeline-item-date" hide show-gt-lg flex>
+                {{xp.date_from.format('MMM YYYY')}} 
+                <span ng-hide='xp.date_from.format("YYYY") == xp.date_to.format("YYYY")'>
+                    ⇢ {{xp.date_to.format("MMM YYYY")}}
+                </span>
+
+            </div>
+            <div class="timeline-item-date" hide show-lg show-md flex>
+                {{xp.date_from.format('YYYY')}} 
+                <span ng-hide='xp.date_from.format("YYYY") == xp.date_to.format("YYYY")'>
+                    ⇢ {{xp.date_to.format("YYYY")}}
+                </span>
+
+            </div>
+            <div  class="timeline-item-trigger" slide-toggle="#xp{{i}}" >
+                <span >
+                    <i class="fa fa-minus-circle " style="color: white" 
+                       ng-show="xp.collapsed" ng-click="xp.collapsed = !xp.collapsed"></i>
+                    <i class="fa fa-plus-circle "  style="color: white" 
+                       ng-show="!xp.collapsed" ng-click="xp.collapsed = !xp.collapsed"></i>
+                </span>
+            </div>
+
+        </div>
+
+
+        <md-content flex>
+            <div  hide-sm hide-md class="timeline-arrow"><i></i></div>
+            <md-content class="timeline-item-content" slide-toggle="#xp{{i}}" flex>
+                <h3 
+                    class="timeline-item-title" 
+                    data-toggle="collapse" 
+                    data-target="#job{{i}}">
+                    {{xp.title}} @ {{xp.company_name}}
+                </h3>
+                <div class="slideable" id="xp{{i}}" >                    
+                    <p ng-bind-html="xp.description | unsafe"></p>
+                    <label ng-repeat="tag in xp.tags" class="tag">
+                        {{tag}}
+                    </label>
+
+                </div>
+            </md-content>
+        </md-content>
+    </md-content>
+
+
+</section>
+<md-divider></md-divider>
+<!--
+<div >
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-head" hide-sm hide-md>
+                <i class="fa fa-lightbulb-o"></i>
+            </div>
+            <div class="timeline-head-content">
+                <h3>Work Experience</h3>
+            </div>
+        </div>
+        <div class="timeline-item" ng-repeat='(i,xp) in experience'>
+            <div  hide-sm hide-md class="timeline-item-date">{{xp.date_from.format('MMM YYYY')}} - {{xp.date_to.format('MMM YYYY')}}</div>
+            <div  hide-sm hide-md class="timeline-item-trigger" slide-toggle="#xp{{i}}">
+
+                <span >
+                    <i class="fa fa-minus-circle " style="color: white" ng-show="xp.collapsed" ng-click="xp.collapsed = !xp.collapsed"></i>
+                    <i class="fa fa-plus-circle "   style="color: white" ng-show="!xp.collapsed" ng-click="xp.collapsed = !xp.collapsed"></i>
+                </span>
+            </div>
+            <div  hide-sm hide-md class="timeline-arrow"><i></i></div>
+            <div class="timeline-item-content" slide-toggle="#xp{{i}}">
+                <h3 show-sm show-md class="timeline-item-title" data-toggle="collapse" data-target="#job{{i}}">{{xp.title}} @ {{xp.company_name}}</h3>
+                <div class="slideable" id="xp{{i}}" >
+                    <p><small class="muted">from {{xp.date_from.format('MMM YYYY')}} to {{xp.date_to.format('MMM YYYY')}}</small></p>
+                    <h4 class="media-heading primary-color">{{xp.headline}}</h4>
+                    <p>{{xp.description}}</p>
+                    <p ng-show='xp.website_url != ""'>
+                        <a href="{{xp.website_url}}" target="_blank" title="" class="noprint">&rarr; View website</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->

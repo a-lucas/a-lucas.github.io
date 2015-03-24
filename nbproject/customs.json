@@ -1,0 +1,42 @@
+{
+    "attributes": {
+        "slideable": {},
+        "show-md": {
+            "context": "div"
+        },
+        "slide-toggle": {
+            "context": "div"
+        },
+        "hide-gt-sm": {
+            "context": "div"
+        },
+        "hide-md": {},
+        "weight": {
+            "context": "a"
+        },
+        "hide": {},
+        "style": {},
+        "layout": {
+            "context": "div"
+        },
+        "show-sm": {
+            "context": "h3"
+        },
+        "hide-sm": {},
+        "show-lg": {},
+        "flex": {}
+    },
+    "elements": {
+        "md-item": {},
+        "md-content": {},
+        "md-item-content": {},
+        "md-list": {},
+        "md-sidenav": {
+            "attributes": {
+                "class": {}
+            }
+        },
+        "md-toolbar": {},
+        "md-divider": {}
+    }
+}

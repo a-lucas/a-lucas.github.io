@@ -1,0 +1,43 @@
+<section id="works" class="section mtcon">
+    <!-- heading -->
+    <div class="row">
+        <h2 class="mtcon-title">Works</h2>
+        <div class="span8 short-dec">
+            <p>The Sky People have sent us a message... that they can take whatever they want. That no one can stop them. Well, we will send them a message. You ride out as fast as the wind can carry you. You tell the other clans to come. Tell them Toruk Macto calls to them! You fly now, with me! My brothers! Sisters! And we will show the Sky People... that they cannot take whatever they want! And that this... this is our land! </p>
+        </div>
+    </div>	
+    <!-- /heading -->
+    <!-- Portfolio -->
+    <div class="row">
+        <!-- #options -->
+        <div id="options" class="clearfix">
+            <ul id="filters" class="option-set clearfix" data-option-key="filter">
+                <li>
+                    <a href="#filter" data-option-value="*" class="selected">all works</a>
+                </li>
+                <li ng-repeat="folio in portfolio">
+                    <a href="#filter" data-option-value="{{folio.name}}">{{folio.name}}</a>
+                </li>
+            </ul>
+        </div> 
+        <!-- #options end-->
+        <!-- portfolio items -->	
+        <div id="portfolio" class="clearfix"> 
+
+            <div ng-repeat="folio in portfolio" class="block {{folio.name}}">
+                <div class="view view-first">
+                    <div class="tringle"></div>
+                    <img src="img/work/1/1.jpg" alt="">
+                    <div class="mask">
+                        <a class="info" data-rel="prettyPhoto" href="img/big/1.jpg"></a>
+                        <a class="link" href="#"></a>
+                    </div>
+                </div>
+                <div class="des">
+                    <h4>{{folio.title}}</h4>
+                    <p>{{folio.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

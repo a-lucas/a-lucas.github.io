@@ -1,0 +1,195 @@
+
+<!-- heading -->
+<section layout="row"  layout-align="center center">
+    <md-content  flex="90">
+
+        <p style="color: #6C6662;padding:0px 15px;background-color:transparent;font: 14px 'PT Sans',sans-serif;">
+            I do Freelance job on ODesk.com. I do full-time and part-time jobs online, and I am usually open to use any communication media available (Skype, Hangout, Phone, VoIP). 
+            If you are interested and want to subcontract your web-development tasks, please contact me on ODesk.com <a href="">here</a>.
+        </p>
+
+    </md-content>
+</section>
+<section layout="row"  flex layout-align="center center" layout-wrap layout-margin>
+    <md-content ng-repeat="(i, service) in services" flex="30"> 
+        <flippy
+            class="fancy my-fancy"
+            ng-click="flip()"
+            ng-mouseenter="flip()"
+            ng-mouseleave="flip()"
+            flip-duration="800"
+            timing-function="ease-in-out">
+
+            <flippy-front>
+                <img ng-if="service.image !== false" src="{{service.image}}" />
+                <div ng-if="service.image == false">
+                    <canvas width="138" height="138" id="myCanvas" style="background-color: #000;border-radius : 75px;">
+                        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+
+                    </canvas>
+                    <div id="tags">
+                        <a href="" weight="20">PHP5</a>
+                        <a href="" weight="10">Zend1</a>
+                        <a href="" weight="20">AngularJS</a>
+                        <a href="" weight="5">EmberJS</a>
+                        <a href="" weight="15">Javascript</a>
+                        <a href="" weight="15">HTML5</a>
+                        <a href="" weight="15">Foundation</a>
+                        <a href="" weight="15">Bootstrap</a>
+                        <a href="" weight="18">Apache2</a>
+                        <a href="" weight="18">MySQL</a>
+                        <a href="" weight="15">MariaDB</a>
+                        <a href="" weight="12">MongoDB</a>
+                        <a href="" weight="15">MEAN.js</a>
+                        <a href="" weight="10">NodeJS</a>
+                        <a href="" weight="8">Java</a>
+                        <a href="" weight="12">Yii</a>
+                        <a href="" weight="18">Sphinx</a>
+                        <a href="" weight="10">Code Igniter</a>
+                        <a href="" weight="18">REST</a>
+                        <a href="" weight="15">SOAP</a>                        
+                        <a href="" weight="18">CSS3</a>
+                        <a href="" weight="12">Jasmine</a>
+                        <a href="" weight="12">Karma</a>
+                        <a href="" weight="5">Python</a>
+                        <a href="" weight="10">Meteor</a>
+
+                    </div>
+                </div>
+                <h2 style="font-size : 20px;">{{service.title}}</h2>        
+
+            </flippy-front>
+
+            <flippy-back>
+                <h2 style="font-size : 20px;">{{service.title}}</h2>  
+                <p>{{service.description}}</p>
+
+            </flippy-back>
+
+        </flippy>
+        <!-- /heading -->
+        <!-- service content -->
+
+
+    </md-content>
+</section>
+<hr />
+
+<md-content>
+    <h2 class="mtcon-title">Skills</h2>
+</md-content>
+
+<section layout="row"  flex layout-align="center top" layout-wrap layout-margin>
+    <md-content flex="30" style="background-color: #EBEBEB;color: #000">
+        
+        <div style="padding: 10px;background-color: darkblue;color: #fff;font-weight: bold;font-size: 20px">Programming</div>
+        <div ng-repeat="(i, coding) in skills.coding">
+            <div style="text-align: center;width: 190px;font-weight: bold;font-size: 15px;margin: auto;margin-top: 10px;margin-bottom: 10px;background-color: #fff;border-radius:10px;">
+                {{coding.name}}
+            </div>
+            
+            <div style="clear:both"></div>
+            
+            
+            <md-content flex="60"></md-content>
+            <md-list style="background-color:#EBEBEB">
+                <md-item ng-repeat="(j,code) in coding.languages" >
+                    <md-item-content style="background-color:#EBEBEB">
+                        <md-content flex="40" style="background-color:#EBEBEB;font-size: 12px;text-transform: uppercase;border: 1px solid transparent;text-align: right;padding-right: 10px;height: 20px;">
+                            {{code.name}}
+                        </md-content>
+                        <md-content flex="60" style="background-color:#EBEBEB">
+                            <div ng-class="{
+                                'score-red': code.percentage<=1,
+                                'score-yellow': code.percentage>1 && code.percentage<=3.5,
+                                'score-green': code.percentage>3.5
+                            }" style="border: 1px solid #fff;height: 20px;width: {{code.percentage * 20}}%"">
+
+                            </div>
+                        </md-content>
+
+                    </md-item-content>
+                </md-item>
+            </md-list> 
+            
+        </div>
+
+    </md-content>
+
+    <md-content flex="30" style="background-color: #EBEBEB;color: #000">
+        
+        <div style="padding: 10px;background-color: darkblue;color: #fff;font-weight: bold;font-size: 20px">
+            Sys Admin
+        </div>
+        <div ng-repeat="(i, coding) in skills.server">
+            <div style="text-align: center;width: 190px;font-weight: bold;font-size: 15px;margin: auto;margin-top: 10px;margin-bottom: 10px;background-color: #fff;border-radius:10px;">
+                {{coding.name}}
+            </div>
+            
+            <div style="clear:both"></div>
+            
+            
+            <md-content flex="60"></md-content>
+            <md-list style="background-color:#EBEBEB">
+                <md-item ng-repeat="(j,code) in coding.languages" >
+                    <md-item-content style="background-color:#EBEBEB">
+                        <md-content flex="40" style="background-color:#EBEBEB;font-size: 12px;text-transform: uppercase;border: 1px solid transparent;text-align: right;padding-right: 10px;height: 20px;">
+                            {{code.name}}
+                        </md-content>
+                        <md-content flex="60" style="background-color:#EBEBEB">
+                            <div ng-class="{
+                                'score-red': code.percentage<=1,
+                                'score-yellow': code.percentage>1 && code.percentage<=3.5,
+                                'score-green': code.percentage>3.5
+                            }" style="border: 1px solid #fff;height: 20px;width: {{code.percentage * 20}}%"">
+
+                            </div>
+                        </md-content>
+
+                    </md-item-content>
+                </md-item>
+            </md-list> 
+            
+        </div>
+
+    </md-content>
+
+    <md-content flex="30" style="background-color: #EBEBEB;color: #000">
+        
+        <div style="padding: 10px;background-color: darkblue;color: #fff;font-weight: bold;font-size: 20px">
+            Softwares
+        </div>
+        <div ng-repeat="(i, coding) in skills.softwares">
+            <div style="text-align: center;width: 190px;font-weight: bold;font-size: 15px;margin: auto;margin-top: 10px;margin-bottom: 10px;background-color: #fff;border-radius:10px;">
+                {{coding.name}}
+            </div>
+            
+            <div style="clear:both"></div>
+            
+            
+            <md-content flex="60"></md-content>
+            <md-list style="background-color:#EBEBEB">
+                <md-item ng-repeat="(j,code) in coding.languages" >
+                    <md-item-content style="background-color:#EBEBEB">
+                        <md-content flex="40" style="background-color:#EBEBEB;font-size: 12px;text-transform: uppercase;border: 1px solid transparent;text-align: right;padding-right: 10px;height: 20px;">
+                            {{code.name}}
+                        </md-content>
+                        <md-content flex="60" style="background-color:#EBEBEB">
+                            <div ng-class="{
+                                'score-red': code.percentage<=1,
+                                'score-yellow': code.percentage>1 && code.percentage<=3.5,
+                                'score-green': code.percentage>3.5
+                            }" style="border: 1px solid #fff;height: 20px;width: {{code.percentage * 20}}%"">
+
+                            </div>
+                        </md-content>
+
+                    </md-item-content>
+                </md-item>
+            </md-list> 
+            
+        </div>
+
+    </md-content>
+</section>
+

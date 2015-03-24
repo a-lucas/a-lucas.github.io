@@ -1,0 +1,82 @@
+<!--material design shock-->
+
+<div ng-controller="AppCtrl" layout="column" style="min-height:100%;">
+
+    <section layout="row" layout-align="end start" >
+
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" 
+
+                    md-component-id="left" >
+
+            <div ng-include=" 'views/menu-content.html'"></div>
+        </md-sidenav>
+
+
+        <md-content layout="left" hide-sm hide-md 
+                    flex="25"
+                    style="position:fixed;top : 25px;left :2%;" >
+            <div ng-include="'views/menu-content.html'"></div>
+        </md-content>
+
+
+
+        <md-content  flex="80" flex-sm="100" flex-md="100" layout="right" class="md-padding" style="background-color: transparent;">
+
+            <div layout="column" layout-fill layout-align="top center">
+
+                <section class="intro">
+
+                    <h2>
+                        <span >
+                            Antoine 
+
+                        </span>
+                        <img style="vertical-align:middle" src="img/me.png" alt="">
+                        <span >
+                            Lucas
+
+                        </span>
+
+                    </h2>
+                    <md-button ng-click="toggleLeft()"
+                               class="md-primary" 
+                               hide-gt-md>
+                        Toggle left
+                    </md-button>
+                    <md-divider></md-divider>
+                    <h3>
+                        I'm an Australia & Europe  based web application developer. I am currently available for remote work.<br /><3 creating modern web and mobile solutions, for startups or small business. 
+                    </h3>
+                    <md-divider></md-divider>
+                </section>
+
+                <section class="section nicesection">
+                    <div >
+                        <h2 class="mtcon-title">Resume</h2>
+                    </div>	
+                    <div ng-include=" 'views/professional.html'" ng-controller="ProCtrl"></div>
+                    <div ng-include=" 'views/education.html'" ng-controller="EducationCtrl"></div>
+                </section>
+                <section class="section nicesection">
+                    <div >
+                        <h2 class="mtcon-title">Services</h2>
+                    </div>	
+                    <div ng-include=" 'views/services.html'" ng-controller="ServiceCtrl"></div>
+                    
+                </section>
+
+
+
+                Data here
+
+
+            </div>
+            <div flex></div>
+        </md-content>
+
+    </section>
+</div>
+
+
+<!--end material-->
+
