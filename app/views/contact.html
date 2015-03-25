@@ -1,0 +1,28 @@
+<section  >
+
+    <form name="userForm">
+        <md-content layout="row" layout-sm="column" layout-wrap layout-margin >
+
+            <md-input-container flex="45">
+                <label>Title</label>
+                <input ng-model="contact.name" type="text" required>
+            </md-input-container>
+            <md-input-container flex>
+                <label>Email</label>
+                <input ng-model="contact.email" type="email" required>
+            </md-input-container>
+            <md-input-container flex="100">
+                <label>Message</label>
+                <textarea ng-model="contact.message" columns="1" md-maxlength="1000"></textarea>
+            </md-input-container>
+            <md-content flex="100" layout-align="center center">
+                <md-button ng-click="send(userForm)" class="md-raised md-primary">
+                    Contact Me
+
+                </md-button>
+            </md-content>
+
+        </md-content>
+        
+    </form>
+</section>

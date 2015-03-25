@@ -182,7 +182,17 @@
                 margin-top: 20px;
                 text-align: center;
                 width: 46px;
+                -webkit-transition: all 0.8s ease-out;
+                -moz-transition: all 0.8s ease-out;
+                -o-transition: all 0.8s ease-out;
+                transition: all 0.8s ease-out;
+
             }
+
+            .timeline-item-trigger:hover{
+                background-color: #216c70;
+            }
+
             .timeline-arrow {
                 display: block;
                 position: relative;
@@ -238,6 +248,7 @@
                 padding: 10px 30px !important;
                 position: relative;
             }
+            
 
             .timeline-item-content p{
                 font-size : 14px;
@@ -252,6 +263,16 @@
                 padding-top : 10px !important;
                 padding-bottom : 5px; 
                 line-height : 40px;
+                -webkit-transition: all 0.8s ease-out;
+                -moz-transition: all 0.8s ease-out;
+                -o-transition: all 0.8s ease-out;
+                transition: all 0.8s ease-out;
+                cursor: pointer;
+                
+            }
+            .timeline-item-content  h3:hover{
+                color: #216c70;
+                text-decoration: underline;
             }
 
 
@@ -359,7 +380,7 @@
             .tag:hover:after {
                 border-color: transparent transparent transparent #739fe4;
             }
-            
+
             .score-red{
                 background-color: red !important;
                 color: white;
@@ -393,9 +414,12 @@
         <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/angular-material/angular-material.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.min.js"></script>
         <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/curl/dist/curl-with-js-and-domReady/curl.js"></script>
         <script src="bower_components/ng-slider/dist/ng-slider.min.js"></script>
         <script src="bower_components/angular-flippy/dist/js/flippy.min.js"></script>
+        <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
 
 
         <script src="directives/slide.js"></script>
@@ -407,5 +431,7 @@
         <script src="controllers/portfolio.js"></script>
         <script src="controllers/professional.js"></script>
         <script src="controllers/services.js"></script>
+        <script src="controllers/skills.js"></script>
+        <script src="controllers/contact.js"></script>
     </body>
 </html>

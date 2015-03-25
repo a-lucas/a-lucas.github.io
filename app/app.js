@@ -7,12 +7,15 @@ angular.module('Antoine_Lucas_CV', [
     'Antoine_Lucas_CV.education',
     'Antoine_Lucas_CV.portfolio',
     'Antoine_Lucas_CV.service',
+    'Antoine_Lucas_CV.skills',
+    'Antoine_Lucas_CV.contact',
     'ngMaterial',
     'ngAnimate',
     'angularSlideables',
     'unsafeHtml',
     'ngSlider',
-    'angular-flippy'
+    'angular-flippy',
+    'duScroll'
 ])
         .config(['$routeProvider', function ($routeProvider) {
                 $routeProvider.when('/AntoineLucas', {
@@ -20,11 +23,20 @@ angular.module('Antoine_Lucas_CV', [
                     controller: 'AppCtrl'
                 }).otherwise({redirectTo: '/AntoineLucas'});
             }])
-        .controller("AppCtrl", function ($scope, $timeout, $mdSidenav, $log) {
+        .controller("AppCtrl", function ($scope, $timeout, $document,$mdSidenav, $log) {
             $scope.title1 = 'Button';
             $scope.title4 = 'Warn';
             $scope.isDisabled = true;
             $scope.googleUrl = 'http://google.com';
+
+            $scope.goToAnchor = function(id){
+                
+                var someElement = angular.element(document.getElementById(id));
+                console.log(someElement);
+                $document.scrollToElement(someElement, 20, 2000);
+                
+    
+            };
 
             $scope.toggleLeft = function () {
                 $mdSidenav('left').toggle()

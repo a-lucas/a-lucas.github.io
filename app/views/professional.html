@@ -45,14 +45,11 @@
 
         </div>
 
-
         <md-content flex>
             <div  hide-sm hide-md class="timeline-arrow"><i></i></div>
-            <md-content class="timeline-item-content" slide-toggle="#xp{{i}}" flex>
+            <md-content class="timeline-item-content"  flex>
                 <h3 
-                    class="timeline-item-title" 
-                    data-toggle="collapse" 
-                    data-target="#job{{i}}">
+                    class="timeline-item-title" slide-toggle="#xp{{i}}" ng-click="xp.collapsed = !xp.collapsed" >
                     {{xp.title}} @ {{xp.company_name}}
                 </h3>
                 <div class="slideable" id="xp{{i}}" >                    

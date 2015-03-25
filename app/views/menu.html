@@ -22,7 +22,7 @@
 
         <md-content  flex="80" flex-sm="100" flex-md="100" layout="right" class="md-padding" style="background-color: transparent;">
 
-            <div layout="column" layout-fill layout-align="top center">
+            <div layout="column" layout-fill layout-align="top center" id="intro">
 
                 <section class="intro">
 
@@ -50,24 +50,35 @@
                     <md-divider></md-divider>
                 </section>
 
-                <section class="section nicesection">
+                <section class="section nicesection" id="resume">
                     <div >
                         <h2 class="mtcon-title">Resume</h2>
                     </div>	
                     <div ng-include=" 'views/professional.html'" ng-controller="ProCtrl"></div>
                     <div ng-include=" 'views/education.html'" ng-controller="EducationCtrl"></div>
                 </section>
-                <section class="section nicesection">
+                
+                <section class="section nicesection" id="services">
                     <div >
                         <h2 class="mtcon-title">Services</h2>
                     </div>	
-                    <div ng-include=" 'views/services.html'" ng-controller="ServiceCtrl"></div>
-                    
+                    <div ng-include=" 'views/services.html'" ng-controller="ServiceCtrl"></div>                    
+                </section>
+                
+                <section class="section nicesection" id="skills">
+                    <div >
+                        <h2 class="mtcon-title">Skills</h2>
+                    </div>	
+                    <div ng-include=" 'views/skills.html'" ng-controller="SkillsCtrl"></div>                    
+                </section>
+                
+                <section class="section nicesection" id="contact">
+                    <div >
+                        <h2 class="mtcon-title">Contact Me</h2>
+                    </div>	
+                    <div ng-include=" 'views/contact.html'" ng-controller="ContactCtrl"></div>                    
                 </section>
 
-
-
-                Data here
 
 
             </div>
