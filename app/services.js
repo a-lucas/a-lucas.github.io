@@ -19,30 +19,7 @@ var now = moment({year: 2012, month: 2});
                 - F subject = 'Hello' \
                 - F text = 'Testing some Mailgun awesomness!'*/
 
-                var req = {
-                        method: 'GET',
-                        url: 'https://api:key-7d366fbeba5d2ae1e9ffaeb04b012dea@api.mailgun.net/v2/a-lucas.github.io/messages',
-                        headers: {
-                           // 'Access-Control-Allow-Origin' : "*"
-                        },
-                        data: { 
-                            text: 'Testing some Mailgun awesomness!' ,
-                            subject: "Hello",
-                            to: "cooluhuru@gmail.com",
-                            from: 'Excited User <mailgun@a-lucas.github.io>'
-                        }
-                };
-
-                $http(req).success(function(){
-                    console.log("Success");
-                }).error(function(data, status, headers, config){
-                    console.log("error");
-                    console.log(data);
-                    console.log(status);
-                    console.log(headers);
-                    console.log(config);
-                });
-                return $http;
+                return;
 
                 return $http.post('https://formkeep.com/f/b4e0421f2b4b', contact);
         };

@@ -11,7 +11,7 @@
     </md-content>
 </section>
 <section layout="row"  flex layout-align="center center" layout-wrap layout-margin>
-    <md-content ng-repeat="(i, service) in services" flex="30"> 
+    <md-content ng-repeat="(i, service) in services" flex-gt-md="30" flex-md="50" flex-sm="100"> 
         <flippy
             class="fancy my-fancy"
             ng-click="flip()"

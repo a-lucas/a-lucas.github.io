@@ -7,37 +7,38 @@
         "slide-toggle": {
             "context": "div"
         },
-        "weight": {
-            "context": "a"
-        },
-        "hide-md": {},
         "hide-gt-sm": {
             "context": "div"
         },
-        "style": {},
+        "hide-md": {},
+        "weight": {
+            "context": "a"
+        },
         "hide": {},
+        "style": {},
         "layout": {
             "context": "div"
         },
-        "hide-sm": {},
         "show-sm": {
             "context": "h3"
         },
+        "hide-sm": {},
         "show-lg": {},
         "flex": {}
     },
     "elements": {
         "md-item": {},
         "md-content": {},
-        "md-list": {},
         "md-item-content": {},
-        "md-toolbar": {},
+        "md-list": {},
+        "md-input-container": {},
         "md-sidenav": {
             "attributes": {
                 "class": {}
             }
         },
-        "md-input-container": {},
-        "md-divider": {}
+        "md-toolbar": {},
+        "md-divider": {},
+        "g:hangout": {}
     }
 }

@@ -6,7 +6,7 @@
             Antoine LUCAS
             <span>Web Application Developer</span>
         </h2>
-        
+
 
     </div>
 
@@ -63,7 +63,7 @@
             </md-item-content>
         </md-item>
         <md-divider></md-divider>
-       
+
         <md-item>
             <md-item-content>
                 <md-button ng-click="goToAnchor('contact')" flex>
@@ -74,6 +74,38 @@
 
                 </md-button>
             </md-item-content>
+        </md-item>            
+        <md-item>
+            <md-item-content>
+
+
+                <g:hangout render="createhangout" hangout_type="normal" invites="[{invite_type:'email',id: 'antoine.lucas.australia@gmail.com'},{invite_type:'email',id: 'cooluhuru@gmail.com'}]" topic="Interview"></g:hangout>
+
+
+                <div id="placeholder-div"></div>
+
+            </md-item-content>
         </md-item>
+        <md-item>
+            <md-item-content>
+
+                <div id="MyDiv">
+                    <a onclick="Skype.tryAnalyzeSkypeUri('call', '0');" href="skype:montpellier_1001net?call">
+                        Call me
+                    </a>
+                </div>
+                <div id="SkypeButton_Call_montpellier_1001net_1">
+                    <script type="text/javascript">
+                        Skype.ui({
+                            "name": "dropdown",
+                            "element": "SkypeButton_Call_montpellier_1001net_1",
+                            "participants": ["montpellier_1001net"],
+                            "imageSize": 24
+                        });
+                    </script>
+                </div>
+            </md-item-content>
+        </md-item>
+    </md-list>
 
 </md-content>

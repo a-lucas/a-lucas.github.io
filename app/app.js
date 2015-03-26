@@ -9,6 +9,7 @@ angular.module('Antoine_Lucas_CV', [
     'Antoine_Lucas_CV.service',
     'Antoine_Lucas_CV.skills',
     'Antoine_Lucas_CV.contact',
+    'Antoine_Lucas_CV.menu',
     'ngMaterial',
     'ngAnimate',
     'angularSlideables',

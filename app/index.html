@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="Antoine_Lucas_CV" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"class="no-js" ng-app="Antoine_Lucas_CV"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
         <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
 
+        <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
         <!--end Custom-->
         <!--
                 <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
@@ -248,7 +249,7 @@
                 padding: 10px 30px !important;
                 position: relative;
             }
-            
+
 
             .timeline-item-content p{
                 font-size : 14px;
@@ -268,7 +269,7 @@
                 -o-transition: all 0.8s ease-out;
                 transition: all 0.8s ease-out;
                 cursor: pointer;
-                
+
             }
             .timeline-item-content  h3:hover{
                 color: #216c70;
@@ -401,7 +402,16 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+
         <div ng-view class="bg-view"></div>
+
+
+        <script >
+            window.___gcfg = {
+                lang: 'en-AU',
+                parsetags: 'onload'
+            };
+        </script>
 
 
         <!-- In production use:
@@ -416,10 +426,13 @@
         <script src="bower_components/angular-route/angular-route.js"></script>
         <script src="bower_components/angular-messages/angular-messages.min.js"></script>
         <script src="bower_components/moment/moment.js"></script>
-        <script src="bower_components/curl/dist/curl-with-js-and-domReady/curl.js"></script>
         <script src="bower_components/ng-slider/dist/ng-slider.min.js"></script>
         <script src="bower_components/angular-flippy/dist/js/flippy.min.js"></script>
         <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+        
+        
 
 
         <script src="directives/slide.js"></script>
@@ -433,5 +446,6 @@
         <script src="controllers/services.js"></script>
         <script src="controllers/skills.js"></script>
         <script src="controllers/contact.js"></script>
+        <script src="controllers/menu.js"></script>
     </body>
 </html>
