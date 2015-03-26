@@ -1,6 +1,6 @@
 <section class="timeline">
     <div class="timeline-item" style="margin-bottom:0px !important">
-        <div class="timeline-head" hide-sm hide-md>
+        <div class="timeline-head" >
             <i class="fa fa-lightbulb-o"></i>
         </div>
         <div class="timeline-head-content">
@@ -38,7 +38,8 @@
                     data-toggle="collapse" 
                     ng-click="edu.collapsed = !edu.collapsed"
                     data-target="#edu{{i}}">
-                    {{edu.title}}  / {{edu.location.town}} - {{edu.location.country}}
+                    {{edu.title}}  
+                    <span class="place">in {{edu.location.town}} - {{edu.location.country}}</span> 
                 </h3>
                 <div class="slideable" id="edu{{i}}" >                    
                     <p ng-bind-html="edu.description | unsafe"></p>

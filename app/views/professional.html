@@ -1,14 +1,8 @@
 
-<section>
-    <md-content hide show-lg>Large</md-content>
-    <md-content hide show-gt-lg>>Large</md-content>
-    <md-content hide show-md>MEdium</md-content>
-    <md-content hide show-sm>Small</md-content>
-</section>
 
 <section class="timeline">
     <div class="timeline-item" style="margin-bottom:0px !important">
-        <div class="timeline-head" hide-sm hide-md>
+        <div class="timeline-head">
             <i class="fa fa-lightbulb-o"></i>
         </div>
         <div class="timeline-head-content">
@@ -51,10 +45,14 @@
             <md-content class="timeline-item-content"  flex>
                 <h3 
                     class="timeline-item-title" slide-toggle="#xp{{i}}" ng-click="xp.collapsed = !xp.collapsed" >
-                    {{xp.title}} @ {{xp.company_name}}
+                    {{xp.title}} 
+                    <span class="place">@ {{xp.company_name}}</span>
                 </h3>
                 <div class="slideable" id="xp{{i}}" >                    
                     <p ng-bind-html="xp.description | unsafe"></p>
+                     <p ng-show="xp.website_url.length>0">
+                         <a href="{{xp.website_url}}" target="_blank" title="" class="noprint">→ View website</a>
+                     </p>
                     <label ng-repeat="tag in xp.tags" class="tag">
                         {{tag}}
                     </label>

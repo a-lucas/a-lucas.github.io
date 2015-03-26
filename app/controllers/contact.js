@@ -15,6 +15,29 @@ angular.module('Antoine_Lucas_CV.contact', ['Antoine_Lucas_CV.services', 'ngMate
 
 
         })
+        .controller('FormCtrl', function ($scope, DataSource) {
+            $scope.user = {
+                name: 'test',
+                _replyto: 'test@gmail.com'
+            };
+            $scope.mailSent = false;
+            $scope.sendMail = function (form) {
+                console.log(form);
+                if (form.$valid) {
+                    $scope.mailSent = true;
+                    DataSource.contact_me($scope.user).success(function () {
+                        console.log("success");
+                    }).error(function (a, b, c, d) {
+                        console.log('error');
+                        console.log(a);
+                        console.log(b);
+                        console.log(c);
+                        console.log(d);
+                    });
+                }
+
+            }
+        })
         .controller('SkypeCtrl', function ($scope, $timeout) {
             $timeout(function () {
 
@@ -45,7 +68,7 @@ angular.module('Antoine_Lucas_CV.contact', ['Antoine_Lucas_CV.services', 'ngMate
 
                 });
                 console.log(t);
-                
+
             });
 
 

@@ -1,7 +1,8 @@
-<section layout="row"  flex layout-align="center top" layout-wrap layout-margin>
-    <md-content flex-gt-md="30"  flex-md="100" flex-sm="100" style="background-color: #EBEBEB;color: #000">
+<section layout="row"   layout-align-gt-md="center start" layout-wrap layout-padding layout-margin>
+    
+    <md-content flex-gt-md="30"  flex-md="100" flex-sm="100"  style="background-color: #EBEBEB;color: #000" layout-margin>
         
-        <div style="padding: 10px;background-color: darkblue;color: #fff;font-weight: bold;font-size: 20px">Programming</div>
+        <div class="skill-title">Programming</div>
         <div ng-repeat="(i, coding) in skills.coding">
             <div style="text-align: center;width: 190px;font-weight: bold;font-size: 15px;margin: auto;margin-top: 10px;margin-bottom: 10px;background-color: #fff;border-radius:10px;">
                 {{coding.name}}
@@ -35,9 +36,9 @@
 
     </md-content>
 
-    <md-content flex-gt-md="30"  flex-md="100" flex-sm="100"  style="background-color: #EBEBEB;color: #000">
+    <md-content flex-gt-md="30"  flex-md="100" flex-sm="100"  style="background-color: #EBEBEB;color: #000" layout-margin>
         
-        <div style="padding: 10px;background-color: darkblue;color: #fff;font-weight: bold;font-size: 20px">
+        <div class="skill-title">
             Sys Admin
         </div>
         <div ng-repeat="(i, coding) in skills.server">
@@ -73,9 +74,9 @@
 
     </md-content>
 
-    <md-content flex-gt-md="30"  flex-md="100" flex-sm="100"  style="background-color: #EBEBEB;color: #000">
+    <md-content flex-gt-md="30"  flex-md="100" flex-sm="100"  style="background-color: #EBEBEB;color: #000" layout-margin>
         
-        <div style="padding: 10px;background-color: darkblue;color: #fff;font-weight: bold;font-size: 20px">
+        <div class="skill-title">
             Softwares
         </div>
         <div ng-repeat="(i, coding) in skills.softwares">

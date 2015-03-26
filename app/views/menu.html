@@ -4,15 +4,25 @@
 
     <section layout="row" layout-align="end start" >
 
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2 large-sidenav" class="large-sidenav" md-component-id="left" layout="row">
-            <div ng-include="'views/menu-content-header.html'" flex="50" style="background-color: #747474"></div>
-            <div ng-include=" 'views/menu-content1.html'" flex="50" ng-controller=MenuCtrl></div>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2 large-sidenav" 
+                    class="large-sidenav" 
+                    id="largeLeft"
+                    md-component-id="largeLeft" 
+                    layout="row">
+            <div ng-include="'views/menu-content-header.html'" flex="50"   style="background-color: #747474"></div>
+            <div ng-include=" 'views/menu-content1.html'" flex="50" ></div>
         </md-sidenav>
-        <md-sidenav class="md-sidenav-left md-whiteframe-z3" class="" md-component-id="left2" >
-            TEST
+        <md-sidenav class="md-sidenav-left md-whiteframe-z3" 
+                    id="smallLeft"
+                    md-component-id="smallLeft" 
+                    layout="column">
+            <div ng-include="'views/menu-content-header.html'"   style="background-color: #fff"></div>
+            <div ng-include=" 'views/menu-content1.html'"  ></div>
         </md-sidenav>
 
-        <md-sidenav class="md-sidenav-right md-whiteframe-z3 large-sidenav" class="" md-component-id="right" >
+        <md-sidenav class="md-sidenav-right md-whiteframe-z3" 
+                    md-component-id="right" 
+                    id="right">
 
             <div ng-include=" 'views/contact.html'" ng-controller="ContactCtrl"></div>                    
 
@@ -21,6 +31,7 @@
 
         <md-content layout="left" show hide-gt-md 
                     style="background-color: transparent;"
+                    ng-show="isTouch==false"
                     flex="10">
 
             <i class="fa fa-4x fa-bars" hide show-md
@@ -41,22 +52,22 @@
             </i>
 
         </md-content>
-        <md-content layout="left" hide-sm hide-md 
+        <md-content layout="left" hide-sm 
                     flex="25"
-                    style="position:fixed;top : 25px;left :2%;" >
+                    style="position:fixed;top : 25px;left :2%;padding : 0px !important" >
             <div ng-include="'views/menu-content2.html'" ng-controller="MenuCtrl"></div>
         </md-content>
 
 
 
-        <md-content  flex="80" flex-sm="85" flex-md="85" layout="right" class="md-padding" style="background-color: transparent;">
+        <md-content  flex-lg="75" flex-gt-lg="80" flex-sm="{{flex_small_content}}" flex-md="70" layout="right" class="md-padding" style="background-color: transparent;">
 
             <div layout="column" layout-fill layout-align="top center">
 
 
 
                 <section class="intro" id='intro'>
-                    <div>
+                    <div id="intro-name">
                         <h2>
                             <span >Antoine</span>
                             <img style="vertical-align:middle" src="img/me.png" alt="">
