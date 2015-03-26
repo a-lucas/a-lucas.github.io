@@ -4,56 +4,58 @@
 
     <section layout="row" layout-align="end start" >
 
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2" 
-
-                    md-component-id="left" >
-
-            <div ng-include=" 'views/menu-content.html'" ng-controller=MenuCtrl></div>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" >
+            <div ng-include=" 'views/menu-content1.html'" ng-controller=MenuCtrl></div>
         </md-sidenav>
 
 
+        <md-content layout="left" show hide-gt-md 
+                    style="background-color: transparent;"
+                    flex="10">
+            
+            <i class="fa fa-4x fa-bars" hide show-md
+                   style="
+                   background-color: #fff;border : 3px solid #575757;border-radius: 5px;padding: 5px;
+                   position:fixed;
+                    left: 10px;
+                    top: 10px;"
+                   ng-click="toggleLeft()">
+            </i>
+             <i class="fa fa-2x fa-bars" hide show-sm
+                   style="
+                   background-color: #fff;border : 3px solid #575757;border-radius: 5px;padding: 5px;
+                   position:fixed;
+                    left: 10px;
+                    top: 10px;"
+                   ng-click="toggleLeft()">
+            </i>
+                        
+        </md-content>
         <md-content layout="left" hide-sm hide-md 
                     flex="25"
                     style="position:fixed;top : 25px;left :2%;" >
-            <div ng-include="'views/menu-content.html'" ng-controller="MenuCtrl"></div>
+            <div ng-include="'views/menu-content2.html'" ng-controller="MenuCtrl"></div>
         </md-content>
 
 
 
-        <md-content  flex="80" flex-sm="100" flex-md="100" layout="right" class="md-padding" style="background-color: transparent;">
+        <md-content  flex="80" flex-sm="85" flex-md="85" layout="right" class="md-padding" style="background-color: transparent;">
 
-            <div layout="column" layout-fill layout-align="top center" id="intro">
+            <div layout="column" layout-fill layout-align="top center">
 
-                <section class="intro">
-                    <i class="fa fa-4x fa-bars" 
-                       hide-gt-md 
-                       style="position:absolute;top:10px;left: 30px;background-color: #fff;border : 3px solid #575757;border-radius: 5px;padding: 5px;"
-                       ng-click="toggleLeft()">
-                           
-                    </i>
-                    <h2>
-                        <span>
-                            
-                        </span>
-                        
-                        <span >
-                            Antoine 
-
-                        </span>
-                        <img style="vertical-align:middle" src="img/me.png" alt="">
-                        <span >
-                            Lucas
-
-                        </span>
-
-                    </h2>
-                    
-                    <md-divider></md-divider>
-                    <h3>
-                        I'm an Australia & Europe  based web application developer. I am currently available for remote work.<br /><3 creating modern web and mobile solutions, for startups or small business. 
-                    </h3>
-                    <md-divider></md-divider>
+                
+                
+                <section class="intro" id='intro'>
+                    <div>
+                        <h2>
+                            <span >Antoine</span>
+                            <img style="vertical-align:middle" src="img/me.png" alt="">
+                            <span >Lucas</span>
+                        </h2>
+                    </div>
+                    <div ng-include=" 'views/intro.html'"></div>
                 </section>
+
 
                 <section class="section nicesection" id="resume">
                     <div >
@@ -62,21 +64,21 @@
                     <div ng-include=" 'views/professional.html'" ng-controller="ProCtrl"></div>
                     <div ng-include=" 'views/education.html'" ng-controller="EducationCtrl"></div>
                 </section>
-                
+
                 <section class="section nicesection" id="services">
                     <div >
                         <h2 class="mtcon-title">Services</h2>
                     </div>	
                     <div ng-include=" 'views/services.html'" ng-controller="ServiceCtrl"></div>                    
                 </section>
-                
+
                 <section class="section nicesection" id="skills">
                     <div >
                         <h2 class="mtcon-title">Skills</h2>
                     </div>	
                     <div ng-include=" 'views/skills.html'" ng-controller="SkillsCtrl"></div>                    
                 </section>
-                
+
                 <section class="section nicesection" id="contact">
                     <div >
                         <h2 class="mtcon-title">Contact Me</h2>

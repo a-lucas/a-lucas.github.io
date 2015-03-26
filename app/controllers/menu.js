@@ -5,18 +5,44 @@
 angular.module('Antoine_Lucas_CV.menu', [])
         .controller('MenuCtrl', function ($scope, $timeout) {
 
-            $timeout(function () {
-                try{
-                    gapi.hangout.render('placeholder-div', { 'render': 'createhangout' });
-                }
-                catch(e){
-                    console.log("somethign wromg happened while creating the hangout");
-                    console.log(e);
-                }
-                
-                
-            },5000);
+            
+            $scope.render1 = function () {
+                $timeout(function () {
+                    gapi.hangout.render('placeholder-div1', {
+                        render: 'createhangout',
+                        hangout_type: "normal",
+                        invites: [
+                            {invite_type: 'email', id: 'antoine.lucas.australia@gmail.com'},
+                            {invite_type: 'email', id: 'cooluhuru@gmail.com'}],
+                        topic: "Interview1",
+                        width: "100%"
 
+                    });
+                });
+
+            };
+            $scope.render2 = function () {
+                $timeout(function () {
+                    gapi.hangout.render('placeholder-div2', {
+                        render: 'createhangout',
+                        hangout_type: "normal",
+                        invites: [
+                            {invite_type: 'email', id: 'antoine.lucas.australia@gmail.com'},
+                            {invite_type: 'email', id: 'cooluhuru@gmail.com'}],
+                        topic: "Interview2",
+                        width: "100%"
+
+                    });
+                })
+
+            };
 
 
         });
+
+
+
+
+
+
+       

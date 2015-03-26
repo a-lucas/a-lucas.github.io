@@ -2,7 +2,13 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"class="no-js" ng-app="Antoine_Lucas_CV"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"class="no-js" ng-app="Antoine_Lucas_CV" scroll scrollaction="{ 
+                             resume : 'resume_btn',
+                             intro: 'intro_btn',
+                             services: 'service_btn',
+                             skills: 'skills_btn',
+                             contact: 'contact_btn'
+                             }"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +26,14 @@
         <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
 
         <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+        <script >
+            window.___gcfg = {
+                lang: 'en-AU',
+                parsetags: 'explicit'
+            };
+        </script>
+         <script src="https://apis.google.com/js/platform.js"  ></script>
+         <script src="https://apis.google.com/js/client:platform.js"  ></script>
         <!--end Custom-->
         <!--
                 <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
@@ -29,6 +43,10 @@
         -->
         <style type="text/css">
 
+            #SkypeButton_Call_montpellier_1001net_1 img, #SkypeButton_Call_montpellier_1001net_2 img, {
+                margin: 0px !important;
+                padding: 0px !important;
+            }
             flippy.my-fancy{
                 width:100%;
                 margin : 0px;
@@ -406,12 +424,7 @@
         <div ng-view class="bg-view"></div>
 
 
-        <script >
-            window.___gcfg = {
-                lang: 'en-AU',
-                parsetags: 'onload'
-            };
-        </script>
+        
 
 
         <!-- In production use:
@@ -429,7 +442,7 @@
         <script src="bower_components/ng-slider/dist/ng-slider.min.js"></script>
         <script src="bower_components/angular-flippy/dist/js/flippy.min.js"></script>
         <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
+       
 
         
         
@@ -437,7 +450,7 @@
 
         <script src="directives/slide.js"></script>
         <script src="directives/unsafeHtml.js"></script>
-
+        <script src="directives/scroll.js"></script>
         <script src="app.js"></script>
         <script src="services.js"></script>
         <script src="controllers/education.js"></script>

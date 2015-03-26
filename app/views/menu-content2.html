@@ -13,20 +13,19 @@
     <md-list>
         <md-item >
             <md-item-content >
-                <md-button  flex  ng-click="goToAnchor('intro')" >
+                <md-button  flex  ng-click="goToAnchor('intro')" id='intro_btn'>
                     <div class="btn-content">
                         <i class="fa fa-lg fa-fire"></i>
                         <span>Intro</span>
 
                     </div>
-
                 </md-button>
             </md-item-content>
         </md-item>
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('resume')" flex>
+                <md-button ng-click="goToAnchor('resume')" flex id='resume_btn'>
                     <div class="btn-content">
                         <i class="fa fa-lg fa-book"></i>
                         <span>Resume</span>
@@ -39,7 +38,7 @@
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('services')" flex>
+                <md-button ng-click="goToAnchor('services')" flex id='service_btn'>
                     <div class="btn-content">
 
                         <i class="fa fa-lg fa-cogs"></i>
@@ -52,7 +51,7 @@
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('skills')" flex>
+                <md-button ng-click="goToAnchor('skills')" flex id='skills_btn'>
                     <div class="btn-content">
 
                         <i class="fa fa-lg fa-cogs"></i>
@@ -66,7 +65,7 @@
 
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('contact')" flex>
+                <md-button ng-click="goToAnchor('contact')" flex id='contact_btn'>
                     <div class="btn-content">
                         <i class="fa fal-lg fa-mail-forward"></i>
                         <span>Contact</span>
@@ -76,34 +75,31 @@
             </md-item-content>
         </md-item>            
         <md-item>
-            <md-item-content>
+            <md-item-content style="text-align:center">
 
 
-                <g:hangout render="createhangout" hangout_type="normal" invites="[{invite_type:'email',id: 'antoine.lucas.australia@gmail.com'},{invite_type:'email',id: 'cooluhuru@gmail.com'}]" topic="Interview"></g:hangout>
+                <!--<g:hangout render="createhangout" hangout_type="normal" invites="[{invite_type:'email',id: 'antoine.lucas.australia@gmail.com'},{invite_type:'email',id: 'cooluhuru@gmail.com'}]" topic="Interview"></g:hangout>-->
 
 
-                <div id="placeholder-div"></div>
+                <div style="float:left;width:100%;text-align:center">
+                    <div id="placeholder-div2" ng-init="render2()"></div>
+                </div>
+                
+                
+            
 
             </md-item-content>
         </md-item>
         <md-item>
-            <md-item-content>
+            <md-item-content style="text-align:center !important">
 
-                <div id="MyDiv">
-                    <a onclick="Skype.tryAnalyzeSkypeUri('call', '0');" href="skype:montpellier_1001net?call">
-                        Call me
-                    </a>
-                </div>
-                <div id="SkypeButton_Call_montpellier_1001net_1">
-                    <script type="text/javascript">
-                        Skype.ui({
-                            "name": "dropdown",
-                            "element": "SkypeButton_Call_montpellier_1001net_1",
-                            "participants": ["montpellier_1001net"],
-                            "imageSize": 24
-                        });
-                    </script>
-                </div>
+                
+               <a href="skype:montpellier_1001net" style="width: 100%;color: #14B9D6;font-size : 18px;text-decoration: none;">
+                   <i class="fa fa-lg fa-skype"></i>
+                   Call Me1
+               </a>
+               
+                
             </md-item-content>
         </md-item>
     </md-list>
