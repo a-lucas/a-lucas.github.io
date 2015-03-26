@@ -1389,6 +1389,7 @@ angular.module('material.core')
   };
 
   function jQueryDispatchEvent(srcEvent, eventType, eventPointer) {
+      
     eventPointer = eventPointer || pointer;
     var eventObj = new angular.element.Event(eventType);
 
@@ -8080,6 +8081,7 @@ function SidenavDirective($timeout, $animate, $parse, $log, $mdMedia, $mdConstan
      * @param isLocked
      */
     function updateIsLocked(isLocked, oldValue) {
+        console.log("Update is Locked");
       scope.isLockedOpen = isLocked;
       if (isLocked === oldValue) {
         element.toggleClass('md-locked-open', !!isLocked);
@@ -8140,6 +8142,7 @@ function SidenavDirective($timeout, $animate, $parse, $log, $mdMedia, $mdConstan
 
             if ( !scope.isOpen ) {
               // reset focus to originating element (if available) upon close
+              console.log("still not open");
               triggeringElement && triggeringElement.focus();
               triggeringElement = null;
             }

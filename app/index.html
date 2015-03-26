@@ -14,7 +14,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>My AngularJS App</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
         <!--custom-->
         <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
         <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
@@ -32,8 +33,8 @@
                 parsetags: 'explicit'
             };
         </script>
-         <script src="https://apis.google.com/js/platform.js"  ></script>
-         <script src="https://apis.google.com/js/client:platform.js"  ></script>
+        <script src="https://apis.google.com/js/platform.js"  ></script>
+        <script src="https://apis.google.com/js/client:platform.js"  ></script>
         <!--end Custom-->
         <!--
                 <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
@@ -120,9 +121,13 @@
                 font-weight: bold;
                 line-height: 40px;
                 margin-top: 20px;
-
+                color: #747474;
                 font-size: 40px;
             }
+            .large-sidenav .logo h2{
+                color: #fff;
+            }
+
             .btn-content{
                 width: 100px;
                 text-align: left;
@@ -413,6 +418,75 @@
                 color: white;
             }
 
+            .md-sidenav-left, .md-sidenav-right{
+                position:fixed;
+            }
+            .large-sidenav{
+                width: 480px !important;
+                min-width: 480px!important;
+            }
+
+            .tabsdemoStaticTabs {
+                /*
+               * Animation styles
+               */ }
+            .tabsdemoStaticTabs .sample {
+                height: 450px; }
+            .tabsdemoStaticTabs #tab1-content {
+                background-color: #3F51B5; }
+            .tabsdemoStaticTabs #tab2-content {
+                background-color: #673AB7; }
+            .tabsdemoStaticTabs #tab3-content {
+                background-color: #00796B; }
+            .tabsdemoStaticTabs .tabpanel-container {
+                display: block;
+                position: relative;
+                background: white;
+                border: 0px solid black;
+                height: 100%;
+                min-height: 400px;
+                overflow: hidden; }
+            .tabsdemoStaticTabs [role="tabpanel"] {
+                color: white;
+                width: 100%;
+                height: 100%;
+                -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+                transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+                position: absolute; }
+            .tabsdemoStaticTabs [role="tabpanel"].ng-leave.ng-leave-active, .tabsdemoStaticTabs [role="tabpanel"].ng-enter {
+                top: -300px; }
+            .tabsdemoStaticTabs [role="tabpanel"].ng-leave, .tabsdemoStaticTabs [role="tabpanel"].ng-enter.ng-enter-active {
+                top: 0; }
+            .tabsdemoStaticTabs [role="tabpanel"].ng-leave {
+                z-index: 100; }
+            .tabsdemoStaticTabs .tabpanel-container [role="tabpanel"] {
+                padding: 20px; }
+            .tabsdemoStaticTabs .after-tabs-area {
+                padding: 10px; }
+            .tabsdemoStaticTabs .after-tabs-area > span {
+                margin-top: 25px;
+                padding-right: 5px;
+                vertical-align: middle;
+                line-height: 30px;
+                height: 35px; }
+            .tabsdemoStaticTabs .after-tabs-area > md-checkbox {
+                margin-top: 26px;
+                margin-left: 0px; }
+            .tabsdemoStaticTabs .md-header {
+                background-color: #1976D2 !important; }
+            .tabsdemoStaticTabs md-tab {
+                color: #90caf9 !important; }
+            .tabsdemoStaticTabs md-tab.active, .tabsdemoStaticTabs md-tab:focus {
+                color: white !important; }
+            .tabsdemoStaticTabs md-tab[disabled] {
+                opacity: 0.5; }
+            .tabsdemoStaticTabs .md-header .md-ripple {
+                border-color: #FFFF8D !important; }
+            .tabsdemoStaticTabs md-tabs-ink-bar {
+                background-color: #FFFF8D !important; }
+            .tabsdemoStaticTabs md-tabs .md-paginator {
+                color: white; }
+
         </style>
     </head>
     <body >
@@ -421,16 +495,16 @@
         <![endif]-->
 
 
-        <div ng-view class="bg-view"></div>
+        <div ng-view class="bg-view" ></div>
 
 
-        
+
 
 
         <!-- In production use:
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
         -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
         <script src="bower_components/bower-tagcanvas/tagcanvas.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -438,14 +512,15 @@
         <script src="bower_components/angular-material/angular-material.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
         <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.min.js"></script>
         <script src="bower_components/moment/moment.js"></script>
         <script src="bower_components/ng-slider/dist/ng-slider.min.js"></script>
         <script src="bower_components/angular-flippy/dist/js/flippy.min.js"></script>
         <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
-       
 
-        
-        
+
+
+
 
 
         <script src="directives/slide.js"></script>

@@ -15,16 +15,16 @@ angular.module('angularScrollParralax', [])
                         
                         
                         for (var i in scrollAction) {
-                            var elem = angular.element("#" + i);
+                            var elem = angular.element( document.querySelector( "#" + i));
                             
                             if (this.pageYOffset > elem[0].offsetTop && this.pageYOffset < (elem[0].offsetTop + elem[0].offsetHeight)) {
 
-                                angular.element("#" + scrollAction[i]).css("background-color", "#EBEBEB");
+                                angular.element(document.querySelector("#" + scrollAction[i])).css("background-color", "#EBEBEB");
 
                             }
                             else {
 
-                                angular.element("#" + scrollAction[i]).css("background-color", "transparent");
+                                angular.element(document.querySelector("#" + scrollAction[i])).css("background-color", "transparent");
 
                             }
 
