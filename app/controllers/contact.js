@@ -17,8 +17,9 @@ angular.module('Antoine_Lucas_CV.contact', ['Antoine_Lucas_CV.services', 'ngMate
         })
         .controller('FormCtrl', function ($scope, DataSource) {
             $scope.user = {
-                name: 'test',
-                _replyto: 'test@gmail.com'
+                name: '',
+                _replyto: '',
+                message: ''
             };
             $scope.mailSent = false;
             $scope.sendMail = function (form) {

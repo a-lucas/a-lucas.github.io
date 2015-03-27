@@ -67,6 +67,27 @@ flippy.my-fancy p{
     opacity: 0;
 }
 
+.fade-show {
+    
+    opacity: 1;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    width : 134px;
+    height : 134px;
+
+}
+
+.fade-show.ng-hide-add.ng-hide-add-active,
+.fade-show.ng-hide-remove.ng-hide-remove-active {
+    -webkit-transition: all linear 1s;
+    transition: all linear 1s;
+}
+
+.fade-show.ng-hide {
+    opacity: 0;
+}
+
 /************************************
 *******  WEBSITE
 ************************************/
@@ -84,6 +105,7 @@ body{
     color: #747474;
 
 }
+
 /************************************
 *******  WEBSITE
 ************************************/
@@ -150,21 +172,71 @@ ul{
     font-size: 18px;
     font-weight: normal;
 }
+/****INTRO SECTION*/
 
-.intro h2,.intro h2 span {
+#intro-name span {
+    float:left;
+    padding-top: 30px;
+}
+#intro-name{
+    margin: auto;
+    position: relative !important;
+}
+#intro-name, #intro-name span {
     font-weight: bold;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     line-height: 60px;
     text-transform: uppercase;
 }
+.fade-show-container{
+    padding: 0px;
+    margin: 0px;
+    height: 140px;
+    width: 140px;
+    float:left;
+    position: relative;
+    display: inline;
+}
 @media screen and (min-width:1200px){
-    .intro h2,.intro h2 span {
+    #intro-name{
+        width: 450px;
+    }
+    #intro-name, #intro-name span {
         font-size : 60px;
         margin-top : 5px;
         margin-bottom : 20px;
     }
 }
-
+@media screen and (min-width:900px) and (max-width: 1200px){
+    #intro-name{
+        width: 350px;
+    }
+    #intro-name, #intro-name span {
+        font-size : 40px;
+        margin-top : 5px;
+        margin-bottom : 20px;
+    }
+}
+@media screen and (min-width:600px) and (max-width: 900px){
+    #intro-name{
+        width: 310px;
+    }
+    #intro-name, #intro-name span {
+        font-size : 35px;
+        margin-top : 5px;
+        margin-bottom : 20px;
+    }
+}
+@media screen and  (max-width: 600px){
+    #intro-name{
+        width: 250px;
+    }
+    #intro-name, #intro-name span {
+        font-size : 25px;
+        margin-top : 5px;
+        margin-bottom : 20px;
+    }
+}
 /************************************
 *******  INTRO
 ************************************/

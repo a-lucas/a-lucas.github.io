@@ -31,7 +31,7 @@
 
         <md-content layout="left" show hide-gt-md 
                     style="background-color: transparent;"
-                    ng-show="isTouch==false"
+                    ng-show="isTouch == false"
                     flex="10">
 
             <i class="fa fa-4x fa-bars" hide show-md
@@ -64,16 +64,19 @@
 
             <div layout="column" layout-fill layout-align="top center">
 
-
-
                 <section class="intro" id='intro'>
+
                     <div id="intro-name">
-                        <h2>
-                            <span >Antoine</span>
-                            <img style="vertical-align:middle" src="img/me.png" alt="">
-                            <span >Lucas</span>
-                        </h2>
+                        <span>Antoine</span>
+                        <div class="fade-show-container">
+                            <img style="vertical-align:middle" class="fade-show" src="img/Slide.png" id="slideImg" ng-show="showSlide"/>
+                            <img style="vertical-align:middle" class="fade-show" src="img/me.png" alt="Antoine LUCAS" id="photoImg" ng-show="showFace"/>
+                        </div>
+                        <span >Lucas</span>
+                        <div style="clear:both"></div>
                     </div>
+
+                    
                     <div ng-include=" 'views/intro.html'"></div>
                 </section>
 

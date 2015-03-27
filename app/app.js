@@ -39,12 +39,28 @@ angular.module('Antoine_Lucas_CV', [
                 $scope.isTouch = false;
                 $scope.flex_small_content = 85;
             }
-            console.log("isTouch: " + $scope.isTouch)
+            
+            function animateSwipe(){
+                if($scope.isTouch){
+                    $scope.showSlide = true;
+                    $scope.showFace=false;
+                    $timeout(function(){
+                        $scope.showSlide = false;
+                        $scope.showFace=true;
+                    }, 3000);
+                }
+                else{
+                    $scope.showSlide = false;
+                    $scope.showFace=true;
+                }
+                
+            }
+            animateSwipe();
 
 
             function checkSideBarsDimension() {
                 if ($mdMedia('max-width: 400px')) {
-                    console.log("max-width1 : 400");
+                    
                     angular.element(document.getElementById('smallLeft'))
                             .removeClass('small-sidenav')
                             .removeClass('smaill-sidenav');
@@ -56,7 +72,7 @@ angular.module('Antoine_Lucas_CV', [
                             .addClass('small-contact-sidenav');
                 }
                 else if ($mdMedia('max-width: 500px')) {
-                    console.log("max-width1 : 500");
+                    
                     angular.element(document.getElementById('smallLeft')).removeClass('small-sidenav');
                     angular.element(document.getElementById('right'))
                             .removeClass('large-contact-sidenav')
@@ -64,8 +80,8 @@ angular.module('Antoine_Lucas_CV', [
                             .removeClass('small-contact-sidenav')
                             .addClass('medium-contact-sidenav');
                 }
-                else if ($mdMedia('max-width: 590')) {
-                    console.log("max-width1 : 590");
+                else if ($mdMedia('max-width: 600')) {
+                   
                     angular.element(document.getElementById('right'))
                             .removeClass('large-contact-sidenav')
                             .removeClass('medium-contact-sidenav')
@@ -73,7 +89,7 @@ angular.module('Antoine_Lucas_CV', [
                             .addClass('medium-contact-sidenav');
                 }
                 else {
-                    console.log("max-width > 590");
+                    
                     angular.element(document.getElementById('right'))
                             .removeClass('large-contact-sidenav')
                             .removeClass('medium-contact-sidenav')
@@ -127,24 +143,19 @@ angular.module('Antoine_Lucas_CV', [
             };
 
             $scope.toggleLeft = function () {
-                $mdSidenav('left').toggle()
+                $mdSidenav('smallLeft').toggle()
                         .then(function () {
                             $log.debug("toggle left is done");
                         });
             };
             $scope.toggleLeft2 = function () {
-                $mdSidenav('left2').toggle()
+                $mdSidenav('largeLeft').toggle()
                         .then(function () {
                             $log.debug("toggle left2 is done");
                         });
             };
 
-            $scope.close = function () {
-                $mdSidenav('left').close()
-                        .then(function () {
-                            $log.debug("close LEFT is done");
-                        });
-            };
+            
         })
         .run(function ($http, $templateCache) {
             var templates = ['views/skype.html', 'views/hangout.html'];

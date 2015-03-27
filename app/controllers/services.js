@@ -26,7 +26,7 @@ angular.module('Antoine_Lucas_CV.service', ['Antoine_Lucas_CV.services'])
                     shadowBlur: 4,
                     shadow: '#000000',
                     shadowOffset: [2, 2]
-                });
+                },2000);
 
 
             }, 500);
