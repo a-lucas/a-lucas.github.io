@@ -24,7 +24,7 @@ angular.module('angular-flippy', [])
                      */
                     $scope.flip = function () {
                         $elem.toggleClass('flipped');
-                    }
+                    };
 
                 }
             };

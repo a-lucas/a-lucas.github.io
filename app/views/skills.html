@@ -19,11 +19,7 @@
                             {{code.name}}
                         </md-content>
                         <md-content flex="60" style="background-color:#EBEBEB">
-                            <div ng-class="{
-                                'score-red': code.percentage<=1,
-                                'score-yellow': code.percentage>1 && code.percentage<=3.5,
-                                'score-green': code.percentage>3.5
-                            }" style="border: 1px solid #fff;height: 20px;width: {{code.percentage * 20}}%"">
+                            <div data-ng-class="{'score-red': code.percentage<=1,'score-yellow': code.percentage>1 && code.percentage<=3.5,'score-green': code.percentage>3.5}" style="border: 1px solid #fff;height: 20px;width: {{code.percentage * 20}}%"">
 
                             </div>
                         </md-content>
@@ -57,7 +53,7 @@
                             {{code.name}}
                         </md-content>
                         <md-content flex="60" style="background-color:#EBEBEB">
-                            <div ng-class="{
+                            <div data-ng-class="{
                                 'score-red': code.percentage<=1,
                                 'score-yellow': code.percentage>1 && code.percentage<=3.5,
                                 'score-green': code.percentage>3.5
@@ -95,7 +91,7 @@
                             {{code.name}}
                         </md-content>
                         <md-content flex="60" style="background-color:#EBEBEB">
-                            <div ng-class="{
+                            <div data-ng-class="{
                                 'score-red': code.percentage<=1,
                                 'score-yellow': code.percentage>1 && code.percentage<=3.5,
                                 'score-green': code.percentage>3.5
