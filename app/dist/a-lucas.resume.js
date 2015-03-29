@@ -338,7 +338,7 @@
                     title: "Senior Web Application Developer",
                     company_name: "Veritas Engineering",
                     date_from: moment({year: 2013, month: 11}),
-                    date_to: moment({year: 2014, month: 3}),
+                    date_to: moment({year: 2015, month: 2}),
                     location: {
                         country: "Australia",
                         town: "Perth"
@@ -348,7 +348,8 @@
                             "<li>Online police checks planning, architecture & cutting edge implementation</li>" +
                             "<li>Custom CRM design, architecture & implementation</li>" +
                             "<li>WebServices development</li>" +
-                            "<li>Analytics & SEO ConsultingDescription</li>" +
+                            "<li>UX Design</li>" +
+                            "<li>Analytics & SEO Consulting</li>" +
                             "</ul>",
                     website_url: 'http://www.veritascheck.com.au',
                     collapsed: false
