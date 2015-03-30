@@ -1,0 +1,19 @@
+<section layout="row"   layout-align-gt-md="center start" layout-wrap layout-padding layout-margin>
+    
+    <md-content class="technologies" flex="100" ng-repeat="tech in technologies">
+        <div class="title" flex="100">
+            {{tech.name}}
+            <span>V {{tech.version}}</span>
+            <span class="url" ng-show="tech.url.length>0">
+                <a href="{{tech.url}}" target="_blank">Website</a>
+            </span>
+        </div>
+        <div class="licence" flex="100">
+            {{tech.licence}}
+        </div>
+        <div class="comment" flex="100">
+            {{tech.comment}}
+        </div>
+    </md-content>
+</section>
+

@@ -354,5 +354,72 @@
         this.get_interests = function () {
             return ["Kite Surf", "Travelling", "Church"];
         };
+        this.get_technology_used = function(){
+            return [
+                {
+                    name: "AngularJS",
+                    version: "1.3.*",
+                    url: "https://angularjs.org/",
+                    licence: "MIT licence",
+                    comment: "This awesome dual-binding javascript framework made by geniuses @ Google"
+                },
+                {
+                    name: "Material Design",
+                    version: "0.8.3",
+                    url: "https://github.com/angular/material/",
+                    licence: "No licence",
+                    comment: "This revolutionary and complete guide to modern mobile design made by Google - Port to AngularJS in progress"
+                },
+                {
+                    name: "Node.JS",
+                    version: "0.12.1",
+                    url: "https://nodejs.org/",
+                    licence: "Multiple Licence",
+                    comment: "The most performant server side technology untill now"
+                },
+                {
+                    name: "Bower",
+                    version: "1.3.12",
+                    url: "http://bower.io/",
+                    licence: "No licence",
+                    comment: "A package manager for client side javascript files"
+                },
+                {
+                    name: "Grunt",
+                    version: "0.4.5",
+                    url: "http://gruntjs.com/",
+                    licence: "No Licence",
+                    comment: "A Task manager used with uglify, annotate, concat, jslint & csslint, angular template caching and html minification"
+                },
+                {
+                    name: "Flippy",
+                    version: "0",
+                    url: "MIT Licence",
+                    licence: " https://github.com/zwacky/angular-flippy",
+                    comment: "An AngularJS Flippy directive."
+                },
+                {
+                    name: "Font Awesome",
+                    version: "4.3.0",
+                    url: "MIT Licence, OFL-1.1, CC-BY-3.0",
+                    licence: " https://github.com/zwacky/angular-flippy",
+                    comment: "A large collection of icons embeded in a font"
+                },
+                {
+                    name: "TagCanvas",
+                    version: "2.2.0",
+                    url: "http://www.goat1000.com/tagcanvas.php",
+                    licence: "LGPL v3",
+                    comment: "TagCanvas is a Javascript class which will draw and animate a HTML5  canvas based tag cloud"
+                },
+                {
+                    name: "MomentJS",
+                    version: "2.9.0",
+                    url: "http://momentjs.com/",
+                    licence: "MIT Licence",
+                    comment: "Parse, validate, manipulate, and display dates in JavaScript."
+                }
+            ];
+        };
     });
 })();

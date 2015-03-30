@@ -20,6 +20,7 @@ module.exports = function (grunt) {
                     "app/controllers/skills.js",
                     "app/controllers/contact.js",
                     "app/controllers/menu.js",
+                    "app/controllers/technologies.js",
                     "app/dist/templates.js"
                 ],
                 dest: 'app/dist/a-lucas.resume.js'

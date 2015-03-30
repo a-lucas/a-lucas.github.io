@@ -1,7 +1,7 @@
 
 
 <md-content  md-padding md-margin style="padding: 10px;">
-    
+
 
     <md-list>
         <md-item >
@@ -56,7 +56,19 @@
             </md-item-content>
         </md-item>
         <md-divider></md-divider>
+        <md-item>
+            <md-item-content>
+                <md-button ng-click="goToAnchor('technologies')" flex>
+                    <div class="btn-content">
 
+                        <i class="fa fa-lg fa-puzzle-piece"></i>
+                        <span>Tech</span>
+
+                    </div>
+                </md-button>
+            </md-item-content>
+        </md-item>
+        <md-divider></md-divider>
         <md-item>
             <md-item-content>
                 <md-button ng-click="swipeLeft()" flex>
@@ -68,7 +80,7 @@
                 </md-button>
             </md-item-content>
         </md-item>            
-        
+
     </md-list>
 
 </md-content>

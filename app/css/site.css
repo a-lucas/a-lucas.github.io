@@ -2,7 +2,45 @@
     margin: 0 !important;
     padding: 0 !important;
 }
+/************************************/
+/*******   TECHNOLOGIES             */
+/************************************/
+.technologies{
+    padding: 20px 0px;
+    border : 1px solid grey;
+    display:block;
 
+}
+.technologies .title{
+    font-weight: bold;
+    font-size : 16px;
+    
+    
+}
+.technologies span{
+    color: blue;
+    font-size: 12px;
+    font-weight: bold;
+}
+.technologies span.url{
+    font-weight: normal;
+    font-size: 12px;
+    float:right;
+    color: lightblue;
+}
+.technologies .licence{
+   display:block;
+    font-size: 12px;
+    text-decoration: underline;
+    padding: 5px;
+    
+}
+.technologies .comment{
+    display:block;
+    text-align: justify;
+    font-size: 12px;
+    padding: 5px;
+}
 /**
 @todo : 
 tags & contact form
