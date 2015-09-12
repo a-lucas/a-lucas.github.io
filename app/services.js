@@ -35,6 +35,37 @@
         this.get_work_experience = function () {
             return [
                 {
+                    title: "FrontEnd Problem Solver",
+                    company_name: "Boomwork",
+                    date_from: moment({year: 2015, month: 7}),
+                    date_to: moment(),
+                    location: {
+                        country: "Australia",
+                        town: "Sydney"
+                    },
+                    tags: ["AngularJS", "Maven", "JBOSS"],
+                    description: "BoomWorks needs an effective and a fast AngularJS coder to help meet a private client MVP deadline." +
+                    "The product an industry game changer  - which is an AngularJS based CRM with a complex JAVA backend - and it must meet complex business logic with a high business value and a critical daily volume.",
+                    website_url: null,
+                    collapsed: false
+                },
+                {
+                    title: "FrontEnd Engineer",
+                    company_name: "Bauer Media",
+                    date_from: moment({year: 2015, month: 5}),
+                    date_to: moment({year: 2015, month: 7}),
+                    location: {
+                        country: "Australia",
+                        town: "Sydney"
+                    },
+                    tags: ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7"],
+                    description: "Bauer Media needed the help of some extra contactors to help start & finish their new MVP website." +
+                    "In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. " +
+                    "I was part of a team of 5 and we all manage to finish the project in time.",
+                    website_url: 'http://www.homestolove.com.au',
+                    collapsed: false
+                },
+                {
                     title: "Senior Web Application Developer",
                     company_name: "Veritas Engineering",
                     date_from: moment({year: 2013, month: 11}),
@@ -218,7 +249,11 @@
                         languages: [
                             {name: "Javascript", percentage: 4},
                             {name: "JQuery", percentage: 5},
-                            {name: "AngularJS", percentage: 4.5},
+                            {name: "AngularJS", percentage: 5},
+                            {name: "ReactJS", percentage: 4.5},
+                            {name: "Flux", percentage: 4.5},
+                            {name: "ES6", percentage: 4},
+                            {name: "JSX Harmony", percentage: 4.5},
                             {name: "Meteor", percentage: 3},
                             {name: "nodeJS", percentage: 4},
                             {name: "mean.js", percentage: 4.5},
@@ -351,9 +386,11 @@
 
             };
         };
+
         this.get_interests = function () {
-            return ["Kite Surf", "Travelling", "Church"];
+            return ["Kite Surf", "Travelling", "Church", "Friends"];
         };
+
         this.get_technology_used = function(){
             return [
                 {

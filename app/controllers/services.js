@@ -14,6 +14,7 @@
                 };
 
                 $timeout(function () {
+
                     TagCanvas.Start('myCanvas', 'tags', {
                         reverse: false,
                         depth: 0.99,
@@ -28,11 +29,7 @@
                         shadowOffset: [2, 2]
                     }, 2000);
 
-
-                }, 500);
-
-
-
+                },5000);
 
             });
 })();

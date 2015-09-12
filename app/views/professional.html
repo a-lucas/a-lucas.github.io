@@ -17,14 +17,14 @@
         <div>
             <div class="timeline-item-date" hide show-gt-lg flex>
                 {{xp.date_from.format('MMM YYYY')}} 
-                <span ng-hide='xp.date_from.format("YYYY") == xp.date_to.format("YYYY")'>
+                <span>
                     ⇢ {{xp.date_to.format("MMM YYYY")}}
                 </span>
 
             </div>
             <div class="timeline-item-date" hide show-lg show-md flex>
                 {{xp.date_from.format('YYYY')}} 
-                <span ng-hide='xp.date_from.format("YYYY") == xp.date_to.format("YYYY")'>
+                <span >
                     ⇢ {{xp.date_to.format("YYYY")}}
                 </span>
 

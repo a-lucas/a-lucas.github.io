@@ -336,6 +336,37 @@
         this.get_work_experience = function () {
             return [
                 {
+                    title: "FrontEnd Problem Solver",
+                    company_name: "Boomwork",
+                    date_from: moment({year: 2015, month: 7}),
+                    date_to: moment(),
+                    location: {
+                        country: "Australia",
+                        town: "Sydney"
+                    },
+                    tags: ["AngularJS", "Maven", "JBOSS"],
+                    description: "BoomWorks needs an effective and a fast AngularJS coder to help meet a private client MVP deadline." +
+                    "The product an industry game changer  - which is an AngularJS based CRM with a complex JAVA backend - and it must meet complex business logic with a high business value and a critical daily volume.",
+                    website_url: null,
+                    collapsed: false
+                },
+                {
+                    title: "FrontEnd Engineer",
+                    company_name: "Bauer Media",
+                    date_from: moment({year: 2015, month: 5}),
+                    date_to: moment({year: 2015, month: 7}),
+                    location: {
+                        country: "Australia",
+                        town: "Sydney"
+                    },
+                    tags: ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7"],
+                    description: "Bauer Media needed the help of some extra contactors to help start & finish their new MVP website." +
+                    "In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. " +
+                    "I was part of a team of 5 and we all manage to finish the project in time.",
+                    website_url: 'http://www.homestolove.com.au',
+                    collapsed: false
+                },
+                {
                     title: "Senior Web Application Developer",
                     company_name: "Veritas Engineering",
                     date_from: moment({year: 2013, month: 11}),
@@ -519,7 +550,11 @@
                         languages: [
                             {name: "Javascript", percentage: 4},
                             {name: "JQuery", percentage: 5},
-                            {name: "AngularJS", percentage: 4.5},
+                            {name: "AngularJS", percentage: 5},
+                            {name: "ReactJS", percentage: 4.5},
+                            {name: "Flux", percentage: 4.5},
+                            {name: "ES6", percentage: 4},
+                            {name: "JSX Harmony", percentage: 4.5},
                             {name: "Meteor", percentage: 3},
                             {name: "nodeJS", percentage: 4},
                             {name: "mean.js", percentage: 4.5},
@@ -652,9 +687,11 @@
 
             };
         };
+
         this.get_interests = function () {
-            return ["Kite Surf", "Travelling", "Church"];
+            return ["Kite Surf", "Travelling", "Church", "Friends"];
         };
+
         this.get_technology_used = function(){
             return [
                 {
@@ -765,6 +802,7 @@
                 };
 
                 $timeout(function () {
+
                     TagCanvas.Start('myCanvas', 'tags', {
                         reverse: false,
                         depth: 0.99,
@@ -779,11 +817,7 @@
                         shadowOffset: [2, 2]
                     }, 2000);
 
-
-                }, 500);
-
-
-
+                },5000);
 
             }]);
 })();;(function () {
@@ -797,87 +831,87 @@
 
 })();
         ;(function () {
-   'use strict';
-        angular.module('Antoine_Lucas_CV.contact', ['Antoine_Lucas_CV.services', 'ngMaterial', 'ngMessages'])
-                .controller('ContactCtrl', ['$scope', 'DataSource', function ($scope, DataSource) {
-                $scope.data = {                 selectedIndex: 0,
+    'use strict';
+    angular.module('Antoine_Lucas_CV.contact', ['Antoine_Lucas_CV.services', 'ngMaterial', 'ngMessages'])
+        .controller('ContactCtrl', ['$scope', 'DataSource', function ($scope, DataSource) {
+            $scope.data = {
+                selectedIndex: 0,
                 secondLocked: true,
-            secondLabel: "Item Two"
+                secondLabel: "Item Two"
             };
-                $scope.next = function () {
-            $scope.data.selectedIndex = Math.min($scope.data.selectedIndex + 1, 2);
+            $scope.next = function () {
+                $scope.data.selectedIndex = Math.min($scope.data.selectedIndex + 1, 2);
             };
-                $scope.previous = function () {
-        $scope.data.selectedIndex = Math.max($scope.data.selectedIndex - 1, 0);
+            $scope.previous = function () {
+                $scope.data.selectedIndex = Math.max($scope.data.selectedIndex - 1, 0);
             };
 
 
         }])
-                .controller('FormCtrl', ['$scope', 'DataSource', function ($scope, DataSource) {
-                $scope.user = {
+        .controller('FormCtrl', ['$scope', 'DataSource', function ($scope, DataSource) {
+            $scope.user = {
                 name: '',
-            _replyto: '',
-            message: ''
+                _replyto: '',
+                message: ''
             };
             $scope.mailSent = false;
-                $scope.sendMail = function (form) {
+            $scope.sendMail = function (form) {
                 console.log(form);
-                    if (form.$valid) {
+                if (form.$valid) {
                     $scope.mailSent = true;
-                        DataSource.contact_me($scope.user).success(function () {
-                    console.log("success");
-                        }).error(function (a, b, c, d) {
+                    DataSource.contact_me($scope.user).success(function () {
+                        console.log("success");
+                    }).error(function (a, b, c, d) {
                         console.log('error');
                         console.log(a);
                         console.log(b);
                         console.log(c);
-                console.log(d);
-            });
-        }
+                        console.log(d);
+                    });
+                }
 
             };
         }])
-            .controller('SkypeCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
-                    $timeout(function () {
+        .controller('SkypeCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+            $timeout(function () {
 
                 Skype.ui({
-                    name: "dropdown",                     "element": "SkypeButton_Call_montpellier_1001net",
+                    name: "dropdown", "element": "SkypeButton_Call_montpellier_1001net",
                     "participants": ["montpellier_1001net"],
-            "imageSize": 32
-        });
+                    "imageSize": 32
+                });
 
             });
         }])
-                .controller('HangoutCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+        .controller('HangoutCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
             $scope.user = {
-            phone: '+61 424207292'
-            }; 
-                $timeout(function () {
-                    var t = gapi.hangout.render('placeholder-div', {
+                phone: '+61 424207292'
+            };
+            $timeout(function () {
+                var t = gapi.hangout.render('placeholder-div', {
                     render: 'createhangout',
                     hangout_type: "normal",
-                        invites: [
+                    invites: [
                         //{invite_type: 'email', id: 'antoine.lucas.australia@gmail.com'},
                         {invite_type: 'phone', id: $scope.user.phone}
-                    //{invite_type: 'email', id: 'cooluhuru@gmail.com'}
+                        //{invite_type: 'email', id: 'cooluhuru@gmail.com'}
                     ],
-                topic: "Interview1"
+                    topic: "Interview1"
 
                 });
-         console.log(t);
+                console.log(t);
 
-});
-
+            });
 
 
         }]);
-    })();
+})();
 /*
-         .config(function ($mdThemingProvider) {
-         // Configure a dark theme with primary foreground yellow
-         $mdThemingProvider.theme('default')
-         .primaryPalette('blue-grey')
-         .accentPalette('orange')
+ .config(function ($mdThemingProvider) {
+ // Configure a dark theme with primary foreground yellow
+ $mdThemingProvider.theme('default')
+ .primaryPalette('blue-grey')
+ .accentPalette('orange')
  .warnPalette('brown');
  })*/
 
@@ -986,12 +1020,12 @@ angular.module("views/portfolio.min.html", []).run(["$templateCache", function($
 
 angular.module("views/professional.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/professional.min.html",
-    "<section class=\"timeline\"><div class=\"timeline-item\" style=\"margin-bottom:0px !important\"><div class=\"timeline-head\"><i class=\"fa fa-lightbulb-o\"></i></div><div class=\"timeline-head-content\"><h3>Work Experience</h3></div></div></section><section layout=\"row\" ng-repeat=\"(i,xp) in experience\"><md-content flex class=\"timeline\"><div><div class=\"timeline-item-date\" hide show-gt-lg flex>{{xp.date_from.format('MMM YYYY')}} <span ng-hide=\"xp.date_from.format(&quot;YYYY&quot;) == xp.date_to.format(&quot;YYYY&quot;)\">⇢ {{xp.date_to.format(\"MMM YYYY\")}}</span></div><div class=\"timeline-item-date\" hide show-lg show-md flex>{{xp.date_from.format('YYYY')}} <span ng-hide=\"xp.date_from.format(&quot;YYYY&quot;) == xp.date_to.format(&quot;YYYY&quot;)\">⇢ {{xp.date_to.format(\"YYYY\")}}</span></div><div class=\"timeline-item-trigger\" slide-toggle=\"#xp{{i}}\"><span><i class=\"fa fa-minus-circle\" style=\"color: white\" ng-show=\"xp.collapsed\" ng-click=\"xp.collapsed = !xp.collapsed\"></i> <i class=\"fa fa-plus-circle\" style=\"color: white\" ng-show=\"!xp.collapsed\" ng-click=\"xp.collapsed = !xp.collapsed\"></i></span></div></div><md-content flex><div hide-sm hide-md class=\"timeline-arrow\"><i></i></div><md-content class=\"timeline-item-content\" flex><h3 class=\"timeline-item-title\" slide-toggle=\"#xp{{i}}\" ng-click=\"xp.collapsed = !xp.collapsed\">{{xp.title}} <span class=\"place\">@ {{xp.company_name}}</span></h3><div class=\"slideable\" id=\"xp{{i}}\"><p ng-bind-html=\"xp.description | unsafe\"></p><p ng-show=\"xp.website_url.length>0\"><a href=\"{{xp.website_url}}\" target=\"_blank\" title=\"\" class=\"noprint\">→ View website</a></p><label ng-repeat=\"tag in xp.tags\" class=\"tag\">{{tag}}</label></div></md-content></md-content></md-content></section><md-divider></md-divider>");
+    "<section class=\"timeline\"><div class=\"timeline-item\" style=\"margin-bottom:0px !important\"><div class=\"timeline-head\"><i class=\"fa fa-lightbulb-o\"></i></div><div class=\"timeline-head-content\"><h3>Work Experience</h3></div></div></section><section layout=\"row\" ng-repeat=\"(i,xp) in experience\"><md-content flex class=\"timeline\"><div><div class=\"timeline-item-date\" hide show-gt-lg flex>{{xp.date_from.format('MMM YYYY')}} <span>⇢ {{xp.date_to.format(\"MMM YYYY\")}}</span></div><div class=\"timeline-item-date\" hide show-lg show-md flex>{{xp.date_from.format('YYYY')}} <span>⇢ {{xp.date_to.format(\"YYYY\")}}</span></div><div class=\"timeline-item-trigger\" slide-toggle=\"#xp{{i}}\"><span><i class=\"fa fa-minus-circle\" style=\"color: white\" ng-show=\"xp.collapsed\" ng-click=\"xp.collapsed = !xp.collapsed\"></i> <i class=\"fa fa-plus-circle\" style=\"color: white\" ng-show=\"!xp.collapsed\" ng-click=\"xp.collapsed = !xp.collapsed\"></i></span></div></div><md-content flex><div hide-sm hide-md class=\"timeline-arrow\"><i></i></div><md-content class=\"timeline-item-content\" flex><h3 class=\"timeline-item-title\" slide-toggle=\"#xp{{i}}\" ng-click=\"xp.collapsed = !xp.collapsed\">{{xp.title}} <span class=\"place\">@ {{xp.company_name}}</span></h3><div class=\"slideable\" id=\"xp{{i}}\"><p ng-bind-html=\"xp.description | unsafe\"></p><p ng-show=\"xp.website_url.length>0\"><a href=\"{{xp.website_url}}\" target=\"_blank\" title=\"\" class=\"noprint\">→ View website</a></p><label ng-repeat=\"tag in xp.tags\" class=\"tag\">{{tag}}</label></div></md-content></md-content></md-content></section><md-divider></md-divider>");
 }]);
 
 angular.module("views/services.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/services.min.html",
-    "<section layout=\"row\" layout-align=\"center center\"><md-content flex=\"90\"><p style=\"color: #6C6662;padding:0px 15px;background-color:transparent;font: 14px 'PT Sans',sans-serif\">I do full-time and part-time remote jobs online, and I am usually open to use any communication media available (Skype, Hangout, Phone, VoIP). If you are interested and want to subcontract your web-development tasks, please contact me.</p></md-content></section><section layout=\"row\" layout-align=\"center start\" layout-wrap layout-margin style=\"padding-bottom:30px\"><md-content layout-margin ng-repeat=\"(i, service) in services\" flex-gt-md=\"30\" flex-md=\"80\" flex-sm=\"90\"><flippy class=\"fancy my-fancy\" ng-click=\"flip()\" ng-mouseenter=\"flip()\" ng-mouseleave=\"flip()\" flip-duration=\"800\" timing-function=\"ease-in-out\"><flippy-front><img ng-if=\"service.image != false\" src=\"{{service.image}}\"><div ng-if=\"service.image == false\"><canvas width=\"138\" height=\"138\" id=\"myCanvas\" style=\"background-color: #000;border-radius : 75px\"><p>Anything in here will be replaced on browsers that support the canvas element</p></canvas><div id=\"tags\"><a href=\"\" weight=\"20\">PHP5</a> <a href=\"\" weight=\"10\">Zend1</a> <a href=\"\" weight=\"20\">AngularJS</a> <a href=\"\" weight=\"5\">EmberJS</a> <a href=\"\" weight=\"15\">Javascript</a> <a href=\"\" weight=\"15\">HTML5</a> <a href=\"\" weight=\"15\">Foundation</a> <a href=\"\" weight=\"15\">Bootstrap</a> <a href=\"\" weight=\"18\">Apache2</a> <a href=\"\" weight=\"18\">MySQL</a> <a href=\"\" weight=\"15\">MariaDB</a> <a href=\"\" weight=\"12\">MongoDB</a> <a href=\"\" weight=\"15\">MEAN.js</a> <a href=\"\" weight=\"10\">NodeJS</a> <a href=\"\" weight=\"8\">Java</a> <a href=\"\" weight=\"12\">Yii</a> <a href=\"\" weight=\"18\">Sphinx</a> <a href=\"\" weight=\"10\">Code Igniter</a> <a href=\"\" weight=\"18\">REST</a> <a href=\"\" weight=\"15\">SOAP</a> <a href=\"\" weight=\"18\">CSS3</a> <a href=\"\" weight=\"12\">Jasmine</a> <a href=\"\" weight=\"12\">Karma</a> <a href=\"\" weight=\"5\">Python</a> <a href=\"\" weight=\"10\">Meteor</a></div></div><h2 style=\"font-size : 20px\">{{service.title}}</h2></flippy-front><flippy-back><h2 style=\"font-size : 20px\">{{service.title}}</h2><p ng-bind-html=\"service.description | unsafe\"></p></flippy-back></flippy></md-content></section>");
+    "<section layout=\"row\" layout-align=\"center center\"><md-content flex=\"90\"><p style=\"color: #6C6662;padding:0px 15px;background-color:transparent;font: 14px 'PT Sans',sans-serif\">I do full-time and part-time remote jobs online, and I am usually open to use any communication media available (Skype, Hangout, Phone, VoIP).</p></md-content></section><section layout=\"row\" layout-align=\"center start\" layout-wrap layout-margin style=\"padding-bottom:30px\"><md-content layout-margin ng-repeat=\"(i, service) in services\" flex-gt-md=\"30\" flex-md=\"80\" flex-sm=\"90\"><flippy class=\"fancy my-fancy\" ng-click=\"flip()\" ng-mouseenter=\"flip()\" ng-mouseleave=\"flip()\" flip-duration=\"800\" timing-function=\"ease-in-out\"><flippy-front><img ng-if=\"service.image !== false\" src=\"{{service.image}}\"><div ng-if=\"service.image === false\"><canvas width=\"138\" height=\"138\" id=\"myCanvas\" style=\"background-color: #000;border-radius : 75px\"><p>Anything in here will be replaced on browsers that support the canvas element</p></canvas><div id=\"tags\"><a href=\"\" weight=\"20\">PHP5</a> <a href=\"\" weight=\"10\">Zend1</a> <a href=\"\" weight=\"20\">AngularJS</a> <a href=\"\" weight=\"5\">EmberJS</a> <a href=\"\" weight=\"15\">Javascript</a> <a href=\"\" weight=\"15\">HTML5</a> <a href=\"\" weight=\"15\">Foundation</a> <a href=\"\" weight=\"15\">Bootstrap</a> <a href=\"\" weight=\"18\">Apache2</a> <a href=\"\" weight=\"18\">MySQL</a> <a href=\"\" weight=\"15\">MariaDB</a> <a href=\"\" weight=\"12\">MongoDB</a> <a href=\"\" weight=\"15\">MEAN.js</a> <a href=\"\" weight=\"10\">NodeJS</a> <a href=\"\" weight=\"8\">Java</a> <a href=\"\" weight=\"12\">Yii</a> <a href=\"\" weight=\"18\">Sphinx</a> <a href=\"\" weight=\"10\">Code Igniter</a> <a href=\"\" weight=\"18\">REST</a> <a href=\"\" weight=\"15\">SOAP</a> <a href=\"\" weight=\"18\">CSS3</a> <a href=\"\" weight=\"12\">Jasmine</a> <a href=\"\" weight=\"12\">Karma</a> <a href=\"\" weight=\"5\">Python</a> <a href=\"\" weight=\"10\">Meteor</a></div></div><h2 style=\"font-size : 20px\">{{service.title}}</h2></flippy-front><flippy-back><h2 style=\"font-size : 20px\">{{service.title}}</h2><p ng-bind-html=\"service.description | unsafe\"></p></flippy-back></flippy></md-content></section>");
 }]);
 
 angular.module("views/skype.min.html", []).run(["$templateCache", function($templateCache) {
