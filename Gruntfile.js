@@ -13,6 +13,7 @@ module.exports = function (grunt) {
                     "app/directives/scroll.js",
                     "app/app.js",
                     "app/services.js",
+                    "app/controllers/app.js",
                     "app/controllers/education.js",
                     "app/controllers/portfolio.js",
                     "app/controllers/professional.js",
@@ -27,9 +28,8 @@ module.exports = function (grunt) {
             },
             css: {
                 src: ['app/css/*.css'],
-                dest: 'app/css/a-lucas.resume.css'
+                dest: 'app/dist/allcss.css'
             }
-
 
         },
         cssmin: {
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'app/dist/allcss.min.css': ['app/css/a-lucas.resume.css']
+                    'app/dist/allcss.min.css': ['app/dist/allcss.css']
                 }
             }
         },
@@ -64,13 +64,12 @@ module.exports = function (grunt) {
         },
         html2js: {
             options: {
-                // custom options, see below 
                 base: 'app'
             },
             main: {
                 src: ['app/views/*.min.html', 'app/views/skills.html'],
                 dest: 'app/dist/templates.js'
-            },
+            }
         },
         csslint: {
             default: {
@@ -103,16 +102,16 @@ module.exports = function (grunt) {
                 command: 'chmod -R 777 app'
             }
         }, 
-        htmlmin: {// Task 
-            dist: {// Target 
-                options: {// Target options 
+        htmlmin: {
+            dist: {
+                options: {
                     removeComments: true,
                     collapseWhitespace: true,
                     removeScriptTypeAttributes: false,
                     customAttrCollapse:  /ng\-class/ ,
                     removeStyleLinkTypeAttributes: false
                 },
-                files: {// Dictionary of files 
+                files: {
                     'app/views/contact.min.html': 'app/views/contact.html', 
                     'app/views/education.min.html' : 'app/views/education.html',
                     'app/views/form.min.html' : 'app/views/form.html',
@@ -130,6 +129,38 @@ module.exports = function (grunt) {
                     'app/index.html' : 'app/index.dev.html'
                 }
             }
+        },
+        watch: {
+            js: {
+                files: ['app/**/*.js', 'app/*.js'],
+                tasks: ['jsdev'],
+                options: {
+                    livereload: true
+                }
+            },
+            clientViews: {
+                files: ['app/views/*.html'],
+                options: {
+                    livereload: true
+                }
+            },
+            clientCSS: {
+                files: ['app/**/*.css'],
+                tasks: ['cssdev'],
+                options: {
+                    livereload: true
+                }
+            }
+        },
+        express:{
+            all:{
+                options:{
+                    port:3000,
+                    hostname:'localhost',
+                    bases:['./app'],
+                    livereload:true
+                }
+            }
         }
 
     });
@@ -137,13 +168,19 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-exec');
     grunt.loadNpmTasks('grunt-html2js');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-express');
+    grunt.registerTask('jsdev', ['jshint']);
+    grunt.registerTask('cssdev', ['csslint']);
     grunt.registerTask('js', ['jshint', 'html2js', 'concat', 'ngAnnotate', 'uglify', 'exec']);
     grunt.registerTask('css', ['csslint', 'concat', 'cssmin', 'exec']);
     grunt.registerTask('default', ['htmlmin', 'html2js', 'concat', 'cssmin', 'ngAnnotate', 'uglify', 'exec']);
+
+
+    grunt.registerTask('server',['express','watch']);
 };

@@ -21,8 +21,7 @@
         'angular-flippy',
         'duScroll',
         'angularScrollParralax',
-        'ngTouch',
-        'templates-main'
+        'ngTouch'
     ])
             .config(['$routeProvider', function ($routeProvider) {
                     $routeProvider.when('/AntoineLucas', {

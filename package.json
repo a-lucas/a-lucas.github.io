@@ -18,6 +18,7 @@
     "grunt-contrib-uglify": "^0.8.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-exec": "^0.4.6",
+    "grunt-express": "^1.4.1",
     "grunt-html2js": "^0.3.0",
     "grunt-ng-annotate": "^0.10.0",
     "http-server": "^0.6.1",
@@ -39,5 +40,8 @@
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor.conf.js",
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+  },
+  "dependencies": {
+    "officegen": "protobi/officegen"
   }
 }

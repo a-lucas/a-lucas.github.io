@@ -36,16 +36,17 @@
             return [
                 {
                     title: "FrontEnd Problem Solver",
-                    company_name: "Boomwork",
+                    company_name: "Boomworks",
                     date_from: moment({year: 2015, month: 7}),
-                    date_to: moment(),
+                    date_to: moment({}),
                     location: {
                         country: "Australia",
                         town: "Sydney"
                     },
                     tags: ["AngularJS", "Maven", "JBOSS"],
-                    description: "BoomWorks needs an effective and a fast AngularJS coder to help meet a private client MVP deadline." +
-                    "The product an industry game changer  - which is an AngularJS based CRM with a complex JAVA backend - and it must meet complex business logic with a high business value and a critical daily volume.",
+                    description: "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline." +
+                    "The product is an industry game changer  - which helps a well known governemental service provider to allow their clients to register new services. " +
+                    "The CRM I worked on had 20+ AngularJS nested forms and we managed to meet the 4 weeks deadline refactoring the whole Javascript code and multiply the sprint story points by 4.",
                     website_url: null,
                     collapsed: false
                 },
@@ -388,8 +389,52 @@
         };
 
         this.get_interests = function () {
-            return ["Kite Surf", "Travelling", "Church", "Friends"];
+            return [{
+                name: "Kite Surfing",
+                description: "“The best surfer out there is the one having the most fun.“ – Phil Edwards",
+                photo: "https://static.groupon.com.au/52/56/1351579815652.jpg"
+            }, {
+                name: "Travelling",
+                description: "“You don’t have to be rich to travel well.” – Eugene Fodor",
+                photo: "https://worldwantswandering.files.wordpress.com/2014/01/tumblr_mbep0irkhi1rcptxoo1_500.jpg"
+            }, {
+                name: "Friends",
+                description: "Two persons cannot long be friends if they cannot forgive each other's little failings.",
+                photo: "http://facecover.net/Upload/friends_quote_10709.jpg"
+            }];
         };
+
+        this.get_travels = function() {
+            return [
+                {
+                    country: "Cameroon",
+                    cities: ["Yaounde"],
+                    description: "I grew up there"
+                },
+                {
+                    country: "Djibouti",
+                    cities: ["Djibouti"],
+                    description: "I grew up there"
+                },
+                {
+                    country: "France",
+                    cities: ["Paris", "Carcassonne", "Perpignan","Grenoble", "Montpellier"],
+                    description: ""
+                },
+                {
+                    country: "Sudan",
+                    cities: ["Karthoum"],
+                    description: ""
+                },
+                {
+                    country: "Australia",
+                    cities: ["Perth", "Sydney"],
+                    description: ""
+                }
+            ]
+        };
+
+
 
         this.get_technology_used = function(){
             return [

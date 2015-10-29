@@ -139,6 +139,7 @@
         'Antoine_Lucas_CV.service',
         'Antoine_Lucas_CV.skills',
         'Antoine_Lucas_CV.contact',
+        'Antoine_Lucas_CV.interests',
         'Antoine_Lucas_CV.technologies',
         'Antoine_Lucas_CV.menu',
         'ngMaterial',
@@ -337,16 +338,17 @@
             return [
                 {
                     title: "FrontEnd Problem Solver",
-                    company_name: "Boomwork",
+                    company_name: "Boomworks",
                     date_from: moment({year: 2015, month: 7}),
-                    date_to: moment(),
+                    date_to: moment({}),
                     location: {
                         country: "Australia",
                         town: "Sydney"
                     },
                     tags: ["AngularJS", "Maven", "JBOSS"],
-                    description: "BoomWorks needs an effective and a fast AngularJS coder to help meet a private client MVP deadline." +
-                    "The product an industry game changer  - which is an AngularJS based CRM with a complex JAVA backend - and it must meet complex business logic with a high business value and a critical daily volume.",
+                    description: "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline." +
+                    "The product is an industry game changer  - which helps a well known governemental service provider to allow their clients to register new services. " +
+                    "The CRM I worked on had 20+ AngularJS nested forms and we managed to meet the 4 weeks deadline refactoring the whole Javascript code and multiply the sprint story points by 4.",
                     website_url: null,
                     collapsed: false
                 },
@@ -689,8 +691,52 @@
         };
 
         this.get_interests = function () {
-            return ["Kite Surf", "Travelling", "Church", "Friends"];
+            return [{
+                name: "Kite Surfing",
+                description: "“The best surfer out there is the one having the most fun.“ – Phil Edwards",
+                photo: "https://static.groupon.com.au/52/56/1351579815652.jpg"
+            }, {
+                name: "Travelling",
+                description: "“You don’t have to be rich to travel well.” – Eugene Fodor",
+                photo: "https://worldwantswandering.files.wordpress.com/2014/01/tumblr_mbep0irkhi1rcptxoo1_500.jpg"
+            }, {
+                name: "Friends",
+                description: "Two persons cannot long be friends if they cannot forgive each other's little failings.",
+                photo: "http://facecover.net/Upload/friends_quote_10709.jpg"
+            }];
         };
+
+        this.get_travels = function() {
+            return [
+                {
+                    country: "Cameroon",
+                    cities: ["Yaounde"],
+                    description: "I grew up there"
+                },
+                {
+                    country: "Djibouti",
+                    cities: ["Djibouti"],
+                    description: "I grew up there"
+                },
+                {
+                    country: "France",
+                    cities: ["Paris", "Carcassonne", "Perpignan","Grenoble", "Montpellier"],
+                    description: ""
+                },
+                {
+                    country: "Sudan",
+                    cities: ["Karthoum"],
+                    description: ""
+                },
+                {
+                    country: "Australia",
+                    cities: ["Perth", "Sydney"],
+                    description: ""
+                }
+            ]
+        };
+
+
 
         this.get_technology_used = function(){
             return [
@@ -1010,7 +1056,7 @@ angular.module("views/menu.min.html", []).run(["$templateCache", function($templ
     "               top: 10px\" ng-click=\"toggleLeft2()\"></i> <i class=\"fa fa-2x fa-bars\" hide show-sm style=\"background-color: #fff;border : 3px solid #575757;border-radius: 5px;padding: 5px;\n" +
     "               position:fixed;\n" +
     "               left: 10px;\n" +
-    "               top: 10px\" ng-click=\"toggleLeft()\"></i></md-content><md-content layout=\"left\" hide-sm flex=\"25\" style=\"position:fixed;top : 25px;left :2%;padding : 0px !important\"><div ng-include=\"'views/menu-content2.html'\" ng-controller=\"MenuCtrl\"></div></md-content><md-content flex-lg=\"75\" flex-gt-lg=\"80\" flex-sm=\"{{flex_small_content}}\" flex-md=\"70\" layout=\"right\" class=\"md-padding\" style=\"background-color: transparent\"><div layout=\"column\" layout-fill layout-align=\"top center\"><section class=\"intro\" id=\"intro\"><div id=\"intro-name\"><span>Antoine</span><div class=\"fade-show-container\"><img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/Slide.png\" id=\"slideImg\" ng-show=\"showSlide\"> <img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/me.png\" alt=\"Antoine LUCAS\" id=\"photoImg\" ng-show=\"showFace\"></div><span>Lucas</span><div style=\"clear:both\"></div></div><div ng-include=\" 'views/intro.html'\"></div></section><section class=\"section nicesection\" id=\"resume\"><div><h2 class=\"mtcon-title\">Resume</h2></div><div ng-include=\" 'views/professional.html'\" ng-controller=\"ProCtrl\"></div><div ng-include=\" 'views/education.html'\" ng-controller=\"EducationCtrl\"></div></section><section class=\"section nicesection\" id=\"services\"><div><h2 class=\"mtcon-title\">Services</h2></div><div ng-include=\" 'views/services.html'\" ng-controller=\"ServiceCtrl\"></div></section><section class=\"section nicesection\" id=\"skills\"><div><h2 class=\"mtcon-title\">Skills</h2></div><div ng-include=\" 'views/skills.html'\" ng-controller=\"SkillsCtrl\"></div></section><section class=\"section nicesection\" id=\"technologies\"><div><h2 class=\"mtcon-title\">Technology used for this page</h2></div><div ng-include=\" 'views/technologies.html'\" ng-controller=\"TechnologiesCtrl\"></div></section></div><div flex></div></md-content></section></div>");
+    "               top: 10px\" ng-click=\"toggleLeft()\"></i></md-content><md-content layout=\"left\" hide-sm flex=\"25\" style=\"position:fixed;top : 25px;left :2%;padding : 0px !important\"><div ng-include=\"'views/menu-content2.html'\" ng-controller=\"MenuCtrl\"></div></md-content><md-content flex-lg=\"75\" flex-gt-lg=\"80\" flex-sm=\"{{flex_small_content}}\" flex-md=\"70\" layout=\"right\" class=\"md-padding\" style=\"background-color: transparent\"><div layout=\"column\" layout-fill layout-align=\"top center\"><section class=\"intro\" id=\"intro\"><div id=\"intro-name\"><span>Antoine</span><div class=\"fade-show-container\"><img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/Slide.png\" id=\"slideImg\" ng-show=\"showSlide\"> <img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/me.png\" alt=\"Antoine LUCAS\" id=\"photoImg\" ng-show=\"showFace\"></div><span>Lucas</span><div style=\"clear:both\"></div></div><div ng-include=\" 'views/intro.html'\"></div></section><section class=\"section nicesection\" id=\"resume\"><div><h2 class=\"mtcon-title\">Resume</h2></div><div ng-include=\" 'views/professional.html'\" ng-controller=\"ProCtrl\"></div><div ng-include=\" 'views/education.html'\" ng-controller=\"EducationCtrl\"></div><div ng-include=\" 'views/interests.html'\" ng-controller=\"InterestsCtrl\"></div></section><section class=\"section nicesection\" id=\"services\"><div><h2 class=\"mtcon-title\">Services</h2></div><div ng-include=\" 'views/services.html'\" ng-controller=\"ServiceCtrl\"></div></section><section class=\"section nicesection\" id=\"skills\"><div><h2 class=\"mtcon-title\">Skills</h2></div><div ng-include=\" 'views/skills.html'\" ng-controller=\"SkillsCtrl\"></div></section><section class=\"section nicesection\" id=\"technologies\"><div><h2 class=\"mtcon-title\">Technology used for this page</h2></div><div ng-include=\" 'views/technologies.html'\" ng-controller=\"TechnologiesCtrl\"></div></section></div><div flex></div></md-content></section></div>");
 }]);
 
 angular.module("views/portfolio.min.html", []).run(["$templateCache", function($templateCache) {
