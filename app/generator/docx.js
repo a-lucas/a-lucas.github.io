@@ -2,11 +2,19 @@
  * Created by antoine on 23/10/15.
  */
 var officegen = require('../../node_modules/officegen/lib/index.js');
-
+var moment = require('moment');
 var fs = require('fs');
 var path = require('path');
 
-var docx = officegen ( 'docx' );
+eval(require('fs').readFileSync('../data.js', 'utf8'));
+
+var docx = officegen ( {
+    'type': 'docx',
+    'subject': 'Antoine LUCAS resume',
+    'keywords': 'Antoine LUCAS, DevOps, ReactJS, AngularJS, NodeJS, LAMP',
+    'description': 'This is an automatically generated Resume @copyright Antoine LUCAS'
+});
+
 
 docx.on ( 'finalize', function ( written ) {
     console.log ( 'Finish to create Word file.\nTotal bytes created: ' + written + '\n' );
@@ -17,124 +25,138 @@ docx.on ( 'error', function ( err ) {
 });
 
 var pObj = docx.createP ();
-
-pObj.addText ( 'Antoine LUCAS' );
+pObj.options.align = 'center';
+pObj.addText ( 'Antoine LUCAS' ,{ bold: true, underline: true, font_face: 'Arial', font_size: 20 }  );
 pObj.addLineBreak ();
-pObj.addText ( 'Phone: 0424 207 292' );
+pObj.addText ( '0424 207 292', { font_face: 'Arial', font_size: 12 }  );
 pObj.addLineBreak ();
-pObj.addText ( 'E-mail: antoine.lucas.australia@gmail.com' );
+pObj.addText ( 'antoine.lucas.australia@gmail.com', { font_face: 'Arial', font_size: 12 } );
 pObj.addLineBreak ();
-pObj.addText ( 'Website: http://www.' );
+pObj.addText ( 'http://a-lucas.github.io/resume/app/#/AntoineLucas', { font_face: 'Arial', font_size: 12, color: '39116C' } );
 
 
 var pObj = docx.createP ();
-pObj.addText('Web DevOps with BA skills.');
+pObj.options.align = 'center';
+pObj.addText('I am a Web DevOps with severall years experiences developing complex solutions. I am not just a developer, I have good BA and BI skills that helps deliver the best quality product in a minimum of iterations.', { font_face: 'Arial', font_size: 12, color: 'D11F3F' });
+
+var pObj = docx.createP ();
+pObj.options.align = 'center';
+pObj.addText('This Word document has been automatically generated from http://a-lucas.github.io/resume/app/#/AntoineLucas.', { font_face: 'Arial', font_size: 7 });
+
+function formatDescription(text) {
+    if ( /\<ul\>/.test(text)) {
 
 
+        text = text.replace('<ul>','');
+        text = text.replace('</ul>','');
+        text = text.replace('<li>','');
+        text = text.split('</li>');
 
+        return text;
+    }
+    else{
+        return text;
+    }
+}
 
 
 function addSectionTitle(name) {
     var pObj = docx.createP ();
-    pObj.addText ( name, { bold: true, font_face: 'Arial', font_size: 20 } );
+    pObj.addText ( name, { bold: true, underline: true, font_face: 'Arial', font_size: 20 } );
 }
 
 function addEmployment(employment) {
+    var pObj = docx.createListOfDots ();
+    pObj.addText(employment.title, {bold: true, font_size: 12});
+    pObj.addText(' @ ', {bold: true, font_size: 12, color: 'D11F3F'});
+    pObj.addText(employment.company_name, {bold: true, font_size: 12, color: 'D11F3F'});
+    pObj.addLineBreak ();
+    var date_from = moment(employment.data_from);
+    var date_to = moment(employment.data_to);
+
+    pObj.addText(date_from.format('MMM YYYY'),{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(' ⇢ '),{bold: false, font_size: 9, color: '39116C'};
+    pObj.addText(date_to.format('MMM YYYY'),{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(' in ',{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(employment.location.town,{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(', ',{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(employment.location.country,{bold: false, font_size: 9, color: '39116C'});
+
+
+    var description = formatDescription(employment.description);
+
+    if( typeof description !== 'string') {
+
+        for(var i in description) {
+            if(description[i].length >0) {
+                var pObj = docx.createListOfNumbers ();
+                var text = description[i].replace('<li>','');
+                pObj.addText(text,{bold: false, font_size: 10, color: '173039'});
+            }
+
+        }
+    }
+    else{
+        var pObj = docx.createP ();
+        pObj.addText(description,{bold: false, font_size: 10, color: '173039'});
+    }
+
     var pObj = docx.createP ();
 
-    pObj.addText(employment.title, {bold: true, font-size: 14});
-    pObj.addText(' @ ', {bold: true, font_size: 14, color: '#E7E7E7'});
+    pObj.addText('Technology used: ',{bold: true, font_size: 9, color: '5A4854'});
+    pObj.addText(employment.tags.join(', '),{bold: false, font_size: 9, color: '5A4854'});
+
 
 }
 
+function addEducation(education) {
+    var pObj = docx.createP ();
+
+    pObj.addText(education.title, {bold: true, font_size: 12});
+    pObj.addLineBreak ();
+    var date_from = moment(education.data_from);
+    var date_to = moment(education.data_to);
+
+    pObj.addText(date_from.format('MMM YYYY'),{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(' ⇢ '),{bold: false, font_size: 9, color: '39116C'};
+    pObj.addText(date_to.format('MMM YYYY'),{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(' in ',{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(education.location.town,{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(', ',{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(education.location.country,{bold: false, font_size: 9, color: '39116C'});
+
+    pObj.addLineBreak ();
+    pObj.addText(education.description,{bold: false, font_size: 10, color: '173039'});
+
+
+}
+
+function addInterest(interest) {
+
+    var pObj = docx.createP ();
+    pObj.addText(interest.name, {bold: true, font_size: 12});
+    pObj.addLineBreak();
+    pObj.addText(interest.description, {bold: false,  color: '39116C', font_size: 9});
+
+}
+
+
 addSectionTitle('Employment');
-addSectionTitle('Technical Skills');
+for(var i in data.work_experience) {
+    addEmployment(data.work_experience[i]);
+}
+
 addSectionTitle('Education');
+for(var i in data.education) {
+    addEducation(data.education[i]);
+}
+
 addSectionTitle('Interests');
-addSectionTitle('Portfolio');
+for(var i in data.interests) {
+    addInterest(data.interests[i]);
+}
 
-
-
-
-/*
-    Add heading text
-
-    - Employment History
-    - Technical Skills
-    - Education
-    - Interests
-    - Portfolio
-
-*/
-
-//pObj.addLineBreak ();
-
-
-//pObj.addText ( ' with color', { color: '000088' } );
-//pObj.addText ( ' and back color.', { color: '00ffff', back: '000088' } );
-
-/*
-var pObj = docx.createP ();
-
-pObj.addText ( 'Bold + underline', { bold: true, underline: true } );
-
-var pObj = docx.createP ( { align: 'center' } );
-
-pObj.addText ( 'Center this text.' );
-
-var pObj = docx.createP ();
-pObj.options.align = 'right';
-
-pObj.addText ( 'Align this text to the right.' );
-
-var pObj = docx.createP ();
-
-pObj.addText ( 'Those two lines are in the same paragraph,' );
-pObj.addLineBreak ();
-pObj.addText ( 'but they are separated by a line break.' );
-
-docx.putPageBreak ();
-
-var pObj = docx.createP ();
-
-pObj.addText ( 'Fonts face only.', { font_face: 'Arial' } );
-pObj.addText ( ' Fonts face and size.', { font_face: 'Arial', font_size: 40 } );
-
-docx.putPageBreak ();
-
-var pObj = docx.createP ();
-
-pObj.addImage ( path.resolve(__dirname, 'images_for_examples/image3.png' ) );
-
-docx.putPageBreak ();
-
-var pObj = docx.createP ();
-
-pObj.addImage ( path.resolve(__dirname, 'images_for_examples/image1.png' ) );
-
-var pObj = docx.createP ();
-
-pObj.addImage ( path.resolve(__dirname, 'images_for_examples/sword_001.png' ) );
-pObj.addImage ( path.resolve(__dirname, 'images_for_examples/sword_002.png' ) );
-pObj.addImage ( path.resolve(__dirname, 'images_for_examples/sword_003.png' ) );
-pObj.addText ( '... some text here ...', { font_face: 'Arial' } );
-pObj.addImage ( path.resolve(__dirname, 'images_for_examples/sword_004.png' ) );
-
-var pObj = docx.createP ();
-
-pObj.addImage ( path.resolve(__dirname, 'images_for_examples/image1.png' ) );
-
-docx.putPageBreak ();
-
-var pObj = docx.createListOfNumbers ();
-
-pObj.addText ( 'Option 1' );
-
-var pObj = docx.createListOfNumbers ();
-
-pObj.addText ( 'Option 2' );
-*/
-var out = fs.createWriteStream ( 'out.docx' );
+var out = fs.createWriteStream ( 'AntoineLucasResume.docx' );
 
 out.on ( 'error', function ( err ) {
     console.log ( err );

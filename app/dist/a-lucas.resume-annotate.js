@@ -58,17 +58,17 @@
                                 console.log("This is a double click. ignoring");
                                 return;
                             }
-                            console.log("click slidetoggle");
 
-                            if (!target)
+                            if (!target) {
                                 target = document.querySelector(attrs.slideToggle);
-                            if (!content)
+                            }
+                            if (!content) {
                                 content = target.querySelector('.slideable_content');
+                            }
 
                             if (!attrs.expanded) {
                                 content.style.border = '1px solid rgba(0,0,0,0)';
                                 var y = content.clientHeight;
-                                console.log(content.clientHeight);
                                 content.style.border = 0;
                                 target.style.height = y + 'px';
                             } else {
@@ -99,8 +99,6 @@
                     link: function ($scope, element, attrs) {
 
                         var scrollAction = $scope.scrollaction;
-
-                        console.log(element);
 
                         angular.element($window).bind("scroll", function () {
 
@@ -159,137 +157,6 @@
                         controller: 'AppCtrl'
                     }).otherwise({redirectTo: '/AntoineLucas'});
                 }])
-            .controller("AppCtrl", ['$scope', '$mdMedia', '$timeout', '$document', '$window', '$mdSidenav', '$parse', '$log', function ($scope, $mdMedia, $timeout, $document, $window, $mdSidenav, $parse, $log) {
-                $scope.customQuery = $mdMedia('(min-width: 500px)');
-                $scope.anotherCustom = $mdMedia('max-width: 400px');
-
-
-                if ("ontouchstart" in window || navigator.msMaxTouchPoints)
-                {
-                    $scope.isTouch = true;
-                    $scope.flex_small_content = 100;
-                } else {
-                    $scope.isTouch = false;
-                    $scope.flex_small_content = 85;
-                }
-
-                function animateSwipe() {
-                    if ($scope.isTouch) {
-                        $scope.showSlide = true;
-                        $scope.showFace = false;
-                        $timeout(function () {
-                            $scope.showSlide = false;
-                            $scope.showFace = true;
-                        }, 3000);
-                    }
-                    else {
-                        $scope.showSlide = false;
-                        $scope.showFace = true;
-                    }
-
-                }
-                animateSwipe();
-
-
-                function checkSideBarsDimension() {
-                    if ($mdMedia('max-width: 400px')) {
-
-                        angular.element(document.getElementById('smallLeft'))
-                                .removeClass('small-sidenav')
-                                .removeClass('smaill-sidenav');
-
-                        angular.element(document.getElementById('right'))
-                                .removeClass('large-contact-sidenav')
-                                .removeClass('medium-contact-sidenav')
-                                .removeClass('small-contact-sidenav')
-                                .addClass('small-contact-sidenav');
-                    }
-                    else if ($mdMedia('max-width: 500px')) {
-
-                        angular.element(document.getElementById('smallLeft')).removeClass('small-sidenav');
-                        angular.element(document.getElementById('right'))
-                                .removeClass('large-contact-sidenav')
-                                .removeClass('medium-contact-sidenav')
-                                .removeClass('small-contact-sidenav')
-                                .addClass('medium-contact-sidenav');
-                    }
-                    else if ($mdMedia('max-width: 600')) {
-
-                        angular.element(document.getElementById('right'))
-                                .removeClass('large-contact-sidenav')
-                                .removeClass('medium-contact-sidenav')
-                                .removeClass('small-contact-sidenav')
-                                .addClass('medium-contact-sidenav');
-                    }
-                    else {
-
-                        angular.element(document.getElementById('right'))
-                                .removeClass('large-contact-sidenav')
-                                .removeClass('medium-contact-sidenav')
-                                .removeClass('small-contact-sidenav')
-                                .addClass('large-contact-sidenav');
-                    }
-                }
-
-                angular.element($window).bind('orientationchange', function () {
-                    checkSideBarsDimension();
-                });
-                angular.element($window).bind('resize', function () {
-                    checkSideBarsDimension();
-                });
-                checkSideBarsDimension();
-
-
-                $scope.swipeRight = function () {
-                    if ($mdMedia('max-width: 600px') === true) {
-                        console.log("max-width2 : 500");
-                        $mdSidenav('smallLeft').toggle();
-                    }
-                    else {
-                        console.log("max-width2 > 600");
-                        $mdSidenav('largeLeft').toggle();
-                    }
-
-                    $mdSidenav('right').close();
-                };
-
-                $scope.swipeLeft = function () {
-                    $mdSidenav('largeLeft').close();
-                    $mdSidenav('smallLeft').close();
-                    $mdSidenav('right').toggle();
-                };
-
-                $scope.goToAnchor = function (id) {
-
-                    var someElement = angular.element(document.getElementById(id));
-
-                    $mdSidenav('largeLeft').close();
-                    $mdSidenav('smallLeft').close();
-                    $document.scrollToElement(someElement, -10, 1000).then(function () {
-                        /*var scrollaction =  $document.find("[scrollaction]")[0].attributes.scrollaction.value;
-                         scrollaction = $parse(scrollaction)($scope);                    
-                         angular.element("#" + scrollaction[id]).css("background-color", "#EBEBEB");*/
-
-                    });
-
-
-                };
-
-                $scope.toggleLeft = function () {
-                    $mdSidenav('smallLeft').toggle()
-                            .then(function () {
-                                $log.debug("toggle left is done");
-                            });
-                };
-                $scope.toggleLeft2 = function () {
-                    $mdSidenav('largeLeft').toggle()
-                            .then(function () {
-                                $log.debug("toggle left2 is done");
-                            });
-                };
-
-
-            }])
             .run(['$http', '$templateCache', function ($http, $templateCache) {
                 var templates = ['views/skype.html', 'views/hangout.html'];
 
@@ -300,7 +167,442 @@
                 });
             }]);
 
-})();;/* 
+})();;/**
+ * Created by antoine on 29/10/15.
+ */
+var data  = {
+    "work_experience" : [
+        {
+            "title": "FrontEnd Problem Solver",
+            "company_name": "Boomworks",
+            "date_from": {"year": 2015, "month": 7},
+            "date_to": {},
+            "location": {
+                "country": "Australia",
+                "town": "Sydney"
+            },
+            "tags": ["AngularJS", "Maven", "JBOSS"],
+            "description": "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governemental service provider to allow their clients to register new services. The CRM I worked on had 20+ AngularJS nested forms and we managed to meet the 4 weeks deadline refactoring the whole Javascript code and multiply the sprint story points by 4.",
+            "website_url": null,
+            "collapsed": false
+        },
+        {
+            "title": "FrontEnd Engineer",
+            "company_name": "Bauer Media",
+            "date_from": {"year": 2015, "month": 5},
+            "date_to": {"year": 2015, "month": 7},
+            "location": {
+                "country": "Australia",
+                "town": "Sydney"
+            },
+            "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7"],
+            "description": "Bauer Media needed the help of some extra contactors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time.",
+            "website_url": "http://www.homestolove.com.au",
+            "collapsed": false
+        },
+        {
+            "title": "Senior Web Application Developer",
+            "company_name": "Veritas Engineering",
+            "date_from": {"year": 2013, "month": 11},
+            "date_to": {"year": 2015, "month": 2},
+            "location": {
+                "country": "Australia",
+                "town": "Perth"
+            },
+            "tags": ["AngularJS", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack"],
+            "description": "<ul><li>Online police checks planning, architecture & cutting edge implementation</li><li>Custom CRM design, architecture & implementation</li><li>WebServices development</li><li>UX Design</li><li>Analytics & SEO Consulting</li></ul>",
+            "website_url": "http://www.veritascheck.com.au",
+            "collapsed": false
+        },
+        {
+            "title": "Lead Developer",
+            "date_from": {"year": 2010, "month": 6},
+            "date_to": {"year": 2013, "month": 5},
+            "company_name": "Webjobz (Former ExpatJob)",
+            "location": {
+                "country": "Australia",
+                "town": "Perth"
+            },
+            "description": "<ul><li>I designed and developed a JQuery based CRM with a web based mail client. Mails were retrieved via the IMAP protocol through a custom PHP socket class, and then stored into a MySQL database. They were linked to companies and contacts, then tagged with Leads / Follow Ups and any custom labels. Users were able to access multiple mailboxes at once. An administration interface allowed administrator to create virtual mailboxes, with read/reply permissions.</li><li>Ten years of electronic correspondence have been imported from a domino legacy system to this new MySQL database</li><li>I wrote the first version of webjobz.com, which was running on a Debian LAMP server (2GB ddr2 ram with an old CPU). The site was gettingthousands of unique visitors per day, and was generating dozens of different XML feeds. All was operating with minimal lag. Site uptime was > 99.99%</li><li>SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder</li><li>I wrote a PHP framework from scratch to allow a unified  URLs rewritting accros a network of severall websites</li><li>I designed the job board search & refine  backend and frontend</li><li>System administrator: I maintained successfully a LAMP server stack across 3 dedicated machines. I implemented a MySQL replication backup strategy </li></ul>",
+            "tags": ["PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
+            "website_url": "http://www.webjobz.com/jobs",
+            "collapsed": false
+        },
+        {
+            "title": "PHP&Jquery Developer",
+            "date_from": {"year": 2010, "month": 9},
+            "date_to": {"year": 2011, "month": 5},
+            "company_name": "Digital Ventures",
+            "location": {
+                "country": "Australia",
+                "town": "Perth"
+            },
+            "description": "<ul><li>The project was a a clone of AliBaba. I mainly wrote a curl spider engine</li></ul>",
+            "tags": ["PHP5", "Curl", "AliBaba", "MySQL", "JQuery"],
+            "website_url": "",
+            "collapsed": false
+        },
+        {
+            "title": "Science Teacher",
+            "date_from": {"year": 2007, "month": 9},
+            "date_to": {"year": 2008, "month": 6},
+            "company_name": "French School of Khartoun",
+            "location": {
+                "country": "Sudan",
+                "town": "Kartoum"
+            },
+            "description": "<ul><li>I did teach Maths Physics & Biology to high school students from diplomatic backgrounds.</li></ul>",
+            "tags": ["Patience", "Kindnes", "Authority"],
+            "website_url": "",
+            "collapsed": false
+        },
+        {
+            "title": "Freelancer",
+            "date_from": {"year": 2006, "month": 1},
+            "date_to": {"year": 2007, "month": 6},
+            "company_name": "1001net",
+            "location": {
+                "country": "France",
+                "town": "Montpellier"
+            },
+            "description": "<ul><li>I did learn to code by my own doing some freelance jobs back in France.</li></ul>",
+            "tags": ["PHP", "Accounting", "LAMP", "Flash", "Suze", "Gentoo", "QMail"],
+            "website_url": "",
+            "collapsed": false
+        }
+    ],
+    "education" : [
+        {
+            "title": "Polytech Geotechnic",
+            "date_from": {"year": 1998},
+            "date_to": {"year": 2010},
+            "location": {
+                "country": "France",
+                "town": "Grenoble"
+            },
+            "description": "I studied Geotechnic at Polytech (formely known as ISTG) for two years before deciding to study information tehcnologies",
+            "website_url": "http://www.polytech-grenoble.fr/",
+            "collapsed": false
+        },
+        {
+            "title": "Bachelor in IT Science",
+            "date_from": {"year": 2010},
+            "date_to": {"year": 2011},
+            "location": {
+                "country": "France",
+                "town": "Montpellier"
+            },
+            "description": "I have a solid formation on theorical and practical aspects in networking, databases, information systems, programming, image processing and artificial intelligence.",
+            "website_url": "http://en.wikipedia.org/wiki/Montpellier_2_University",
+            "collapsed": false
+        }
+    ],
+    "services" : [
+        {
+            "title": "PhoneGap / Cordova",
+            "description": "You have an existing web application running AngularJs, EmberJs or written in any javascript web-application framework and you want to transform it into a phone or tablet native application. Migration from an existing <b>web</b> application to an IOS, Android , Windows or Blackberry platform needs some optimization. <a ng-click='swipeLeft()'>Contact me</a>",
+            "image": "img/phone-gap-icon.png"
+        },
+        {
+            "title": "Responsive Design",
+            "description": "Do you need to make your website responsive? A responsive design is a great cost saver. Most of the code doesn;t need any change, only the front-end css & html needs to be modified. The result will be a website that looks great on all platforms : TV, Desktop, Laptops, Tablets and phones. ",
+            "image": "img/responsive.png"
+        },
+        {
+            "title": "Web Development",
+            "description": "I offer 12 years experience in Web development. I am up to date with most cutting edge open source technologies and old school ones. It can be bug fixes, taking over someone else work, collaboration and team work, sprints and anything web related.",
+            "image": false
+        },
+        {
+            "title": "Web Architect",
+            "description": "Are you looking to design a complexe web based application. Whatever SASS, Public internet or private  Intranet, it is crucial to take the correct decisions upfront. I have build from scratch many complex web-based system, and I am really passionate to discuss about challenging new concepts",
+            "image": "img/architect.png"
+        },
+        {
+            "title": "Databases",
+            "description": "Database restoration, Maintenance, MIgration, Design, Replication. The only thing I don't know about is Database Scalability.",
+            "image": "img/database.png"
+        },
+        {
+            "title": "Crawlers",
+            "description": "A crawler is a bot that automatically scrap web content following a strict specification. A crawler can authenticate, save cookies & session, parse HTML and extract relevant informations. Internet data is HUGE, a good massive crawler engine needs several dedicated servers.",
+            "image": "img/crawler.png"
+        }
+    ],
+    "skills" : {
+        "coding": [
+            {
+                "logo": "img/PHP_logo.png",
+                "bgColor": "#6082BB",
+                "name": "PHP",
+                "languages": [
+                    {"name": "PHP4&5", "percentage": 4.5},
+                    {"name": "Zend1", "percentage": 4},
+                    {"name": "Yii", "percentage": 4.5},
+                    {"name": "Code Igniter", "percentage": 3.5},
+                    {"name": "Cake PHP", "percentage": 3.5},
+                    {"name": "Phalcon", "percentage": 3.5},
+                    {"name": "Laravel", "percentage": 4},
+                    {"name": "Slim", "percentage": 4.5}
+                ]
+            },
+            {
+                "logo": "img/ecma5_logo.png",
+                "bgColor": "#fff",
+                "name": "Javascript",
+                "languages": [
+                    {"name": "Javascript", "percentage": 4},
+                    {"name": "JQuery", "percentage": 5},
+                    {"name": "AngularJS", "percentage": 5},
+                    {"name": "ReactJS", "percentage": 4.5},
+                    {"name": "Flux", "percentage": 4.5},
+                    {"name": "ES6", "percentage": 4},
+                    {"name": "JSX Harmony", "percentage": 4.5},
+                    {"name": "Meteor", "percentage": 3},
+                    {"name": "nodeJS", "percentage": 4},
+                    {"name": "mean.js", "percentage": 4.5},
+                    {"name": "Cordova", "percentage": 4},
+                    {"name": "backbone", "percentage": 1},
+                    {"name": "ember.js", "percentage": 1}
+                ]
+            }, {
+                "logo": "img/perl_logo2.png",
+                "bgColor": "#fff",
+                "name": "Perl",
+                "languages": [
+                    {"name": "Perl", "percentage": 2.5}
+                ]
+            },
+            {
+                "bgColor": "#fff",
+                "name": "Design Techs",
+                "languages": [
+                    {"name": "Css2/Css3", "percentage": 4.5},
+                    {"name": "SASS/SCSS/Less", "percentage": 4.5},
+                    {"name": "HTML", "percentage": 5},
+                    {"name": "Foundation", "percentage": 5},
+                    {"name": "Bootstrap", "percentage": 5},
+                    {"name": "Foundation", "percentage": 5}
+                ]
+            },
+            {
+                "bgColor": "#fff",
+                "name": "API Providers",
+                "languages": [
+                    {"name": "OAUTH", "percentage": 5},
+                    {"name": "REST", "percentage": 5},
+                    {"name": "Google API", "percentage": 4.5},
+                    {"name": "Facebook API", "percentage": 4.5},
+                    {"name": "LinkedIn API", "percentage": 4.5},
+                    {"name": "Twitter API", "percentage": 4.5},
+                    {"name": "Other APIs", "percentage": 4}
+                ]
+            },
+            {
+                "logo": "img/java-oracle.png",
+                "bgColor": "#fff",
+                "name": "JAVA",
+                "languages": [
+                    {"name": "JAVA", "percentage": 4},
+                    {"name": "GWT", "percentage": 3},
+                    {"name": "Spring MVC", "percentage": 2.5},
+                    {"name": "Others", "percentage": 0.5}
+                ]
+            },
+            {
+                "logo": "img/mslogo.png",
+                "bgColor": "#fff",
+                "name": "Microsoft",
+                "languages": [
+                    {"name": "C#", "percentage": 3},
+                    {"name": "ASP", "percentage": 2.5},
+                    {"name": "Others", "percentage": 0.5}
+                ]
+            }],
+            "server"
+    :
+        [
+            {
+                "logo": "",
+                "name": "Linux",
+                "bgColor": "#fff",
+                "languages": [
+                    {"name": "Debian", "percentage": 4.5},
+                    {"name": "RedHat", "percentage": 3},
+                    {"name": "Centos", "percentage": 2},
+                    {"name": "Suze", "percentage": 2.5}
+                ]
+            },
+            {
+                "logo": "",
+                "name": "Databases",
+                "bgColor": "#fff",
+                "languages": [
+                    {"name": "MySQL", "percentage": 4},
+                    {"name": "MariaDB", "percentage": 4},
+                    {"name": "MongoDB", "percentage": 3.5},
+                    {"name": "PostgreSQL", "percentage": 2},
+                    {"name": "SQL Server", "percentage": 0}
+                ]
+            }, {
+            "logo": "",
+            "name": "Web Servers",
+            "bgColor": "#fff",
+            "languages": [
+                {"name": "Apache2", "percentage": 4.5},
+                {"name": "NGinX", "percentage": 4},
+                {"name": "Express", "percentage": 4},
+                {"name": "IIS", "percentage": 0}
+            ]
+        }
+        ],
+            "softwares"
+    :
+        [
+            {
+                "logo": "",
+                "name": "Google",
+                "bgColor": "#fff",
+                "languages": [
+                    {"name": "Webmaster", "percentage": 4.5},
+                    {"name": "Analytics", "percentage": 4.5},
+                    {"name": "Adwords", "percentage": 3},
+                    {"name": "Double Click", "percentage": 4.5}
+                ]
+            },
+            {
+                "logo": "",
+                "name": "Graphic editors",
+                "bgColor": "#fff",
+                "languages": [
+                    {"name": "Gimp", "percentage": 3},
+                    {"name": "photoshop CE", "percentage": 2.5}
+                ]
+            },
+            {
+                "logo": "",
+                "name": "Code Editors",
+                "languages": [
+                    {"name": "Netbeans", "percentage": 4.5},
+                    {"name": "WebStorm", "percentage": 4},
+                    {"name": "Geany", "percentage": 4},
+                    {"name": "Visual Studio", "percentage": 3},
+                    {"name": "Vi", "percentage": 1}
+                ]
+            }
+        ]
+
+    }
+,
+    "interests" : [{
+            "name": "Kite Surfing",
+            "description": "“The best surfer out there is the one having the most fun.“ – Phil Edwards",
+            "photo": "img/kiteSurf.jpg"
+        }, {
+            "name": "Travelling",
+            "description": "“You don’t have to be rich to travel well.” – Eugene Fodor",
+            "photo": "img/travelling.jpg"
+        }, {
+            "name": "Friends",
+            "description": "Two persons cannot long be friends if they cannot forgive each other's little failings.",
+            "photo": "img/friendship.jpg"
+        }],
+
+    "travels": [
+        {
+            "country": "Cameroon",
+            "cities": ["Yaounde"],
+            "description": "I grew up there"
+        },
+        {
+            "country": "Djibouti",
+            "cities": ["Djibouti"],
+            "description": "I grew up there"
+        },
+        {
+            "country": "France",
+            "cities": ["Paris", "Carcassonne", "Perpignan", "Grenoble", "Montpellier"],
+            "description": ""
+        },
+        {
+            "country": "Sudan",
+            "cities": ["Karthoum"],
+            "description": ""
+        },
+        {
+            "country": "Australia",
+            "cities": ["Perth", "Sydney"],
+            "description": ""
+        }
+    ],
+        "technology_used"
+:
+    [
+        {
+            "name": "AngularJS",
+            "version": "1.3.*",
+           "url": "https://angularjs.org/",
+            "licence": "MIT licence",
+            "comment": "This awesome dual-binding javascript framework made by geniuses @ Google"
+        },
+        {
+            "name": "Material Design",
+            "version": "0.8.3",
+           "url": "https://github.com/angular/material/",
+            "licence": "No licence",
+            "comment": "This revolutionary and complete guide to modern mobile design made by Google - Port to AngularJS in progress"
+        },
+        {
+            "name": "Node.JS",
+            "version": "0.12.1",
+           "url": "https://nodejs.org/",
+            "licence": "Multiple licence",
+            "comment": "The most performant server side technology untill now"
+        },
+        {
+            "name": "Bower",
+            "version": "1.3.12",
+           "url": "http://bower.io/",
+            "licence": "No licence",
+            "comment": "A package manager for client side javascript files"
+        },
+        {
+            "name": "Grunt",
+            "version": "0.4.5",
+           "url": "http://gruntjs.com/",
+            "licence": "No licence",
+            "comment": "A Task manager used with uglify, annotate, concat, jslint & csslint, angular template caching and html minification"
+        },
+        {
+            "name": "Flippy",
+            "version": "0",
+           "url": "MIT licence",
+            "licence": " https://github.com/zwacky/angular-flippy",
+            "comment": "An AngularJS Flippy directive."
+        },
+        {
+            "name": "Font Awesome",
+            "version": "4.3.0",
+           "url": "MIT licence, OFL-1.1, CC-BY-3.0",
+            "licence": " https://github.com/zwacky/angular-flippy",
+            "comment": "A large collection of icons embeded in a font"
+        },
+        {
+            "name": "TagCanvas",
+            "version": "2.2.0",
+           "url": "http://www.goat1000.com/tagcanvas.php",
+            "licence": "LGPL v3",
+            "comment": "TagCanvas is a Javascript class which will draw and animate a HTML5  canvas based tag cloud"
+        },
+        {
+            "name": "MomentJS",
+            "version": "2.9.0",
+           "url": "http://momentjs.com/",
+            "licence": "MIT licence",
+            "comment": "Parse, validate, manipulate, and display dates in JavaScript."
+        }
+    ]
+};;/* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -334,478 +636,188 @@
             return $http(req);
         };
 
+
         this.get_work_experience = function () {
-            return [
-                {
-                    title: "FrontEnd Problem Solver",
-                    company_name: "Boomworks",
-                    date_from: moment({year: 2015, month: 7}),
-                    date_to: moment({}),
-                    location: {
-                        country: "Australia",
-                        town: "Sydney"
-                    },
-                    tags: ["AngularJS", "Maven", "JBOSS"],
-                    description: "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline." +
-                    "The product is an industry game changer  - which helps a well known governemental service provider to allow their clients to register new services. " +
-                    "The CRM I worked on had 20+ AngularJS nested forms and we managed to meet the 4 weeks deadline refactoring the whole Javascript code and multiply the sprint story points by 4.",
-                    website_url: null,
-                    collapsed: false
-                },
-                {
-                    title: "FrontEnd Engineer",
-                    company_name: "Bauer Media",
-                    date_from: moment({year: 2015, month: 5}),
-                    date_to: moment({year: 2015, month: 7}),
-                    location: {
-                        country: "Australia",
-                        town: "Sydney"
-                    },
-                    tags: ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7"],
-                    description: "Bauer Media needed the help of some extra contactors to help start & finish their new MVP website." +
-                    "In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. " +
-                    "I was part of a team of 5 and we all manage to finish the project in time.",
-                    website_url: 'http://www.homestolove.com.au',
-                    collapsed: false
-                },
-                {
-                    title: "Senior Web Application Developer",
-                    company_name: "Veritas Engineering",
-                    date_from: moment({year: 2013, month: 11}),
-                    date_to: moment({year: 2015, month: 2}),
-                    location: {
-                        country: "Australia",
-                        town: "Perth"
-                    },
-                    tags: ["AngularJS", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack"],
-                    description: "<ul>" +
-                            "<li>Online police checks planning, architecture & cutting edge implementation</li>" +
-                            "<li>Custom CRM design, architecture & implementation</li>" +
-                            "<li>WebServices development</li>" +
-                            "<li>UX Design</li>" +
-                            "<li>Analytics & SEO Consulting</li>" +
-                            "</ul>",
-                    website_url: 'http://www.veritascheck.com.au',
-                    collapsed: false
-                },
-                {
-                    title: "Lead Developer",
-                    date_from: moment({year: 2010, month: 6}),
-                    date_to: moment({year: 2013, month: 5}),
-                    company_name: "Webjobz (Former ExpatJob)",
-                    location: {
-                        country: "Australia",
-                        town: "Perth"
-                    },
-                    description: "<ul><li>I designed and developed a JQuery based CRM with a web based mail client. Mails were retrieved via the IMAP protocol through a custom PHP socket class, and then stored into a MySQL database. They were linked to companies and contacts, then tagged with Leads / Follow Ups and any custom labels. Users were able to access multiple mailboxes at once. An administration interface allowed administrator to create virtual mailboxes, with read/reply permissions.</li>" +
-                            "<li>Ten years of electronic correspondence have been imported from a domino legacy system to this new MySQL database</li>" +
-                            "<li>I wrote the first version of webjobz.com, which was running on a Debian LAMP server (2GB ddr2 ram with an old CPU). The site was gettingthousands of unique visitors per day, and was generating dozens of different XML feeds. All was operating with minimal lag. Site uptime was > 99.99%</li>" +
-                            "<li>SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder</li>" +
-                            "<li>I wrote a PHP framework from scratch to allow a unified  URLs rewritting accros a network of severall websites</li>" +
-                            "<li>I designed the job board search & refine  backend and frontend</li>" +
-                            "<li>System administrator: I maintained successfully a LAMP server stack across 3 dedicated machines. I implemented a MySQL replication backup strategy </li>" +
-                            "</ul>",
-                    tags: ["PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
-                    website_url: 'http://www.webjobz.com/jobs',
-                    collapsed: false
-                },
-                {
-                    title: "PHP&Jquery Developer",
-                    date_from: moment({year: 2010, month: 9}),
-                    date_to: moment({year: 2011, month: 5}),
-                    company_name: "Digital Ventures",
-                    location: {
-                        country: "Australia",
-                        town: "Perth"
-                    },
-                    description: "<ul>" +
-                            "<li>The project was a a clone of AliBaba. I mainly wrote a curl spider engine</li>" +
-                            "</ul>",
-                    tags: ["PHP5", "Curl", "AliBaba", "MySQL", "JQuery"],
-                    website_url: '',
-                    collapsed: false
-                },
-                {
-                    title: "Science Teacher",
-                    date_from: moment({year: 2007, month: 9}),
-                    date_to: moment({year: 2008, month: 6}),
-                    company_name: "French School of Khartoun",
-                    location: {
-                        country: "Sudan",
-                        town: "Kartoum"
-                    },
-                    description: "<ul>" +
-                            "<li>I did teach Maths Physics & Biology to high school students from diplomatic backgrounds.</li>" +
-                            "</ul>",
-                    tags: ["Patience", "Kindnes", "Authority"],
-                    website_url: '',
-                    collapsed: false
-                },
-                {
-                    title: "Freelancer",
-                    date_from: moment({year: 2006, month: 1}),
-                    date_to: moment({year: 2007, month: 6}),
-                    company_name: "1001net",
-                    location: {
-                        country: "France",
-                        town: "Montpellier"
-                    },
-                    description: "<ul>" +
-                            "<li>I did learn to code by my own doing some freelance jobs back in France.</li>" +
-                            "</ul>",
-                    tags: ["PHP", "Accounting", "LAMP", "Flash", "Suze", "Gentoo", "QMail"],
-                    website_url: '',
-                    collapsed: false
-                }
-            ];
+
+            var work_experience = data.work_experience;
+
+            for(var i in work_experience) {
+                work_experience[i].date_from = moment(work_experience[i].date_from);
+                work_experience[i].date_to = moment(work_experience[i].date_to);
+            }
+            return work_experience;
         };
+
         this.get_education = function () {
-            return [
-                {
-                    title: "Polytech Geotechnic",
-                    date_from: moment({year: 1998}),
-                    date_to: moment({year: 2010}),
-                    location: {
-                        country: "France",
-                        town: "Grenoble"
-                    },
-                    description: 'I studied Geotechnic at Polytech (formely known as ISTG) for two years before deciding to study information tehcnologies',
-                    website_url: 'http://www.polytech-grenoble.fr/',
-                    collapsed: false
-                },
-                {
-                    title: "Bachelor in IT Science",
-                    date_from: moment({year: 2010}),
-                    date_to: moment({year: 2011}),
-                    location: {
-                        country: "France",
-                        town: "Montpellier"
-                    },
-                    description: 'I have a solid formation on theorical and practical aspects in networking, databases, information systems, programming, image processing and artificial intelligence.',
-                    website_url: 'http://en.wikipedia.org/wiki/Montpellier_2_University',
-                    collapsed: false
-                }
-            ];
+            var education = data.education;
+            for(var i in education) {
+                education[i].date_from = moment(education[i].date_from);
+                education[i].date_to = moment(education[i].date_to);
+            }
+
+            return education;
         };
+
         this.get_services = function () {
-            return [
-                {
-                    title: "PhoneGap / Cordova",
-                    description: "You have an existing web application running AngularJs, EmberJs or written in any javascript web-application framework and you want to transform it into a phone or tablet native application." +
-                            "Migration from an existing <b>web</b> application to an IOS, Android , Windows or Blackberry platform needs some optimization. <a ng-click='swipeLeft()'>Contact me</a>",
-                    image: "img/phone-gap-icon.png"
-                },
-                {
-                    title: "Responsive Design",
-                    description: "Do you need to make your website responsive?" +
-                            "A responsive design is a great cost saver. Most of the code doesn;t need any change, only the front-end css & html needs to be modified. The result will be a website that looks great on all platforms : TV, Desktop, Laptops, Tablets and phones. ",
-                    image: "img/responsive.png"
-                },
-                {
-                    title: "Web Development",
-                    description: "I offer 12 years experience in Web development. I am up to date with most cutting edge open source technologies and old school ones. " +
-                            "It can be bug fixes, taking over someone else work, collaboration and team work, sprints and anything web related.",
-                    image: false
-                },
-                {
-                    title: "Web Architect",
-                    description: "Are you looking to design a complexe web based application. Whatever SASS, Public internet or private  Intranet, it is crucial to take the correct decisions upfront. " +
-                            "I have build from scratch many complex web-based system, and I am really passionate to discuss about challenging new concepts",
-                    image: "img/architect.png"
-                },
-                {
-                    title: "Databases",
-                    description: "Database restoration, Maintenance, MIgration, Design, Replication. The only thing I don't know about is Database Scalability.",
-                    image: "img/database.png"
-                },
-                {
-                    title: "Crawlers",
-                    description: "A crawler is a bot that automatically scrap web content following a strict specification." +
-                            "A crawler can authenticate, save cookies & session, parse HTML and extract relevant informations." +
-                            "Internet data is HUGE, a good massive crawler engine needs several dedicated servers.",
-                    image: "img/crawler.png"
-                }
-            ];
+            return data.services;
         };
         this.get_skills = function () {
-            return {
-                coding: [
-                    {
-                        logo: 'img/PHP_Logo.png',
-                        bgColor: '#6082BB',
-                        name: "PHP",
-                        languages: [
-                            {name: "PHP4&5", percentage: 4.5},
-                            {name: "Zend1", percentage: 4},
-                            {name: "Yii", percentage: 4.5},
-                            {name: "Code Igniter", percentage: 3.5},
-                            {name: "Cake PHP", percentage: 3.5},
-                            {name: "Phalcon", percentage: 3.5},
-                            {name: "Laravel", percentage: 4},
-                            {name: "Slim", percentage: 4.5}
-                        ]
-                    },
-                    {
-                        logo: 'img/ecma5_logo.png',
-                        bgColor: '#fff',
-                        name: "Javascript",
-                        languages: [
-                            {name: "Javascript", percentage: 4},
-                            {name: "JQuery", percentage: 5},
-                            {name: "AngularJS", percentage: 5},
-                            {name: "ReactJS", percentage: 4.5},
-                            {name: "Flux", percentage: 4.5},
-                            {name: "ES6", percentage: 4},
-                            {name: "JSX Harmony", percentage: 4.5},
-                            {name: "Meteor", percentage: 3},
-                            {name: "nodeJS", percentage: 4},
-                            {name: "mean.js", percentage: 4.5},
-                            {name: "Cordova", percentage: 4},
-                            {name: "backbone", percentage: 1},
-                            {name: "ember.js", percentage: 1}
-                        ]
-                    }, {
-                        logo: 'img/perl_logo2.png',
-                        bgColor: '#fff',
-                        name: "Perl",
-                        languages: [
-                            {name: "Perl", percentage: 2.5}
-                        ]
-                    },
-                    {
-                        bgColor: '#fff',
-                        name: "Design Techs",
-                        languages: [
-                            {name: "Css2/Css3", percentage: 4.5},
-                            {name: "SASS/SCSS/Less", percentage: 4.5},
-                            {name: "HTML", percentage: 5},
-                            {name: "Foundation", percentage: 5},
-                            {name: "Bootstrap", percentage: 5},
-                            {name: "Foundation", percentage: 5}
-                        ]
-                    },
-                    {
-                        bgColor: '#fff',
-                        name: "API Providers",
-                        languages: [
-                            {name: "OAUTH", percentage: 5},
-                            {name: "REST", percentage: 5},
-                            {name: "Google API", percentage: 4.5},
-                            {name: "Facebook API", percentage: 4.5},
-                            {name: "LinkedIn API", percentage: 4.5},
-                            {name: "Twitter API", percentage: 4.5},
-                            {name: "Other APIs", percentage: 4}
-                        ]
-                    },
-                    {
-                        logo: 'img/java-oracle.png',
-                        bgColor: '#fff',
-                        name: "JAVA",
-                        languages: [
-                            {name: "JAVA", percentage: 4},
-                            {name: "GWT", percentage: 3},
-                            {name: "Spring MVC", percentage: 2.5},
-                            {name: "Others", percentage: 0.5}
-                        ]
-                    },
-                    {
-                        logo: 'img/mslogo.png',
-                        bgColor: '#fff',
-                        name: "Microsoft",
-                        languages: [
-                            {name: "C#", percentage: 3},
-                            {name: "ASP", percentage: 2.5},
-                            {name: "Others", percentage: 0.5}
-                        ]
-                    }],
-                server: [
-                    {
-                        logo: '',
-                        name: "Linux",
-                        bgColor: '#fff',
-                        languages: [
-                            {name: "Debian", percentage: 4.5},
-                            {name: "RedHat", percentage: 3},
-                            {name: "Centos", percentage: 2},
-                            {name: "Suze", percentage: 2.5}
-                        ]
-                    },
-                    {
-                        logo: '',
-                        name: "Databases",
-                        bgColor: '#fff',
-                        languages: [
-                            {name: "MySQL", percentage: 4},
-                            {name: "MariaDB", percentage: 4},
-                            {name: "MongoDB", percentage: 3.5},
-                            {name: "PostgreSQL", percentage: 2},
-                            {name: "SQL Server", percentage: 0}
-                        ]
-                    }, {
-                        logo: '',
-                        name: "Web Servers",
-                        bgColor: '#fff',
-                        languages: [
-                            {name: "Apache2", percentage: 4.5},
-                            {name: "NGinX", percentage: 4},
-                            {name: "Express", percentage: 4},
-                            {name: "IIS", percentage: 0}
-                        ]
-                    }
-                ],
-                softwares: [
-                    {
-                        logo: '',
-                        name: "Google",
-                        bgColor: '#fff',
-                        languages: [
-                            {name: "Webmaster", percentage: 4.5},
-                            {name: "Analytics", percentage: 4.5},
-                            {name: "Adwords", percentage: 3},
-                            {name: "Double Click", percentage: 4.5}
-                        ]
-                    },
-                    {
-                        logo: '',
-                        name: "Graphic editors",
-                        bgColor: '#fff',
-                        languages: [
-                            {name: "Gimp", percentage: 3},
-                            {name: "Photoshop CE", percentage: 2.5}
-                        ]
-                    },
-                    {
-                        logo: '',
-                        name: "Code Editors",
-                        languages: [
-                            {name: "Netbeans", percentage: 4.5},
-                            {name: "WebStorm", percentage: 4},
-                            {name: "Geany", percentage: 4},
-                            {name: "Visual Studio", percentage: 3},
-                            {name: "Vi", percentage: 1}
-                        ]
-                    }
-                ]
-
-            };
+            return data.skills;
         };
 
         this.get_interests = function () {
-            return [{
-                name: "Kite Surfing",
-                description: "“The best surfer out there is the one having the most fun.“ – Phil Edwards",
-                photo: "https://static.groupon.com.au/52/56/1351579815652.jpg"
-            }, {
-                name: "Travelling",
-                description: "“You don’t have to be rich to travel well.” – Eugene Fodor",
-                photo: "https://worldwantswandering.files.wordpress.com/2014/01/tumblr_mbep0irkhi1rcptxoo1_500.jpg"
-            }, {
-                name: "Friends",
-                description: "Two persons cannot long be friends if they cannot forgive each other's little failings.",
-                photo: "http://facecover.net/Upload/friends_quote_10709.jpg"
-            }];
+            return data.interests;
         };
 
         this.get_travels = function() {
-            return [
-                {
-                    country: "Cameroon",
-                    cities: ["Yaounde"],
-                    description: "I grew up there"
-                },
-                {
-                    country: "Djibouti",
-                    cities: ["Djibouti"],
-                    description: "I grew up there"
-                },
-                {
-                    country: "France",
-                    cities: ["Paris", "Carcassonne", "Perpignan","Grenoble", "Montpellier"],
-                    description: ""
-                },
-                {
-                    country: "Sudan",
-                    cities: ["Karthoum"],
-                    description: ""
-                },
-                {
-                    country: "Australia",
-                    cities: ["Perth", "Sydney"],
-                    description: ""
-                }
-            ]
+            return data.travels;
         };
 
 
 
         this.get_technology_used = function(){
-            return [
-                {
-                    name: "AngularJS",
-                    version: "1.3.*",
-                    url: "https://angularjs.org/",
-                    licence: "MIT licence",
-                    comment: "This awesome dual-binding javascript framework made by geniuses @ Google"
-                },
-                {
-                    name: "Material Design",
-                    version: "0.8.3",
-                    url: "https://github.com/angular/material/",
-                    licence: "No licence",
-                    comment: "This revolutionary and complete guide to modern mobile design made by Google - Port to AngularJS in progress"
-                },
-                {
-                    name: "Node.JS",
-                    version: "0.12.1",
-                    url: "https://nodejs.org/",
-                    licence: "Multiple Licence",
-                    comment: "The most performant server side technology untill now"
-                },
-                {
-                    name: "Bower",
-                    version: "1.3.12",
-                    url: "http://bower.io/",
-                    licence: "No licence",
-                    comment: "A package manager for client side javascript files"
-                },
-                {
-                    name: "Grunt",
-                    version: "0.4.5",
-                    url: "http://gruntjs.com/",
-                    licence: "No Licence",
-                    comment: "A Task manager used with uglify, annotate, concat, jslint & csslint, angular template caching and html minification"
-                },
-                {
-                    name: "Flippy",
-                    version: "0",
-                    url: "MIT Licence",
-                    licence: " https://github.com/zwacky/angular-flippy",
-                    comment: "An AngularJS Flippy directive."
-                },
-                {
-                    name: "Font Awesome",
-                    version: "4.3.0",
-                    url: "MIT Licence, OFL-1.1, CC-BY-3.0",
-                    licence: " https://github.com/zwacky/angular-flippy",
-                    comment: "A large collection of icons embeded in a font"
-                },
-                {
-                    name: "TagCanvas",
-                    version: "2.2.0",
-                    url: "http://www.goat1000.com/tagcanvas.php",
-                    licence: "LGPL v3",
-                    comment: "TagCanvas is a Javascript class which will draw and animate a HTML5  canvas based tag cloud"
-                },
-                {
-                    name: "MomentJS",
-                    version: "2.9.0",
-                    url: "http://momentjs.com/",
-                    licence: "MIT Licence",
-                    comment: "Parse, validate, manipulate, and display dates in JavaScript."
-                }
-            ];
+            return data.technology_used;
         };
     }]);
+})();;/**
+ * Created by antoine on 29/10/15.
+ */
+(function () {
+    'use strict';
+
+// Declare app level module which depends on views, and components
+    angular.module('Antoine_Lucas_CV').controller("AppCtrl", ['$scope', '$mdMedia', '$timeout', '$document', '$window', '$mdSidenav', '$parse', '$log', function ($scope, $mdMedia, $timeout, $document, $window, $mdSidenav, $parse, $log) {
+            $scope.customQuery = $mdMedia('(min-width: 500px)');
+            $scope.anotherCustom = $mdMedia('max-width: 400px');
+
+
+            if ("ontouchstart" in window || navigator.msMaxTouchPoints)
+            {
+                $scope.isTouch = true;
+                $scope.flex_small_content = 100;
+            } else {
+                $scope.isTouch = false;
+                $scope.flex_small_content = 85;
+            }
+
+            function animateSwipe() {
+                if ($scope.isTouch) {
+                    $scope.showSlide = true;
+                    $scope.showFace = false;
+                    $timeout(function () {
+                        $scope.showSlide = false;
+                        $scope.showFace = true;
+                    }, 3000);
+                }
+                else {
+                    $scope.showSlide = false;
+                    $scope.showFace = true;
+                }
+
+            }
+            animateSwipe();
+
+
+            function checkSideBarsDimension() {
+                if ($mdMedia('max-width: 400px')) {
+
+                    angular.element(document.getElementById('smallLeft'))
+                        .removeClass('small-sidenav')
+                        .removeClass('smaill-sidenav');
+
+                    angular.element(document.getElementById('right'))
+                        .removeClass('large-contact-sidenav')
+                        .removeClass('medium-contact-sidenav')
+                        .removeClass('small-contact-sidenav')
+                        .addClass('small-contact-sidenav');
+                }
+                else if ($mdMedia('max-width: 500px')) {
+
+                    angular.element(document.getElementById('smallLeft')).removeClass('small-sidenav');
+                    angular.element(document.getElementById('right'))
+                        .removeClass('large-contact-sidenav')
+                        .removeClass('medium-contact-sidenav')
+                        .removeClass('small-contact-sidenav')
+                        .addClass('medium-contact-sidenav');
+                }
+                else if ($mdMedia('max-width: 600')) {
+
+                    angular.element(document.getElementById('right'))
+                        .removeClass('large-contact-sidenav')
+                        .removeClass('medium-contact-sidenav')
+                        .removeClass('small-contact-sidenav')
+                        .addClass('medium-contact-sidenav');
+                }
+                else {
+
+                    angular.element(document.getElementById('right'))
+                        .removeClass('large-contact-sidenav')
+                        .removeClass('medium-contact-sidenav')
+                        .removeClass('small-contact-sidenav')
+                        .addClass('large-contact-sidenav');
+                }
+            }
+
+            angular.element($window).bind('orientationchange', function () {
+                checkSideBarsDimension();
+            });
+            angular.element($window).bind('resize', function () {
+                checkSideBarsDimension();
+            });
+            checkSideBarsDimension();
+
+
+            $scope.swipeRight = function () {
+                if ($mdMedia('max-width: 600px') === true) {
+                    console.log("max-width2 : 500");
+                    $mdSidenav('smallLeft').toggle();
+                }
+                else {
+                    console.log("max-width2 > 600");
+                    $mdSidenav('largeLeft').toggle();
+                }
+
+                $mdSidenav('right').close();
+            };
+
+            $scope.swipeLeft = function () {
+                $mdSidenav('largeLeft').close();
+                $mdSidenav('smallLeft').close();
+                $mdSidenav('right').toggle();
+            };
+
+            $scope.goToAnchor = function (id) {
+
+                var someElement = angular.element(document.getElementById(id));
+
+                $mdSidenav('largeLeft').close();
+                $mdSidenav('smallLeft').close();
+                $document.scrollToElement(someElement, -10, 1000).then(function () {
+                    /*var scrollaction =  $document.find("[scrollaction]")[0].attributes.scrollaction.value;
+                     scrollaction = $parse(scrollaction)($scope);
+                     angular.element("#" + scrollaction[id]).css("background-color", "#EBEBEB");*/
+
+                });
+
+
+            };
+
+            $scope.toggleLeft = function () {
+                $mdSidenav('smallLeft').toggle()
+                    .then(function () {
+                        $log.debug("toggle left is done");
+                    });
+            };
+            $scope.toggleLeft2 = function () {
+                $mdSidenav('largeLeft').toggle()
+                    .then(function () {
+                        $log.debug("toggle left2 is done");
+                    });
+            };
+
+
+        }]);
+
 })();;(function () {
     'use strict';
 
@@ -813,6 +825,15 @@
             .controller('EducationCtrl', ['$scope', 'DataSource', function ($scope, DataSource) {
 
                 $scope.education = DataSource.get_education();
+
+            }]);
+})();;(function () {
+    'use strict';
+
+    angular.module('Antoine_Lucas_CV.interests', ['Antoine_Lucas_CV.services'])
+            .controller('InterestsCtrl', ['$scope', 'DataSource', function ($scope, DataSource) {
+
+                $scope.interests = DataSource.get_interests();
 
             }]);
 })();;(function () {
@@ -1004,7 +1025,7 @@
                 $scope.technologies = DataSource.get_technology_used();
 
             }]);
-})();;angular.module('templates-main', ['views/contact.min.html', 'views/education.min.html', 'views/form.min.html', 'views/hangout.min.html', 'views/intro.min.html', 'views/menu-content-header.min.html', 'views/menu-content1.min.html', 'views/menu-content2.min.html', 'views/menu.min.html', 'views/portfolio.min.html', 'views/professional.min.html', 'views/services.min.html', 'views/skype.min.html', 'views/skills.html']);
+})();;angular.module('templates-main', ['views/contact.min.html', 'views/education.min.html', 'views/form.min.html', 'views/hangout.min.html', 'views/interests.min.html', 'views/intro.min.html', 'views/menu-content-header.min.html', 'views/menu-content1.min.html', 'views/menu-content2.min.html', 'views/menu.min.html', 'views/portfolio.min.html', 'views/professional.min.html', 'views/services.min.html', 'views/skype.min.html', 'views/skills.html']);
 
 angular.module("views/contact.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/contact.min.html",
@@ -1028,6 +1049,11 @@ angular.module("views/hangout.min.html", []).run(["$templateCache", function($te
     "<div id=\"placeholder-div\"></div><p style=\"color:#fff\">A Google account is required to proceed with Hangout.</p>");
 }]);
 
+angular.module("views/interests.min.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("views/interests.min.html",
+    "<section class=\"timeline\"><div class=\"timeline-item\" style=\"margin-bottom:0px !important\"><div class=\"timeline-head\"><i class=\"fa fa-lightbulb-o\"></i></div><div class=\"timeline-head-content\"><h3>Interests</h3></div></div></section><section layout=\"row\" ng-repeat=\"(i,int) in interests\"><md-content flex class=\"timeline\"><div><div class=\"timeline-item-date\" hide show-lg show-gt-lg show-md flex></div><div class=\"timeline-item-trigger\" slide-toggle=\"#edu{{i}}\"><span><i class=\"fa fa-minus-circle\" style=\"color: white\" ng-show=\"int.collapsed\" ng-click=\"int.collapsed = !int.collapsed\"></i> <i class=\"fa fa-plus-circle\" style=\"color: white\" ng-show=\"!int.collapsed\" ng-click=\"int.collapsed = !int.collapsed\"></i></span></div></div><md-content flex><div hide-sm hide-md class=\"timeline-arrow\"><i></i></div><md-content class=\"timeline-item-content\" slide-toggle=\"#int{{i}}\" flex><h3 class=\"timeline-item-title\" data-toggle=\"collapse\" ng-click=\"int.collapsed = !int.collapsed\" data-target=\"#int{{i}}\">{{int.name}} <span class=\"interests\">{{int.description}}</span></h3><div class=\"slideable\" id=\"int{{i}}\"><img src=\"{{int.photo}}\" class=\"interest-img\"></div></md-content></md-content></md-content></section><md-divider></md-divider>");
+}]);
+
 angular.module("views/intro.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/intro.min.html",
     "<md-divider></md-divider><h3>I'm an Australia & Europe based web application developer. I am currently available for remote work.<br>I <span style=\"color:red\">&#x3C;3</span> creating modern web and mobile solutions, for startups or small business.</h3><md-divider></md-divider>");
@@ -1040,12 +1066,12 @@ angular.module("views/menu-content-header.min.html", []).run(["$templateCache", 
 
 angular.module("views/menu-content1.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/menu-content1.min.html",
-    "<md-content md-padding md-margin style=\"padding: 10px\"><md-list><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item></md-list></md-content>");
+    "<md-content md-padding md-margin style=\"padding: 10px\"><md-list><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item></md-list></md-content>");
 }]);
 
 angular.module("views/menu-content2.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/menu-content2.min.html",
-    "<md-content md-padding md-margin style=\"padding: 10px\"><div class=\"logo\"><h2>Antoine LUCAS <span>Web Application Developer</span></h2></div><md-list><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\" id=\"intro_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex id=\"resume_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex id=\"service_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex id=\"skills_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex id=\"contact_btn\"><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item></md-list><div class=\"bg-portrait\" ng-show=\"showPortrait\"></div></md-content>");
+    "<md-content md-padding md-margin style=\"padding: 10px\"><div class=\"logo\"><h2>Antoine LUCAS <span>Web Application Developer</span></h2></div><md-list><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\" id=\"intro_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex id=\"resume_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex id=\"education_btn\"><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex id=\"interests_btn\"><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex id=\"service_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex id=\"skills_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex id=\"technologies_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex id=\"contact_btn\"><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item></md-list><div class=\"bg-portrait\" ng-show=\"showPortrait\"></div></md-content>");
 }]);
 
 angular.module("views/menu.min.html", []).run(["$templateCache", function($templateCache) {
@@ -1056,7 +1082,7 @@ angular.module("views/menu.min.html", []).run(["$templateCache", function($templ
     "               top: 10px\" ng-click=\"toggleLeft2()\"></i> <i class=\"fa fa-2x fa-bars\" hide show-sm style=\"background-color: #fff;border : 3px solid #575757;border-radius: 5px;padding: 5px;\n" +
     "               position:fixed;\n" +
     "               left: 10px;\n" +
-    "               top: 10px\" ng-click=\"toggleLeft()\"></i></md-content><md-content layout=\"left\" hide-sm flex=\"25\" style=\"position:fixed;top : 25px;left :2%;padding : 0px !important\"><div ng-include=\"'views/menu-content2.html'\" ng-controller=\"MenuCtrl\"></div></md-content><md-content flex-lg=\"75\" flex-gt-lg=\"80\" flex-sm=\"{{flex_small_content}}\" flex-md=\"70\" layout=\"right\" class=\"md-padding\" style=\"background-color: transparent\"><div layout=\"column\" layout-fill layout-align=\"top center\"><section class=\"intro\" id=\"intro\"><div id=\"intro-name\"><span>Antoine</span><div class=\"fade-show-container\"><img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/Slide.png\" id=\"slideImg\" ng-show=\"showSlide\"> <img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/me.png\" alt=\"Antoine LUCAS\" id=\"photoImg\" ng-show=\"showFace\"></div><span>Lucas</span><div style=\"clear:both\"></div></div><div ng-include=\" 'views/intro.html'\"></div></section><section class=\"section nicesection\" id=\"resume\"><div><h2 class=\"mtcon-title\">Resume</h2></div><div ng-include=\" 'views/professional.html'\" ng-controller=\"ProCtrl\"></div><div ng-include=\" 'views/education.html'\" ng-controller=\"EducationCtrl\"></div><div ng-include=\" 'views/interests.html'\" ng-controller=\"InterestsCtrl\"></div></section><section class=\"section nicesection\" id=\"services\"><div><h2 class=\"mtcon-title\">Services</h2></div><div ng-include=\" 'views/services.html'\" ng-controller=\"ServiceCtrl\"></div></section><section class=\"section nicesection\" id=\"skills\"><div><h2 class=\"mtcon-title\">Skills</h2></div><div ng-include=\" 'views/skills.html'\" ng-controller=\"SkillsCtrl\"></div></section><section class=\"section nicesection\" id=\"technologies\"><div><h2 class=\"mtcon-title\">Technology used for this page</h2></div><div ng-include=\" 'views/technologies.html'\" ng-controller=\"TechnologiesCtrl\"></div></section></div><div flex></div></md-content></section></div>");
+    "               top: 10px\" ng-click=\"toggleLeft()\"></i></md-content><md-content layout=\"left\" hide-sm flex=\"25\" style=\"position:fixed;top : 25px;left :2%;padding : 0px !important\"><div ng-include=\"'views/menu-content2.html'\" ng-controller=\"MenuCtrl\"></div></md-content><md-content flex-lg=\"75\" flex-gt-lg=\"80\" flex-sm=\"{{flex_small_content}}\" flex-md=\"70\" layout=\"right\" class=\"md-padding\" style=\"background-color: transparent\"><div layout=\"column\" layout-fill layout-align=\"top center\"><section class=\"intro\" id=\"intro\"><div id=\"intro-name\"><span>Antoine</span><div class=\"fade-show-container\"><img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/Slide.png\" id=\"slideImg\" ng-show=\"showSlide\"> <img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/me.png\" alt=\"Antoine LUCAS\" id=\"photoImg\" ng-show=\"showFace\"></div><span>Lucas</span><div style=\"clear:both\"></div></div><div ng-include=\" 'views/intro.html'\"></div></section><section class=\"section nicesection\"><div><h2 class=\"mtcon-title\">Resume</h2></div><div id=\"resume\" ng-include=\" 'views/professional.html'\" ng-controller=\"ProCtrl\"></div><div id=\"education\" ng-include=\" 'views/education.html'\" ng-controller=\"EducationCtrl\"></div><div id=\"interests\" ng-include=\" 'views/interests.html'\" ng-controller=\"InterestsCtrl\"></div></section><section class=\"section nicesection\" id=\"services\"><div><h2 class=\"mtcon-title\">Services</h2></div><div ng-include=\" 'views/services.html'\" ng-controller=\"ServiceCtrl\"></div></section><section class=\"section nicesection\" id=\"skills\"><div><h2 class=\"mtcon-title\">Skills</h2></div><div ng-include=\" 'views/skills.html'\" ng-controller=\"SkillsCtrl\"></div></section><section class=\"section nicesection\" id=\"technologies\"><div><h2 class=\"mtcon-title\">Technology used for this page</h2></div><div ng-include=\" 'views/technologies.html'\" ng-controller=\"TechnologiesCtrl\"></div></section></div><div flex></div></md-content></section></div>");
 }]);
 
 angular.module("views/portfolio.min.html", []).run(["$templateCache", function($templateCache) {

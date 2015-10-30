@@ -11,8 +11,6 @@
 
                         var scrollAction = $scope.scrollaction;
 
-                        console.log(element);
-
                         angular.element($window).bind("scroll", function () {
 
 

@@ -6,7 +6,10 @@
                              resume : 'resume_btn',
                              intro: 'intro_btn',
                              services: 'service_btn',
-                             skills: 'skills_btn'
+                             skills: 'skills_btn',
+                             education: 'education_btn',
+                             interests: 'interests_btn',
+                             technologies: 'technologies_btn'
                              }"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
@@ -22,8 +25,8 @@
         <link rel="stylesheet" href="bower_components/ng-slider/dist/css/ng-slider.min.css">
         <link rel="stylesheet" href="bower_components/angular-flippy/dist/css/flippy.min.css">
         <link rel="stylesheet" href="bower_components/angular-flippy/dist/css/flippy-fancy.min.css">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
-        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+        <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">-->
+        <!--<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>-->
 
         <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
         <script >
@@ -37,6 +40,7 @@
 
 
         <link href="css/a-lucas.resume.css" rel="stylesheet" />
+        <link href="css/fonts.css" rel="stylesheet" />
     </head>
     <body >
         <!--[if lt IE 7]>
@@ -48,7 +52,7 @@
         <!-- In production use:
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
         -->
-        <script src="bower_components/bower-tagcanvas/tagcanvas.js"></script>
+         <script src="bower_components/bower-tagcanvas/tagcanvas.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-aria/angular-aria.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -66,8 +70,8 @@
         <script src="directives/slide.js"></script>
         <script src="directives/unsafeHtml.js"></script>
 
+        <script src="data.js"></script>
         <script src="services.js"></script>
-
 
         <script src="app-dev.js"></script>
 

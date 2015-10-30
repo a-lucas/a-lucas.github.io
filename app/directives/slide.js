@@ -58,17 +58,17 @@
                                 console.log("This is a double click. ignoring");
                                 return;
                             }
-                            console.log("click slidetoggle");
 
-                            if (!target)
+                            if (!target) {
                                 target = document.querySelector(attrs.slideToggle);
-                            if (!content)
+                            }
+                            if (!content) {
                                 content = target.querySelector('.slideable_content');
+                            }
 
                             if (!attrs.expanded) {
                                 content.style.border = '1px solid rgba(0,0,0,0)';
                                 var y = content.clientHeight;
-                                console.log(content.clientHeight);
                                 content.style.border = 0;
                                 target.style.height = y + 'px';
                             } else {

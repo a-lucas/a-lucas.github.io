@@ -12,9 +12,11 @@ module.exports = function (grunt) {
                     "app/directives/unsafeHtml.js",
                     "app/directives/scroll.js",
                     "app/app.js",
+                    "app/data.js",
                     "app/services.js",
                     "app/controllers/app.js",
                     "app/controllers/education.js",
+                    "app/controllers/interests.js",
                     "app/controllers/portfolio.js",
                     "app/controllers/professional.js",
                     "app/controllers/services.js",
@@ -117,6 +119,7 @@ module.exports = function (grunt) {
                     'app/views/form.min.html' : 'app/views/form.html',
                     'app/views/hangout.min.html' : 'app/views/hangout.html',
                     'app/views/intro.min.html' : 'app/views/intro.html',
+                    'app/views/interests.min.html' : 'app/views/interests.html',
                     'app/views/menu-content-header.min.html' : 'app/views/menu-content-header.html',
                     'app/views/menu-content1.min.html' : 'app/views/menu-content1.html',
                     'app/views/menu-content2.min.html' : 'app/views/menu-content2.html',
@@ -126,7 +129,7 @@ module.exports = function (grunt) {
                     'app/views/services.min.html' : 'app/views/services.html',
                     //'app/views/skills.min.html' : 'app/views/skills.html',
                     'app/views/skype.min.html' : 'app/views/skype.html',
-                    'app/index.html' : 'app/index.dev.html'
+                    'app/index.html' : 'app/index.prod.html'
                 }
             }
         },

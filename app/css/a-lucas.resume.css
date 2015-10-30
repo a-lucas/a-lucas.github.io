@@ -3,6 +3,11 @@
     padding: 0 !important;
 }
 
+
+.interest-img {
+    width:100% !important;
+}
+
 /**
 @todo : 
 tags & contact form
@@ -188,6 +193,8 @@ ul{
 #intro-name{
     margin: auto;
     position: relative !important;
+    text-align: center;
+    width: auto;
 }
 #intro-name, #intro-name span {
     font-weight: bold;
@@ -198,15 +205,15 @@ ul{
 .fade-show-container{
     padding: 0;
     margin: 0;
-    height: 140px;
-    width: 140px;
+    height: 135px;
+    width: 135px;
     float:left;
     position: relative;
-    display: inline;
 }
 @media screen and (min-width:1200px){
-    #intro-name{
-        width: 450px;
+
+    #intro-name {
+        width: 460px;
     }
     #intro-name, #intro-name span {
         font-size : 60px;
@@ -215,9 +222,11 @@ ul{
     }
 }
 @media screen and (min-width:900px) and (max-width: 1200px){
-    #intro-name{
-        width: 350px;
+
+    #intro-name {
+        width: 320px;
     }
+
     #intro-name, #intro-name span {
         font-size : 40px;
         margin-top : 5px;
@@ -225,9 +234,11 @@ ul{
     }
 }
 @media screen and (min-width:600px) and (max-width: 900px){
-    #intro-name{
-        width: 310px;
+
+    #intro-name {
+        width: 300px;
     }
+
     #intro-name, #intro-name span {
         font-size : 35px;
         margin-top : 5px;
@@ -235,9 +246,13 @@ ul{
     }
 }
 @media screen and  (max-width: 600px){
-    #intro-name{
-        width: 250px;
+
+
+    #intro-name {
+        width: 270px;
     }
+
+
     #intro-name, #intro-name span {
         font-size : 25px;
         margin-top : 5px;
@@ -290,6 +305,7 @@ ul{
 
 .timeline {
     margin-left: 15px;
+    /*background-color: transparent !important;*/
 
 }
 .timeline-item {
@@ -405,9 +421,15 @@ ul{
     color: #216c70;
     text-decoration: underline;
 }
+
 .timeline-item-title span.place{
     color: #a36933;
 }
+
+.timeline-item-title span.interests{
+    color: #0040D0;
+}
+
 
 @media screen and (max-width: 600px){
     .timeline {
@@ -428,7 +450,7 @@ ul{
     .timeline-head{
         margin-left: 0;
     }
-    .timeline-item-title span.place{
+    .timeline-item-title span.place, .timeline-item-title span.interests{
         display: block;
     }
 }
@@ -452,7 +474,7 @@ ul{
     .timeline-head{
         margin-left: 90px;
     }
-    .timeline-item-title span.place{
+    .timeline-item-title span.place, .timeline-item-title span.interests{
         display: block;
     }
     .timeline-item-date{
@@ -479,7 +501,7 @@ ul{
     .timeline-head{
         margin-left: 130px;
     }
-    .timeline-item-title span.place{
+    .timeline-item-title span.place, .timeline-item-title span.interests{
         display: inline;
     }
 }
@@ -504,10 +526,7 @@ ul{
     .timeline-head{
         margin-left: 130px;
     }
-    .timeline-item-title span.place{
-        display: block;
-    }
-    .timeline-item-title span.place{
+    .timeline-item-title span.place, .timeline-item-title span.interests{
         display: inline;
     }
 }
