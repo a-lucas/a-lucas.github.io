@@ -13,7 +13,7 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["AngularJS", "Maven", "JBOSS"],
-            "description": "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governemental service provider to allow their clients to register new services. The CRM I worked on had 20+ AngularJS nested forms and we managed to meet the 4 weeks deadline refactoring the whole Javascript code and multiply the sprint story points by 4.",
+            "description": "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental service provider to allow their clients to register new services. The CRM I worked on had 20+ AngularJS nested forms and we managed to meet the 4 weeks deadline refactoring the whole Javascript code and multiply the sprint story points by 4.",
             "website_url": null,
             "collapsed": false
         },
@@ -27,7 +27,7 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7"],
-            "description": "Bauer Media needed the help of some extra contactors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time.",
+            "description": "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time.",
             "website_url": "http://www.homestolove.com.au",
             "collapsed": false
         },
@@ -54,7 +54,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "description": "<ul><li>I designed and developed a JQuery based CRM with a web based mail client. Mails were retrieved via the IMAP protocol through a custom PHP socket class, and then stored into a MySQL database. They were linked to companies and contacts, then tagged with Leads / Follow Ups and any custom labels. Users were able to access multiple mailboxes at once. An administration interface allowed administrator to create virtual mailboxes, with read/reply permissions.</li><li>Ten years of electronic correspondence have been imported from a domino legacy system to this new MySQL database</li><li>I wrote the first version of webjobz.com, which was running on a Debian LAMP server (2GB ddr2 ram with an old CPU). The site was gettingthousands of unique visitors per day, and was generating dozens of different XML feeds. All was operating with minimal lag. Site uptime was > 99.99%</li><li>SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder</li><li>I wrote a PHP framework from scratch to allow a unified  URLs rewritting accros a network of severall websites</li><li>I designed the job board search & refine  backend and frontend</li><li>System administrator: I maintained successfully a LAMP server stack across 3 dedicated machines. I implemented a MySQL replication backup strategy </li></ul>",
+            "description": "<ul><li>I designed and developed a JQuery based CRM with a web based mail client. Mails were retrieved via the IMAP protocol through a custom PHP socket class, and then stored into a MySQL database. They were linked to companies and contacts, then tagged with Leads / Follow Ups and any custom labels. Users were able to access multiple mailboxes at once. An administration interface allowed administrator to create virtual mailboxes, with read/reply permissions.</li><li>Ten years of electronic correspondence have been imported from a domino legacy system to this new MySQL database</li><li>I wrote the first version of webjobz.com, which was running on a Debian LAMP server (2GB ddr2 ram with an old CPU). The site was getting thousands of unique visitors per day, and was generating dozens of different XML feeds. All was operating with minimal lag. Site uptime was > 99.99%</li><li>SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder</li><li>I wrote a PHP framework from scratch to allow a unified  URLs rewritting accros a network of severall websites</li><li>I designed the job board search & refine  backend and frontend</li><li>System administrator: I maintained successfully a LAMP server stack across 3 dedicated machines. I implemented a MySQL replication backup strategy </li></ul>",
             "tags": ["PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
             "website_url": "http://www.webjobz.com/jobs",
             "collapsed": false
@@ -83,7 +83,7 @@ var data  = {
                 "town": "Kartoum"
             },
             "description": "<ul><li>I did teach Maths Physics & Biology to high school students from diplomatic backgrounds.</li></ul>",
-            "tags": ["Patience", "Kindnes", "Authority"],
+            "tags": ["Patience", "Kindness", "Authority", "Communication"],
             "website_url": "",
             "collapsed": false
         },
@@ -111,7 +111,7 @@ var data  = {
                 "country": "France",
                 "town": "Grenoble"
             },
-            "description": "I studied Geotechnic at Polytech (formely known as ISTG) for two years before deciding to study information tehcnologies",
+            "description": "I studied Geotechnic at Polytech (formely known as ISTG) for two years before deciding to study information technologies",
             "website_url": "http://www.polytech-grenoble.fr/",
             "collapsed": false
         },
@@ -123,7 +123,7 @@ var data  = {
                 "country": "France",
                 "town": "Montpellier"
             },
-            "description": "I have a solid formation on theorical and practical aspects in networking, databases, information systems, programming, image processing and artificial intelligence.",
+            "description": "I have a solid formation on theoretical and practical aspects in networking, databases, information systems, programming, image processing and artificial intelligence.",
             "website_url": "http://en.wikipedia.org/wiki/Montpellier_2_University",
             "collapsed": false
         }
@@ -330,7 +330,7 @@ var data  = {
             "description": "“The best surfer out there is the one having the most fun.“ – Phil Edwards",
             "photo": "img/kiteSurf.jpg"
         }, {
-            "name": "Travelling",
+            "name": "Traveling",
             "description": "“You don’t have to be rich to travel well.” – Eugene Fodor",
             "photo": "img/travelling.jpg"
         }, {

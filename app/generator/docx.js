@@ -37,7 +37,7 @@ pObj.addText ( 'http://a-lucas.github.io/resume/app/#/AntoineLucas', { font_face
 
 var pObj = docx.createP ();
 pObj.options.align = 'center';
-pObj.addText('I am a Web DevOps with severall years experiences developing complex solutions. I am not just a developer, I have good BA and BI skills that helps deliver the best quality product in a minimum of iterations.', { font_face: 'Arial', font_size: 12, color: 'D11F3F' });
+pObj.addText('I am a Web DevOps with several years experiences developing complex solutions. I am not just a developer, I have good BA and BI skills that helps deliver the best quality product in a minimum of iterations.', { font_face: 'Arial', font_size: 12, color: 'D11F3F' });
 
 var pObj = docx.createP ();
 pObj.options.align = 'center';
