@@ -1,0 +1,17 @@
+<section layout="row">
+
+    <md-content >
+
+        <div  layout="row">
+            <md-card ng-repeat="soc in social"  flex>
+                <a href="{{soc.url}}" target="_blank">
+                    <img ng-src="{{soc.logo_url}}" class="md-card-image" alt="{{soc.name}}">
+                </a>
+            </md-card>
+        </div>
+    </md-content>
+    <br /><br />
+</section>
+
+<md-divider></md-divider>
+

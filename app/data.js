@@ -2,19 +2,45 @@
  * Created by antoine on 29/10/15.
  */
 var data  = {
+
+    paper: {
+        first_name: "Antoine",
+        last_name: "LUCAS",
+        phone: "0424 207 292",
+        email: "antoine.lucas.australia@gmail.com",
+        headline: "I am a Web DevOps with several years experiences developing complex solutions."
+        + "I have a good knowledge of BA and BI aquire by practice."
+        + "Only available for contracts on site or remotly.",
+        info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
+        onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the downoad button."
+    },
     "work_experience" : [
+        {
+            "title": "FrontEnd Engineer",
+            "company_name": "BUPA",
+            "date_from": {"year": 2015, "month": 10},
+            "date_to": {"year": 2015, "month": 11},
+            "location": {
+                "country": "Australia",
+                "town": "Sydney"
+            },
+            "tags": ["AngularJS", "Team Foundation"],
+            "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following  chid birth for paents and friends - based on a sketch specification."}],
+            "website_url": 'http://theblueroom.bupa.com.au/first-1000-days#/',
+            "collapsed": false
+        },
         {
             "title": "FrontEnd Problem Solver",
             "company_name": "Boomworks",
             "date_from": {"year": 2015, "month": 7},
-            "date_to": {},
+            "date_to": {"year": 2015, "month": 8},
             "location": {
                 "country": "Australia",
                 "town": "Sydney"
             },
             "tags": ["AngularJS", "Maven", "JBOSS"],
-            "description": "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental service provider to allow their clients to register new services. The CRM I worked on had 20+ AngularJS nested forms and we managed to meet the 4 weeks deadline refactoring the whole Javascript code and multiply the sprint story points by 4.",
-            "website_url": null,
+            "description": [{text: "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental sevice provider to speed up processing complex applicationns processing time."}],
+            "website_url": 'http://www.sydneywater.com.au/tapin/index.htm',
             "collapsed": false
         },
         {
@@ -27,7 +53,7 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7"],
-            "description": "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time.",
+            "description": [{text: "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time."}],
             "website_url": "http://www.homestolove.com.au",
             "collapsed": false
         },
@@ -41,7 +67,11 @@ var data  = {
                 "town": "Perth"
             },
             "tags": ["AngularJS", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack"],
-            "description": "<ul><li>Online police checks planning, architecture & cutting edge implementation</li><li>Custom CRM design, architecture & implementation</li><li>WebServices development</li><li>UX Design</li><li>Analytics & SEO Consulting</li></ul>",
+            "description": [{text: "Online police checks planning, architecture & cutting edge implementation"},
+                {text: "Custom CRM design, architecture & implementation"},
+                {text: "WebServices development"},
+                {text: "UX Design & optimization"},
+                {text: "Analytics & SEO Consulting"}],
             "website_url": "http://www.veritascheck.com.au",
             "collapsed": false
         },
@@ -54,8 +84,16 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "description": "<ul><li>I designed and developed a JQuery based CRM with a web based mail client. Mails were retrieved via the IMAP protocol through a custom PHP socket class, and then stored into a MySQL database. They were linked to companies and contacts, then tagged with Leads / Follow Ups and any custom labels. Users were able to access multiple mailboxes at once. An administration interface allowed administrator to create virtual mailboxes, with read/reply permissions.</li><li>Ten years of electronic correspondence have been imported from a domino legacy system to this new MySQL database</li><li>I wrote the first version of webjobz.com, which was running on a Debian LAMP server (2GB ddr2 ram with an old CPU). The site was getting thousands of unique visitors per day, and was generating dozens of different XML feeds. All was operating with minimal lag. Site uptime was > 99.99%</li><li>SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder</li><li>I wrote a PHP framework from scratch to allow a unified  URLs rewritting accros a network of severall websites</li><li>I designed the job board search & refine  backend and frontend</li><li>System administrator: I maintained successfully a LAMP server stack across 3 dedicated machines. I implemented a MySQL replication backup strategy </li></ul>",
-            "tags": ["PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
+            "description": [{text: "JQUERY based mail client with ACL Mail basex linked to a custom CRM."},
+                {text: "Ten years of electronic correspondence have been imported from a domino legacy system to this new CRM"},
+                {text: "3 Linux dedicated server setup strategy with backup server (MySQL replication & Rsync), Database server (MySQL + Sphinx) and file&API server (Apache XML / PHP / SOAP / REST)"},
+                {text: "Linux SysADMIN and maintenance"},
+                {text: "SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder to cite a few"},
+                {text: "XML job feeds"},
+                {text: "Creation of an organized and consistent multi-level location database from several sources"},
+                {text: "Optimized FullText search with ultra-fast grouping and count "},
+                {text: "Maintenance and implementation of Google DFP - We had the visit of a Google sales representative that told us that we were N1 in CTR in the australian market"}],
+            "tags": ["Ubuntu Server", "MySQL replication", "PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
             "website_url": "http://www.webjobz.com/jobs",
             "collapsed": false
         },
@@ -68,7 +106,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "description": "<ul><li>The project was a a clone of AliBaba. I mainly wrote a curl spider engine</li></ul>",
+            "description": [{text: "The project was a a clone of AliBaba. I mainly wrote a curl spider engine, a search engine and an admin interface"}],
             "tags": ["PHP5", "Curl", "AliBaba", "MySQL", "JQuery"],
             "website_url": "",
             "collapsed": false
@@ -82,7 +120,7 @@ var data  = {
                 "country": "Sudan",
                 "town": "Kartoum"
             },
-            "description": "<ul><li>I did teach Maths Physics & Biology to high school students from diplomatic backgrounds.</li></ul>",
+            "description": [{text: "I did teach Maths Physics & Biology to high school students from diplomatic backgrounds."}],
             "tags": ["Patience", "Kindness", "Authority", "Communication"],
             "website_url": "",
             "collapsed": false
@@ -96,8 +134,8 @@ var data  = {
                 "country": "France",
                 "town": "Montpellier"
             },
-            "description": "<ul><li>I did learn to code by my own doing some freelance jobs back in France.</li></ul>",
-            "tags": ["PHP", "Accounting", "LAMP", "Flash", "Suze", "Gentoo", "QMail"],
+            "description": [{text: "I did learn to code by my own doing some freelance jobs back in France."}],
+            "tags": ["PHP", "Accounting Certification", "LAMP", "Flash", "Suze", "Gentoo", "QMail"],
             "website_url": "",
             "collapsed": false
         }
@@ -366,6 +404,23 @@ var data  = {
             "description": ""
         }
     ],
+    social_accounts: [
+        {
+            name: "LinkedIn",
+            url: "https://au.linkedin.com/in/antoine-lucas-1a669b14 ",
+            logo_url: "https://content.linkedin.com/content/dam/brand/site/img/logo/logo-hero.png"
+        },
+        {
+            name: "AngelList",
+            url: "https://angel.co/antoine-lucas",
+            logo_url: "http://blogs-images.forbes.com/tomiogeron/files/2012/12/angellist-logo2.png"
+        },
+        {
+            name: "GitHub",
+            url: "https://github.com/a-lucas",
+            logo_url: "http://opendigitalscience.eu/wp-content/uploads/2015/09/github-logo.png"
+        },
+    ],
         "technology_used"
 :
     [
@@ -431,6 +486,13 @@ var data  = {
            "url": "http://momentjs.com/",
             "licence": "MIT licence",
             "comment": "Parse, validate, manipulate, and display dates in JavaScript."
+        },
+        {
+            "name": "Docx Templater",
+            "version": "1.2.1",
+            "url": "http://docxtemplater.readthedocs.org/",
+            "licence": "MIT licence",
+            "comment": "Generate a docx from a template - using angularJS parser."
         }
     ]
 };

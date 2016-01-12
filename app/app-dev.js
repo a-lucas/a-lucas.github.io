@@ -12,6 +12,7 @@
         'Antoine_Lucas_CV.contact',
         'Antoine_Lucas_CV.interests',
         'Antoine_Lucas_CV.technologies',
+        'Antoine_Lucas_CV.social',
         'Antoine_Lucas_CV.menu',
         'ngMaterial',
         'ngAnimate',

@@ -44,6 +44,10 @@
             return work_experience;
         };
 
+        this.get_social = function() {
+           return data.social_accounts;
+        };
+
         this.get_education = function () {
             var education = data.education;
             for(var i in education) {

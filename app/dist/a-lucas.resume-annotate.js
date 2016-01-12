@@ -132,6 +132,7 @@
     angular.module('Antoine_Lucas_CV', [
         'ngRoute',
         'Antoine_Lucas_CV.pro',
+        'Antoine_Lucas_CV.social',
         'Antoine_Lucas_CV.education',
         'Antoine_Lucas_CV.portfolio',
         'Antoine_Lucas_CV.service',
@@ -171,19 +172,45 @@
  * Created by antoine on 29/10/15.
  */
 var data  = {
+
+    paper: {
+        first_name: "Antoine",
+        last_name: "LUCAS",
+        phone: "0424 207 292",
+        email: "antoine.lucas.australia@gmail.com",
+        headline: "I am a Web DevOps with several years experiences developing complex solutions."
+        + "I have a good knowledge of BA and BI aquire by practice."
+        + "Only available for contracts on site or remotly.",
+        info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
+        onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the downoad button."
+    },
     "work_experience" : [
+        {
+            "title": "FrontEnd Engineer",
+            "company_name": "BUPA",
+            "date_from": {"year": 2015, "month": 10},
+            "date_to": {"year": 2015, "month": 11},
+            "location": {
+                "country": "Australia",
+                "town": "Sydney"
+            },
+            "tags": ["AngularJS", "Team Foundation"],
+            "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following  chid birth for paents and friends - based on a sketch specification."}],
+            "website_url": 'http://theblueroom.bupa.com.au/first-1000-days#/',
+            "collapsed": false
+        },
         {
             "title": "FrontEnd Problem Solver",
             "company_name": "Boomworks",
             "date_from": {"year": 2015, "month": 7},
-            "date_to": {},
+            "date_to": {"year": 2015, "month": 8},
             "location": {
                 "country": "Australia",
                 "town": "Sydney"
             },
             "tags": ["AngularJS", "Maven", "JBOSS"],
-            "description": "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governemental service provider to allow their clients to register new services. The CRM I worked on had 20+ AngularJS nested forms and we managed to meet the 4 weeks deadline refactoring the whole Javascript code and multiply the sprint story points by 4.",
-            "website_url": null,
+            "description": [{text: "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental sevice provider to speed up processing complex applicationns processing time."}],
+            "website_url": 'http://www.sydneywater.com.au/tapin/index.htm',
             "collapsed": false
         },
         {
@@ -196,7 +223,7 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7"],
-            "description": "Bauer Media needed the help of some extra contactors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time.",
+            "description": [{text: "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time."}],
             "website_url": "http://www.homestolove.com.au",
             "collapsed": false
         },
@@ -210,7 +237,11 @@ var data  = {
                 "town": "Perth"
             },
             "tags": ["AngularJS", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack"],
-            "description": "<ul><li>Online police checks planning, architecture & cutting edge implementation</li><li>Custom CRM design, architecture & implementation</li><li>WebServices development</li><li>UX Design</li><li>Analytics & SEO Consulting</li></ul>",
+            "description": [{text: "Online police checks planning, architecture & cutting edge implementation"},
+                {text: "Custom CRM design, architecture & implementation"},
+                {text: "WebServices development"},
+                {text: "UX Design & optimization"},
+                {text: "Analytics & SEO Consulting"}],
             "website_url": "http://www.veritascheck.com.au",
             "collapsed": false
         },
@@ -223,8 +254,16 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "description": "<ul><li>I designed and developed a JQuery based CRM with a web based mail client. Mails were retrieved via the IMAP protocol through a custom PHP socket class, and then stored into a MySQL database. They were linked to companies and contacts, then tagged with Leads / Follow Ups and any custom labels. Users were able to access multiple mailboxes at once. An administration interface allowed administrator to create virtual mailboxes, with read/reply permissions.</li><li>Ten years of electronic correspondence have been imported from a domino legacy system to this new MySQL database</li><li>I wrote the first version of webjobz.com, which was running on a Debian LAMP server (2GB ddr2 ram with an old CPU). The site was gettingthousands of unique visitors per day, and was generating dozens of different XML feeds. All was operating with minimal lag. Site uptime was > 99.99%</li><li>SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder</li><li>I wrote a PHP framework from scratch to allow a unified  URLs rewritting accros a network of severall websites</li><li>I designed the job board search & refine  backend and frontend</li><li>System administrator: I maintained successfully a LAMP server stack across 3 dedicated machines. I implemented a MySQL replication backup strategy </li></ul>",
-            "tags": ["PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
+            "description": [{text: "JQUERY based mail client with ACL Mail basex linked to a custom CRM."},
+                {text: "Ten years of electronic correspondence have been imported from a domino legacy system to this new CRM"},
+                {text: "3 Linux dedicated server setup strategy with backup server (MySQL replication & Rsync), Database server (MySQL + Sphinx) and file&API server (Apache XML / PHP / SOAP / REST)"},
+                {text: "Linux SysADMIN and maintenance"},
+                {text: "SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder to cite a few"},
+                {text: "XML job feeds"},
+                {text: "Creation of an organized and consistent multi-level location database from several sources"},
+                {text: "Optimized FullText search with ultra-fast grouping and count "},
+                {text: "Maintenance and implementation of Google DFP - We had the visit of a Google sales representative that told us that we were N1 in CTR in the australian market"}],
+            "tags": ["Ubuntu Server", "MySQL replication", "PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
             "website_url": "http://www.webjobz.com/jobs",
             "collapsed": false
         },
@@ -237,7 +276,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "description": "<ul><li>The project was a a clone of AliBaba. I mainly wrote a curl spider engine</li></ul>",
+            "description": [{text: "The project was a a clone of AliBaba. I mainly wrote a curl spider engine, a search engine and an admin interface"}],
             "tags": ["PHP5", "Curl", "AliBaba", "MySQL", "JQuery"],
             "website_url": "",
             "collapsed": false
@@ -251,8 +290,8 @@ var data  = {
                 "country": "Sudan",
                 "town": "Kartoum"
             },
-            "description": "<ul><li>I did teach Maths Physics & Biology to high school students from diplomatic backgrounds.</li></ul>",
-            "tags": ["Patience", "Kindnes", "Authority"],
+            "description": [{text: "I did teach Maths Physics & Biology to high school students from diplomatic backgrounds."}],
+            "tags": ["Patience", "Kindness", "Authority", "Communication"],
             "website_url": "",
             "collapsed": false
         },
@@ -265,8 +304,8 @@ var data  = {
                 "country": "France",
                 "town": "Montpellier"
             },
-            "description": "<ul><li>I did learn to code by my own doing some freelance jobs back in France.</li></ul>",
-            "tags": ["PHP", "Accounting", "LAMP", "Flash", "Suze", "Gentoo", "QMail"],
+            "description": [{text: "I did learn to code by my own doing some freelance jobs back in France."}],
+            "tags": ["PHP", "Accounting Certification", "LAMP", "Flash", "Suze", "Gentoo", "QMail"],
             "website_url": "",
             "collapsed": false
         }
@@ -280,7 +319,7 @@ var data  = {
                 "country": "France",
                 "town": "Grenoble"
             },
-            "description": "I studied Geotechnic at Polytech (formely known as ISTG) for two years before deciding to study information tehcnologies",
+            "description": "I studied Geotechnic at Polytech (formely known as ISTG) for two years before deciding to study information technologies",
             "website_url": "http://www.polytech-grenoble.fr/",
             "collapsed": false
         },
@@ -292,7 +331,7 @@ var data  = {
                 "country": "France",
                 "town": "Montpellier"
             },
-            "description": "I have a solid formation on theorical and practical aspects in networking, databases, information systems, programming, image processing and artificial intelligence.",
+            "description": "I have a solid formation on theoretical and practical aspects in networking, databases, information systems, programming, image processing and artificial intelligence.",
             "website_url": "http://en.wikipedia.org/wiki/Montpellier_2_University",
             "collapsed": false
         }
@@ -499,7 +538,7 @@ var data  = {
             "description": "“The best surfer out there is the one having the most fun.“ – Phil Edwards",
             "photo": "img/kiteSurf.jpg"
         }, {
-            "name": "Travelling",
+            "name": "Traveling",
             "description": "“You don’t have to be rich to travel well.” – Eugene Fodor",
             "photo": "img/travelling.jpg"
         }, {
@@ -534,6 +573,23 @@ var data  = {
             "cities": ["Perth", "Sydney"],
             "description": ""
         }
+    ],
+    social_accounts: [
+        {
+            name: "LinkedIn",
+            url: "https://au.linkedin.com/in/antoine-lucas-1a669b14 ",
+            logo_url: "https://content.linkedin.com/content/dam/brand/site/img/logo/logo-hero.png"
+        },
+        {
+            name: "AngelList",
+            url: "https://angel.co/antoine-lucas",
+            logo_url: "http://blogs-images.forbes.com/tomiogeron/files/2012/12/angellist-logo2.png"
+        },
+        {
+            name: "GitHub",
+            url: "https://github.com/a-lucas",
+            logo_url: "http://opendigitalscience.eu/wp-content/uploads/2015/09/github-logo.png"
+        },
     ],
         "technology_used"
 :
@@ -600,6 +656,13 @@ var data  = {
            "url": "http://momentjs.com/",
             "licence": "MIT licence",
             "comment": "Parse, validate, manipulate, and display dates in JavaScript."
+        },
+        {
+            "name": "Docx Templater",
+            "version": "1.2.1",
+            "url": "http://docxtemplater.readthedocs.org/",
+            "licence": "MIT licence",
+            "comment": "Generate a docx from a template - using angularJS parser."
         }
     ]
 };;/* 
@@ -646,6 +709,10 @@ var data  = {
                 work_experience[i].date_to = moment(work_experience[i].date_to);
             }
             return work_experience;
+        };
+
+        this.get_social = function() {
+           return data.social_accounts;
         };
 
         this.get_education = function () {
@@ -846,6 +913,15 @@ var data  = {
             }]);
 })();;(function () {
     'use strict';
+
+    angular.module('Antoine_Lucas_CV.social', ['Antoine_Lucas_CV.services'])
+        .controller('SocialCtrl', ['$scope', 'DataSource', function ($scope, DataSource) {
+
+            $scope.social = DataSource.get_social();
+
+        }]);
+})();;(function () {
+    'use strict';
     angular.module('Antoine_Lucas_CV.pro', ['Antoine_Lucas_CV.services'])
             .controller('ProCtrl', ['$scope', 'DataSource', function ($scope, DataSource) {
 
@@ -1025,7 +1101,7 @@ var data  = {
                 $scope.technologies = DataSource.get_technology_used();
 
             }]);
-})();;angular.module('templates-main', ['views/contact.min.html', 'views/education.min.html', 'views/form.min.html', 'views/hangout.min.html', 'views/interests.min.html', 'views/intro.min.html', 'views/menu-content-header.min.html', 'views/menu-content1.min.html', 'views/menu-content2.min.html', 'views/menu.min.html', 'views/portfolio.min.html', 'views/professional.min.html', 'views/services.min.html', 'views/skype.min.html', 'views/skills.html']);
+})();;angular.module('templates-main', ['views/contact.min.html', 'views/education.min.html', 'views/form.min.html', 'views/hangout.min.html', 'views/interests.min.html', 'views/intro.min.html', 'views/menu-content-header.min.html', 'views/menu-content1.min.html', 'views/menu-content2.min.html', 'views/menu.min.html', 'views/portfolio.min.html', 'views/professional.min.html', 'views/services.min.html', 'views/skype.min.html', 'views/social.min.html', 'views/skills.html']);
 
 angular.module("views/contact.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/contact.min.html",
@@ -1066,12 +1142,12 @@ angular.module("views/menu-content-header.min.html", []).run(["$templateCache", 
 
 angular.module("views/menu-content1.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/menu-content1.min.html",
-    "<md-content md-padding md-margin style=\"padding: 10px\"><md-list><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button href=\"generator/AntoineLucasResume.docx\" class=\"md-primary\" target=\"_blank\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></div></md-button></md-item-content></md-item><md-divider></md-divider></md-list></md-content>");
+    "<md-content md-padding md-margin style=\"padding: 10px\"><md-list><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('social')\" flex><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button href=\"generator/ANTOINE_LUCAS_RESUME.doc\" class=\"md-primary\" target=\"_blank\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></div></md-button></md-item-content></md-item><md-divider></md-divider></md-list></md-content>");
 }]);
 
 angular.module("views/menu-content2.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/menu-content2.min.html",
-    "<md-content md-padding md-margin style=\"padding: 10px\"><div class=\"logo\"><h2>Antoine LUCAS <span>Web Application Developer</span></h2></div><md-list><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\" id=\"intro_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex id=\"resume_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex id=\"education_btn\"><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex id=\"interests_btn\"><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex id=\"service_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex id=\"skills_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex id=\"technologies_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex id=\"contact_btn\"><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button href=\"generator/AntoineLucasResume.docx\" class=\"md-primary\" target=\"_blank\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></div></md-button></md-item-content></md-item></md-list><div class=\"bg-portrait\" ng-show=\"showPortrait\"></div></md-content>");
+    "<md-content md-padding md-margin style=\"padding: 10px\"><div class=\"logo\"><h2>Antoine LUCAS <span>Web Application Developer</span></h2></div><md-list><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\" id=\"intro_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex id=\"resume_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex id=\"education_btn\"><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('social')\" flex id=\"social_btn\"><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex id=\"interests_btn\"><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex id=\"service_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex id=\"skills_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex id=\"technologies_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex id=\"contact_btn\"><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button href=\"generator/ANTOINE_LUCAS_RESUME.doc\" class=\"md-primary\" target=\"_blank\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></div></md-button></md-item-content></md-item></md-list><div class=\"bg-portrait\" ng-show=\"showPortrait\"></div></md-content>");
 }]);
 
 angular.module("views/menu.min.html", []).run(["$templateCache", function($templateCache) {
@@ -1082,7 +1158,7 @@ angular.module("views/menu.min.html", []).run(["$templateCache", function($templ
     "               top: 10px\" ng-click=\"toggleLeft2()\"></i> <i class=\"fa fa-2x fa-bars\" hide show-sm style=\"background-color: #fff;border : 3px solid #575757;border-radius: 5px;padding: 5px;\n" +
     "               position:fixed;\n" +
     "               left: 10px;\n" +
-    "               top: 10px\" ng-click=\"toggleLeft()\"></i></md-content><md-content layout=\"left\" hide-sm flex=\"25\" style=\"position:fixed;top : 25px;left :2%;padding : 0px !important\"><div ng-include=\"'views/menu-content2.html'\" ng-controller=\"MenuCtrl\"></div></md-content><md-content flex-lg=\"75\" flex-gt-lg=\"80\" flex-sm=\"{{flex_small_content}}\" flex-md=\"70\" layout=\"right\" class=\"md-padding\" style=\"background-color: transparent\"><div layout=\"column\" layout-fill layout-align=\"top center\"><section class=\"intro\" id=\"intro\"><div id=\"intro-name\"><span>Antoine</span><div class=\"fade-show-container\"><img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/Slide.png\" id=\"slideImg\" ng-show=\"showSlide\"> <img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/me.png\" alt=\"Antoine LUCAS\" id=\"photoImg\" ng-show=\"showFace\"></div><span>Lucas</span><div style=\"clear:both\"></div></div><div ng-include=\" 'views/intro.html'\"></div></section><section class=\"section nicesection\"><div><h2 class=\"mtcon-title\">Resume</h2></div><div id=\"resume\" ng-include=\" 'views/professional.html'\" ng-controller=\"ProCtrl\"></div><div id=\"education\" ng-include=\" 'views/education.html'\" ng-controller=\"EducationCtrl\"></div><div id=\"interests\" ng-include=\" 'views/interests.html'\" ng-controller=\"InterestsCtrl\"></div></section><section class=\"section nicesection\" id=\"services\"><div><h2 class=\"mtcon-title\">Services</h2></div><div ng-include=\" 'views/services.html'\" ng-controller=\"ServiceCtrl\"></div></section><section class=\"section nicesection\" id=\"skills\"><div><h2 class=\"mtcon-title\">Skills</h2></div><div ng-include=\" 'views/skills.html'\" ng-controller=\"SkillsCtrl\"></div></section><section class=\"section nicesection\" id=\"technologies\"><div><h2 class=\"mtcon-title\">Technology used for this page</h2></div><div ng-include=\" 'views/technologies.html'\" ng-controller=\"TechnologiesCtrl\"></div></section></div><div flex></div></md-content></section></div>");
+    "               top: 10px\" ng-click=\"toggleLeft()\"></i></md-content><md-content layout=\"left\" hide-sm flex=\"25\" style=\"position:fixed;top : 25px;left :2%;padding : 0px !important\"><div ng-include=\"'views/menu-content2.html'\" ng-controller=\"MenuCtrl\"></div></md-content><md-content flex-lg=\"75\" flex-gt-lg=\"80\" flex-sm=\"{{flex_small_content}}\" flex-md=\"70\" layout=\"right\" class=\"md-padding\" style=\"background-color: transparent\"><div layout=\"column\" layout-fill layout-align=\"top center\"><section class=\"intro\" id=\"intro\"><div id=\"intro-name\"><span>Antoine</span><div class=\"fade-show-container\"><img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/Slide.png\" id=\"slideImg\" ng-show=\"showSlide\"> <img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/me.png\" alt=\"Antoine LUCAS\" id=\"photoImg\" ng-show=\"showFace\"></div><span>Lucas</span><div style=\"clear:both\"></div></div><div ng-include=\" 'views/intro.html'\"></div></section><section class=\"section nicesection\"><div><h2 class=\"mtcon-title\">Resume</h2></div><div id=\"resume\" ng-include=\" 'views/professional.html'\" ng-controller=\"ProCtrl\"></div><div id=\"education\" ng-include=\" 'views/education.html'\" ng-controller=\"EducationCtrl\"></div><div id=\"interests\" ng-include=\" 'views/interests.html'\" ng-controller=\"InterestsCtrl\"></div></section><section class=\"section nicesection\"><div><h2 class=\"mtcon-title\">Social Links</h2></div><div id=\"social\" ng-include=\"'views/social.html'\" ng-controller=\"SocialCtrl\"></div></section><section class=\"section nicesection\" id=\"services\"><div><h2 class=\"mtcon-title\">Services</h2></div><div ng-include=\" 'views/services.html'\" ng-controller=\"ServiceCtrl\"></div></section><section class=\"section nicesection\" id=\"skills\"><div><h2 class=\"mtcon-title\">Skills</h2></div><div ng-include=\" 'views/skills.html'\" ng-controller=\"SkillsCtrl\"></div></section><section class=\"section nicesection\" id=\"technologies\"><div><h2 class=\"mtcon-title\">Technology used for this page</h2></div><div ng-include=\" 'views/technologies.html'\" ng-controller=\"TechnologiesCtrl\"></div></section></div><div flex></div></md-content></section></div>");
 }]);
 
 angular.module("views/portfolio.min.html", []).run(["$templateCache", function($templateCache) {
@@ -1092,7 +1168,7 @@ angular.module("views/portfolio.min.html", []).run(["$templateCache", function($
 
 angular.module("views/professional.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/professional.min.html",
-    "<section class=\"timeline\"><div class=\"timeline-item\" style=\"margin-bottom:0px !important\"><div class=\"timeline-head\"><i class=\"fa fa-lightbulb-o\"></i></div><div class=\"timeline-head-content\"><h3>Work Experience</h3></div></div></section><section layout=\"row\" ng-repeat=\"(i,xp) in experience\"><md-content flex class=\"timeline\"><div><div class=\"timeline-item-date\" hide show-gt-lg flex>{{xp.date_from.format('MMM YYYY')}} <span>⇢ {{xp.date_to.format(\"MMM YYYY\")}}</span></div><div class=\"timeline-item-date\" hide show-lg show-md flex>{{xp.date_from.format('YYYY')}} <span>⇢ {{xp.date_to.format(\"YYYY\")}}</span></div><div class=\"timeline-item-trigger\" slide-toggle=\"#xp{{i}}\"><span><i class=\"fa fa-minus-circle\" style=\"color: white\" ng-show=\"xp.collapsed\" ng-click=\"xp.collapsed = !xp.collapsed\"></i> <i class=\"fa fa-plus-circle\" style=\"color: white\" ng-show=\"!xp.collapsed\" ng-click=\"xp.collapsed = !xp.collapsed\"></i></span></div></div><md-content flex><div hide-sm hide-md class=\"timeline-arrow\"><i></i></div><md-content class=\"timeline-item-content\" flex><h3 class=\"timeline-item-title\" slide-toggle=\"#xp{{i}}\" ng-click=\"xp.collapsed = !xp.collapsed\">{{xp.title}} <span class=\"place\">@ {{xp.company_name}}</span></h3><div class=\"slideable\" id=\"xp{{i}}\"><p ng-bind-html=\"xp.description | unsafe\"></p><p ng-show=\"xp.website_url.length>0\"><a href=\"{{xp.website_url}}\" target=\"_blank\" title=\"\" class=\"noprint\">→ View website</a></p><label ng-repeat=\"tag in xp.tags\" class=\"tag\">{{tag}}</label></div></md-content></md-content></md-content></section><md-divider></md-divider>");
+    "<section class=\"timeline\"><div class=\"timeline-item\" style=\"margin-bottom:0px !important\"><div class=\"timeline-head\"><i class=\"fa fa-lightbulb-o\"></i></div><div class=\"timeline-head-content\"><h3>Work Experience</h3></div></div></section><section layout=\"row\" ng-repeat=\"(i,xp) in experience\"><md-content flex class=\"timeline\"><div><div class=\"timeline-item-date\" hide show-gt-lg flex>{{xp.date_from.format('MMM YYYY')}} <span>⇢ {{xp.date_to.format(\"MMM YYYY\")}}</span></div><div class=\"timeline-item-date\" hide show-lg show-md flex>{{xp.date_from.format('YYYY')}} <span>⇢ {{xp.date_to.format(\"YYYY\")}}</span></div><div class=\"timeline-item-trigger\" slide-toggle=\"#xp{{i}}\"><span><i class=\"fa fa-minus-circle\" style=\"color: white\" ng-show=\"xp.collapsed\" ng-click=\"xp.collapsed = !xp.collapsed\"></i> <i class=\"fa fa-plus-circle\" style=\"color: white\" ng-show=\"!xp.collapsed\" ng-click=\"xp.collapsed = !xp.collapsed\"></i></span></div></div><md-content flex><div hide-sm hide-md class=\"timeline-arrow\"><i></i></div><md-content class=\"timeline-item-content\" flex><h3 class=\"timeline-item-title\" slide-toggle=\"#xp{{i}}\" ng-click=\"xp.collapsed = !xp.collapsed\">{{xp.title}} <span class=\"place\">@ {{xp.company_name}}</span></h3><div class=\"slideable\" id=\"xp{{i}}\"><ul><li ng-repeat=\"description in xp.description\">{{description.text}}</li></ul><p ng-show=\"xp.website_url.length>0\"><a href=\"{{xp.website_url}}\" target=\"_blank\" title=\"\" class=\"noprint\">→ View website</a></p><label ng-repeat=\"tag in xp.tags\" class=\"tag\">{{tag}}</label></div></md-content></md-content></md-content></section><md-divider></md-divider>");
 }]);
 
 angular.module("views/services.min.html", []).run(["$templateCache", function($templateCache) {
@@ -1103,6 +1179,11 @@ angular.module("views/services.min.html", []).run(["$templateCache", function($t
 angular.module("views/skype.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/skype.min.html",
     "<div id=\"SkypeButton_Call_montpellier_1001net\"></div><p style=\"color:#fff\">Do you Skype installed on this computer?</p>");
+}]);
+
+angular.module("views/social.min.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("views/social.min.html",
+    "<section layout=\"row\"><md-content><div layout=\"row\"><md-card ng-repeat=\"soc in social\" flex><a href=\"{{soc.url}}\" target=\"_blank\"><img ng-src=\"{{soc.logo_url}}\" class=\"md-card-image\" alt=\"{{soc.name}}\"></a></md-card></div></md-content><br><br></section><md-divider></md-divider>");
 }]);
 
 angular.module("views/skills.html", []).run(["$templateCache", function($templateCache) {

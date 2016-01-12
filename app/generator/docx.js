@@ -8,6 +8,17 @@ var path = require('path');
 
 eval(require('fs').readFileSync('../data.js', 'utf8'));
 
+var colors = {
+    date: '39116C',
+    headline: 'D11F3F',
+    company: 'D11F3F',
+    description: '173039',
+    technology: '5A4854',
+    location: '39116C',
+    interests: '39116C',
+    contact: '000000',
+};
+
 var docx = officegen ( {
     'type': 'docx',
     'subject': 'Antoine LUCAS resume',
@@ -26,32 +37,30 @@ docx.on ( 'error', function ( err ) {
 
 var pObj = docx.createP ();
 pObj.options.align = 'center';
-pObj.addText ( 'Antoine LUCAS' ,{ bold: true, underline: true, font_face: 'Arial', font_size: 20 }  );
+pObj.addText ( 'Antoine LUCAS' ,{ bold: true, underline: true, font_face: 'Arial', font_size: 20, color: colors.contact }  );
 pObj.addLineBreak ();
-pObj.addText ( '0424 207 292', { font_face: 'Arial', font_size: 12 }  );
+pObj.addText ( '0424 207 292', { font_face: 'Arial', font_size: 12 , color: colors.contact}  );
 pObj.addLineBreak ();
-pObj.addText ( 'antoine.lucas.australia@gmail.com', { font_face: 'Arial', font_size: 12 } );
+pObj.addText ( 'antoine.lucas.australia@gmail.com', { font_face: 'Arial', font_size: 12 , color: colors.contact} );
 pObj.addLineBreak ();
-pObj.addText ( 'http://a-lucas.github.io/resume/app/#/AntoineLucas', { font_face: 'Arial', font_size: 12, color: '39116C' } );
+pObj.addText ( data.paper.onlineVersion, { font_face: 'Arial', font_size: 12, color: colors.contact } );
 
 
 var pObj = docx.createP ();
 pObj.options.align = 'center';
-pObj.addText('I am a Web DevOps with several years experiences developing complex solutions. I am not just a developer, I have good BA and BI skills that helps deliver the best quality product in a minimum of iterations.', { font_face: 'Arial', font_size: 12, color: 'D11F3F' });
+pObj.addText(data.paper.headline, { font_face: 'Arial', font_size: 12, color: colors.headline });
 
 var pObj = docx.createP ();
 pObj.options.align = 'center';
-pObj.addText('This Word document has been automatically generated from http://a-lucas.github.io/resume/app/#/AntoineLucas.', { font_face: 'Arial', font_size: 7 });
+pObj.addText(data.paper.info, { font_face: 'Arial', font_size: 7 });
+
 
 function formatDescription(text) {
     if ( /\<ul\>/.test(text)) {
-
-
         text = text.replace('<ul>','');
         text = text.replace('</ul>','');
         text = text.replace('<li>','');
         text = text.split('</li>');
-
         return text;
     }
     else{
@@ -69,18 +78,18 @@ function addEmployment(employment) {
     var pObj = docx.createListOfDots ();
     pObj.addText(employment.title, {bold: true, font_size: 12});
     pObj.addText(' @ ', {bold: true, font_size: 12, color: 'D11F3F'});
-    pObj.addText(employment.company_name, {bold: true, font_size: 12, color: 'D11F3F'});
+    pObj.addText(employment.company_name, {bold: true, font_size: 12, color: colors.company});
     pObj.addLineBreak ();
-    var date_from = moment(employment.data_from);
-    var date_to = moment(employment.data_to);
+    var date_from = moment(employment.date_from);
+    var date_to = moment(employment.date_to);
 
-    pObj.addText(date_from.format('MMM YYYY'),{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(date_from.format('MMM YYYY'),{bold: false, font_size: 9, color: colors.date});
     pObj.addText(' ⇢ '),{bold: false, font_size: 9, color: '39116C'};
-    pObj.addText(date_to.format('MMM YYYY'),{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(date_to.format('MMM YYYY'),{bold: false, font_size: 9, color: colors.date});
     pObj.addText(' in ',{bold: false, font_size: 9, color: '39116C'});
-    pObj.addText(employment.location.town,{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(employment.location.town,{bold: false, font_size: 9, color: colors.location});
     pObj.addText(', ',{bold: false, font_size: 9, color: '39116C'});
-    pObj.addText(employment.location.country,{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(employment.location.country,{bold: false, font_size: 9, color: colors.location});
 
 
     var description = formatDescription(employment.description);
@@ -91,20 +100,20 @@ function addEmployment(employment) {
             if(description[i].length >0) {
                 var pObj = docx.createListOfNumbers ();
                 var text = description[i].replace('<li>','');
-                pObj.addText(text,{bold: false, font_size: 10, color: '173039'});
+                pObj.addText(text,{bold: false, font_size: 10, color: colors.description});
             }
 
         }
     }
     else{
         var pObj = docx.createP ();
-        pObj.addText(description,{bold: false, font_size: 10, color: '173039'});
+        pObj.addText(description,{bold: false, font_size: 10, color: colors.description});
     }
 
     var pObj = docx.createP ();
 
-    pObj.addText('Technology used: ',{bold: true, font_size: 9, color: '5A4854'});
-    pObj.addText(employment.tags.join(', '),{bold: false, font_size: 9, color: '5A4854'});
+    pObj.addText('Technology used: ',{bold: true, font_size: 9, color: colors.technology});
+    pObj.addText(employment.tags.join(', '),{bold: false, font_size: 9, color: colors.technology});
 
 
 }
@@ -114,19 +123,19 @@ function addEducation(education) {
 
     pObj.addText(education.title, {bold: true, font_size: 12});
     pObj.addLineBreak ();
-    var date_from = moment(education.data_from);
-    var date_to = moment(education.data_to);
+    var date_from = moment(education.date_from);
+    var date_to = moment(education.date_to);
 
-    pObj.addText(date_from.format('MMM YYYY'),{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(date_from.format('MMM YYYY'),{bold: false, font_size: 9, color: colors.date});
     pObj.addText(' ⇢ '),{bold: false, font_size: 9, color: '39116C'};
-    pObj.addText(date_to.format('MMM YYYY'),{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(date_to.format('MMM YYYY'),{bold: false, font_size: 9, color: colors.date});
     pObj.addText(' in ',{bold: false, font_size: 9, color: '39116C'});
-    pObj.addText(education.location.town,{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(education.location.town,{bold: false, font_size: 9, color: colors.location});
     pObj.addText(', ',{bold: false, font_size: 9, color: '39116C'});
-    pObj.addText(education.location.country,{bold: false, font_size: 9, color: '39116C'});
+    pObj.addText(education.location.country,{bold: false, font_size: 9, color: colors.location});
 
     pObj.addLineBreak ();
-    pObj.addText(education.description,{bold: false, font_size: 10, color: '173039'});
+    pObj.addText(education.description,{bold: false, font_size: 10, color: colors.description});
 
 
 }
@@ -136,7 +145,7 @@ function addInterest(interest) {
     var pObj = docx.createP ();
     pObj.addText(interest.name, {bold: true, font_size: 12});
     pObj.addLineBreak();
-    pObj.addText(interest.description, {bold: false,  color: '39116C', font_size: 9});
+    pObj.addText(interest.description, {bold: false,  color: colors.interests, font_size: 9});
 
 }
 

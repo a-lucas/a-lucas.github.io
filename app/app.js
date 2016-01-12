@@ -5,6 +5,7 @@
     angular.module('Antoine_Lucas_CV', [
         'ngRoute',
         'Antoine_Lucas_CV.pro',
+        'Antoine_Lucas_CV.social',
         'Antoine_Lucas_CV.education',
         'Antoine_Lucas_CV.portfolio',
         'Antoine_Lucas_CV.service',
