@@ -9,8 +9,8 @@ var data  = {
         phone: "0424 207 292",
         email: "antoine.lucas.australia@gmail.com",
         headline: "I am a Web DevOps with several years experiences developing complex solutions."
-        + "I have a good knowledge of BA and BI aquire by practice."
-        + "Only available for contracts on site or remotly.",
+        + "I have a good knowledge of BA and BI aquired with years of practice."
+        + "I am available for contracts only on site or remotly.",
         info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
         onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the downoad button."
     },
