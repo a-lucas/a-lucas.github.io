@@ -14,10 +14,10 @@
     <md-content  flex class="timeline">
         <div>
 
-            <div class="timeline-item-date" hide show-lg show-gt-lg show-md flex>
+            <div class="timeline-item-date" ng-if="size=='lg' || size=='xl'" flex>
 
             </div>
-            <div  class="timeline-item-trigger" slide-toggle="#edu{{i}}" >
+            <div  class="timeline-item-trigger" slide-toggle="#edu{{i}}" ng-if="size=='lg' || size=='xl'">
                     <span >
                         <i class="fa fa-minus-circle " style="color: white"
                            ng-show="int.collapsed" ng-click="int.collapsed = !int.collapsed"></i>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <md-content flex>
-            <div hide-sm hide-md class="timeline-arrow">
+            <div ng-if="size=='lg' || size=='xl'" class="timeline-arrow">
                 <i></i>
             </div>
             <md-content class="timeline-item-content" slide-toggle="#int{{i}}" flex >

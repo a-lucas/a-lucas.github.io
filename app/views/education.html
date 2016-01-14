@@ -12,7 +12,7 @@
 <section layout="row" ng-repeat='(i,edu) in education' >
 
     <md-content  flex class='timeline' >
-        <div>
+        <div ng-if="size=='lg' || size=='xl'">
            
             <div class="timeline-item-date" hide show-lg show-gt-lg show-md flex>
                 {{edu.date_from.format('YYYY')}} 
@@ -29,7 +29,7 @@
             </div>
         </div>
         <md-content flex>
-            <div hide-sm hide-md class="timeline-arrow">
+            <div ng-if="size=='lg' || size=='xl'" class="timeline-arrow">
                 <i></i>
             </div>
             <md-content class="timeline-item-content" slide-toggle="#edu{{i}}" flex >
@@ -38,7 +38,11 @@
                     data-toggle="collapse" 
                     ng-click="edu.collapsed = !edu.collapsed"
                     data-target="#edu{{i}}">
-                    {{edu.title}}  
+                    {{edu.title}}
+                    <span class="date" ng-if="size!='lg' && size !='xl'" flex>
+                        {{xp.date_from.format('MMM YYYY')}} ⇢ {{xp.date_to.format("MMM YYYY")}}
+                    </span>
+
                     <span class="place">in {{edu.location.town}} - {{edu.location.country}}</span> 
                 </h3>
                 <div class="slideable" id="edu{{i}}" >                    

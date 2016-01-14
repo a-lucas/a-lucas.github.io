@@ -5,7 +5,7 @@
     'use strict';
 
 // Declare app level module which depends on views, and components
-    angular.module('Antoine_Lucas_CV').controller("AppCtrl", function ($scope, $mdMedia, $timeout, $document, $window, $mdSidenav, $parse, $log) {
+    angular.module('Antoine_Lucas_CV').controller("AppCtrl", function ($scope, $rootScope, $mdMedia, $timeout, $document, $window, $mdSidenav, $parse, $log) {
             $scope.customQuery = $mdMedia('(min-width: 500px)');
             $scope.anotherCustom = $mdMedia('max-width: 400px');
 
@@ -38,11 +38,23 @@
 
 
             function checkSideBarsDimension() {
-                if ($mdMedia('max-width: 400px')) {
 
+
+                if ($mdMedia('min-width: 1600px') ) {
+                    $rootScope.size = 'xl';
+                } else if ($mdMedia('min-width: 1200px') ) {
+                    $rootScope.size = 'lg';
+                } else if ($mdMedia('min-width: 600px') ) {
+                    $rootScope.size = 'md';
+                } else if ($mdMedia('min-width: 400px') ) {
+                    $rootScope.size = 'sm';
+                } else {
+                    $rootScope.size = 'xs';
+                }
+
+                if ($mdMedia('max-width: 400px')) {
                     angular.element(document.getElementById('smallLeft'))
-                        .removeClass('small-sidenav')
-                        .removeClass('smaill-sidenav');
+                        .removeClass('small-sidenav');
 
                     angular.element(document.getElementById('right'))
                         .removeClass('large-contact-sidenav')
@@ -51,7 +63,6 @@
                         .addClass('small-contact-sidenav');
                 }
                 else if ($mdMedia('max-width: 500px')) {
-
                     angular.element(document.getElementById('smallLeft')).removeClass('small-sidenav');
                     angular.element(document.getElementById('right'))
                         .removeClass('large-contact-sidenav')
@@ -60,21 +71,36 @@
                         .addClass('medium-contact-sidenav');
                 }
                 else if ($mdMedia('max-width: 600')) {
-
                     angular.element(document.getElementById('right'))
                         .removeClass('large-contact-sidenav')
                         .removeClass('medium-contact-sidenav')
                         .removeClass('small-contact-sidenav')
                         .addClass('medium-contact-sidenav');
-                }
-                else {
 
+
+                }
+                else if ($mdMedia('max-width: 900')) {
                     angular.element(document.getElementById('right'))
                         .removeClass('large-contact-sidenav')
                         .removeClass('medium-contact-sidenav')
                         .removeClass('small-contact-sidenav')
                         .addClass('large-contact-sidenav');
                 }
+                else if ($mdMedia('max-width: 1200')) {
+                    angular.element(document.getElementById('right'))
+                        .removeClass('large-contact-sidenav')
+                        .removeClass('medium-contact-sidenav')
+                        .removeClass('small-contact-sidenav')
+                        .addClass('large-contact-sidenav');
+                }
+                else {
+                    angular.element(document.getElementById('right'))
+                        .removeClass('large-contact-sidenav')
+                        .removeClass('medium-contact-sidenav')
+                        .removeClass('small-contact-sidenav')
+                        .addClass('large-contact-sidenav');
+                }
+
             }
 
             angular.element($window).bind('orientationchange', function () {
@@ -88,11 +114,11 @@
 
             $scope.swipeRight = function () {
                 if ($mdMedia('max-width: 600px') === true) {
-                    console.log("max-width2 : 500");
+                    console.log("max-width : <600");
                     $mdSidenav('smallLeft').toggle();
                 }
                 else {
-                    console.log("max-width2 > 600");
+                    console.log("max-width > 600");
                     $mdSidenav('largeLeft').toggle();
                 }
 

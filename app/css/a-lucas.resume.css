@@ -1,3 +1,47 @@
+/*******CONTENT******/
+
+@media screen and (min-width:1600px){
+
+    .menuBar {
+        position: fixed;
+
+    }
+    .content {
+        float: left;
+        margin-left: 550px;
+        width: 1000px;
+        max-width: 1000px;
+        display: inline !important;
+    }
+}
+@media screen and (min-width:1200px) and (max-width: 1600px){
+    .content {
+        float: left;
+        margin-left: 350px;
+        width: 900px;
+        max-width: 900px;
+        display: inline !important;
+    }
+}
+@media screen and (min-width:900px) and (max-width: 1600px){
+    .content {
+        float: left;
+        margin-left: 350px;
+        width: 550px;
+        max-width: 550px;
+        display: inline !important;
+    }
+}
+@media screen and (min-width:600px) and (max-width: 900px){
+
+}
+@media screen and  (max-width: 600px){
+
+}
+
+
+
+
 #SkypeButton_Call_montpellier_1001net_1 img, #SkypeButton_Call_montpellier_1001net_2 img {
     margin: 0 !important;
     padding: 0 !important;
@@ -126,6 +170,8 @@ body{
     padding-top: 30px;
 }
 
+
+
 ul{
     padding-left: 15px;
     margin-left: 0;
@@ -162,10 +208,18 @@ ul{
     margin : 0;
     color: #747474;
     font-size: 40px;
+
 }
 .large-sidenav .logo h2{
     color: #fff;
 }
+
+
+.large-sidenav .logo h2 span {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 
 .btn-content{
     width: 100px;
@@ -306,7 +360,6 @@ ul{
 .timeline {
     margin-left: 15px;
     /*background-color: transparent !important;*/
-
 }
 .timeline-item {
     margin-bottom: 30px;
@@ -430,6 +483,13 @@ ul{
     color: #0040D0;
 }
 
+.timeline-item-content .date {
+    font-family: PT Sans;
+    font-weight: 400;
+    font-size: 13px;
+    float: right;
+}
+
 
 @media screen and (max-width: 600px){
     .timeline {
@@ -486,23 +546,31 @@ ul{
     .timeline {
         background: url("../img/line.gif") repeat-y scroll 154px 0 transparent;    
     }
+    .timeline-head {
+        display: none;
+    }
+    li {
+        font-family: 'PT Sans', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
+        font-size: 13px;
+    }
     .timeline-item-content p{
         font-size : 13px;
     }
     .timeline-item-content{
-        padding: 10px 30px !important;
+        padding: 10px 10px !important;
     }
     .timeline-item-content  h3{
         font-size : 16px;
         line-height : 30px;
-        padding-top : 10px !important;
+        padding-top : 0px !important;
         padding-bottom : 5px; 
     }
     .timeline-head{
         margin-left: 130px;
     }
     .timeline-item-title span.place, .timeline-item-title span.interests{
-        display: inline;
+        display: block;
+        font-size: 11px;
     }
 }
 
@@ -540,7 +608,7 @@ ul{
     border-left: 1px solid #CCCCCC;
     border-right: 1px solid #CCCCCC;
     border-top: 1px solid #CCCCCC;
-    padding: 0 0 1px;
+    padding: 15px 30px;
     position: relative;
 }
 .nicesection h2{
@@ -684,7 +752,40 @@ ul{
 
     }
 }
-@media screen and (min-width:900px){
+@media screen and (min-width: 900px) and (max-width:1200px){
+    .tag {
+        padding: 6px;
+        margin: 0 20px 0 0;
+        margin-top : 5px;
+
+        font-size : 11px;
+    }
+    .tag:before {
+        width: 10px;
+        height: 7px;
+        border-radius: 15px;
+        margin: 0 5px 0 0;
+        background: #fff;
+        content: "";
+        display: inline-block;
+    }
+
+    .tag:after {
+        border: 12px solid;
+        right: -24px;
+        border-color: transparent transparent transparent #588fe5;
+        height: 0;
+        width: 0;
+        position: absolute;
+
+        top: 0;
+        content: "";
+
+    }
+
+}
+
+@media screen and  (min-width:1200px){
     .tag {
         padding: 8px;
         margin: 0 30px 0 0;
@@ -716,7 +817,6 @@ ul{
     }
 
 }
-
 
 /************************************
 *******  SKILLS
@@ -758,11 +858,15 @@ ul{
     position:fixed;
 }
 .large-sidenav{
+    height: 100%;
+    min-height: 100%;
     width: 480px !important;
     min-width: 480px!important;
     max-width: 480px!important;
 }
 .small-sidenav{
+    top: 30px;
+    left: 30px;
     width: 300px !important;
     min-width: 300px!important;
     max-width: 300px!important;
@@ -782,6 +886,20 @@ ul{
     width: 250px !important;
     min-width: 250px!important;
     max-width: 250px!important;
+}
+
+@media screen and (min-width:1200px){
+
+
+}
+@media screen and (min-width:900px) and (max-width: 1200px){
+
+}
+@media screen and (min-width:600px) and (max-width: 900px){
+
+}
+@media screen and  (max-width: 600px){
+
 }
 
 /************************************

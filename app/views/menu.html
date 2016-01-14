@@ -1,25 +1,50 @@
+<div>
+    SIZE = {{size}}
+</div>
+
+<div ng-if="size=='xl'">
+    XL
+</div>
+<div ng-if="size=='lg'">
+    LG
+</div>
+<div ng-if="size=='md'">
+    MD
+</div>
+<div ng-if="size=='sm'">
+    SM
+</div>
+<div ng-if="size=='xs'">
+    XS
+</div>
+
 <!--material design shock-->
 
 <div ng-controller="AppCtrl" layout="column" style="min-height:100%;" ng-swipe-right="swipeRight()" ng-swipe-left="swipeLeft()">
 
-    <section layout="row" layout-align="end start" >
+    <section layout="row" layout-align="start end" >
 
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2 large-sidenav" 
-                    class="large-sidenav" 
+        <!--Large menu left -->
+        <md-content class="md-sidenav-left md-whiteframe-z2 large-sidenav"
                     id="largeLeft"
-                    md-component-id="largeLeft" 
+                    ng-if="size=='xl'"
+                    md-component-id="largeLeft"
                     layout="row">
             <div ng-include="'views/menu-content-header.html'" flex="50"   style="background-color: #747474"></div>
             <div ng-include=" 'views/menu-content1.html'" flex="50" ></div>
-        </md-sidenav>
-        <md-sidenav class="md-sidenav-left md-whiteframe-z3" 
+        </md-content>
+
+        <!--Small menu left -->
+        <md-content class="md-sidenav-left md-whiteframe-z3 small-sidenav"
                     id="smallLeft"
-                    md-component-id="smallLeft" 
+                    ng-if="size=='lg' || size=='md'"
+                    md-component-id="smallLeft"
                     layout="column">
             <div ng-include="'views/menu-content-header.html'"   style="background-color: #fff"></div>
             <div ng-include=" 'views/menu-content1.html'"  ></div>
-        </md-sidenav>
+        </md-content>
 
+        <!--Contact right -->
         <md-sidenav class="md-sidenav-right md-whiteframe-z3" 
                     md-component-id="right" 
                     id="right">
@@ -29,20 +54,23 @@
         </md-sidenav>
 
 
-        <md-content layout="left" show hide-gt-md 
+        <!--Mobile toggle -->
+        <md-content layout="left" ng-if="size=='sm' || size=='xs'"
                     style="background-color: transparent;"
                     ng-show="isTouch == false"
                     flex="10">
 
-            <i class="fa fa-4x fa-bars" hide show-md
+            <!--<i class="fa fa-4x fa-bars"
+               ng-if="size=='md'"
                style="
                background-color: #fff;border : 3px solid #575757;border-radius: 5px;padding: 5px;
                position:fixed;
                left: 10px;
                top: 10px;"
                ng-click="toggleLeft2()">
-            </i>
-            <i class="fa fa-2x fa-bars" hide show-sm
+            </i>-->
+            <i class="fa fa-2x fa-bars"
+               ng-if="size=='sm' || size=='xs'"
                style="
                background-color: #fff;border : 3px solid #575757;border-radius: 5px;padding: 5px;
                position:fixed;
@@ -52,21 +80,25 @@
             </i>
 
         </md-content>
-        <md-content layout="left" hide-sm 
+
+        <!-- MObile menu -->
+        <md-content layout="left" class="smallMenu"
                     flex="25"
+                    ng-if="size=='sm' || size=='xs'"
                     style="position:fixed;top : 25px;left :2%;padding : 0px !important" >
             <div ng-include="'views/menu-content2.html'" ng-controller="MenuCtrl"></div>
         </md-content>
 
 
 
-        <md-content  flex-lg="75" flex-gt-lg="80" flex-sm="{{flex_small_content}}" flex-md="70" layout="right" class="md-padding" style="background-color: transparent;">
+        <!--content -->
+        <md-content  layout="left" class="content md-padding" style="background-color: transparent;">
 
             <div layout="column" layout-fill layout-align="top center">
 
-                <section class="intro" id='intro'>
+                <section class="intro" id='intro' >
 
-                    <div id="intro-name">
+                    <div id="intro-name" ng-if="size != 'xl'">
                         <span>Antoine</span>
                         <div class="fade-show-container">
                             <img style="vertical-align:middle" class="fade-show" src="img/Slide.png" id="slideImg" ng-show="showSlide"/>
@@ -76,7 +108,6 @@
                         <div style="clear:both"></div>
                     </div>
 
-                    
                     <div ng-include=" 'views/intro.html'"></div>
                 </section>
 
