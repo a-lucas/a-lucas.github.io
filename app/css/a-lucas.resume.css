@@ -1,5 +1,8 @@
 /*******CONTENT******/
-
+.content {
+    padding: 0 !important;
+    background-color: transparent !important;
+}
 @media screen and (min-width:1600px){
 
     .menuBar {
@@ -9,17 +12,6 @@
     .content {
         float: left;
         margin-left: 550px;
-        width: 1000px;
-        max-width: 1000px;
-        display: inline !important;
-    }
-}
-@media screen and (min-width:1200px) and (max-width: 1600px){
-    .content {
-        float: left;
-        margin-left: 350px;
-        width: 900px;
-        max-width: 900px;
         display: inline !important;
     }
 }
@@ -27,8 +19,6 @@
     .content {
         float: left;
         margin-left: 350px;
-        width: 550px;
-        max-width: 550px;
         display: inline !important;
     }
 }
@@ -36,10 +26,64 @@
 
 }
 @media screen and  (max-width: 600px){
+    .content {
 
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100%;
+        max-width: 100% !important;
+        margin-top: 50px;
+    }
 }
 
 
+/********MENU******/
+
+.topBanner {
+    width: 100%;
+    height: 70px;
+    background-color: #555;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.topBanner h1 {
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    float: left;
+    margin-left: 20px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    margin-top: 10px;
+}
+
+.toggleBtn {
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.toggleBtn i {
+    background-color: #fff;
+    border : 3px solid #575757;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+.menu {
+    padding: 10px;
+}
+
+
+.menuSmall{
+    width: 100%;
+    height: 100%;
+}
 
 
 #SkypeButton_Call_montpellier_1001net_1 img, #SkypeButton_Call_montpellier_1001net_2 img {
@@ -189,7 +233,7 @@ ul{
 .bg-portrait.ng-hide-add.ng-hide-add-active,
 .bg-portrait.ng-hide-remove.ng-hide-remove-active {
     -webkit-transition: all linear 0.5s;
-    -o-transition: all liniear 0.5s;
+    -o-transition: all linear 0.5s;
     -moz-transition: all linear 0.5s;
     transition: all linear 0.5s;
 }
@@ -221,16 +265,47 @@ ul{
 }
 
 
+
 .btn-content{
-    width: 100px;
+    padding: 5px 10px;
     text-align: left;
     margin: auto;
+}
+.btn-content a {
+    text-decoration: none;
+    color: inherit;
 }
 .btn-content i{
     width : 30px;
 }
 .btn-content span{
     margin-left : 5px;
+}
+.menu button {
+    min-width: 250px;
+}
+@media screen and (max-width: 600px) {
+
+    .menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu button {
+        margin: auto !important;
+        margin-top: 5px !important;
+    }
+
+    .menu .logo h2 {
+        color: red;
+    }
+
+    .menu .logo {
+
+        margin: 0px;
+        padding: 0px;
+    }
+
 }
 
 .logo h2 span {
@@ -344,6 +419,34 @@ ul{
 }
 
 /************************************
+*******  SKILLS
+************************************/
+
+.skill {
+    background-color: #EBEBEB;
+    color: #000
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .skill {
+        margin: 10px;
+    }
+}
+
+/************************************
+*******  SERVICES
+************************************/
+
+.service {
+
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .service {
+        margin: 10px;
+    }
+}
+/************************************
 *******  SECTION
 ************************************/
 .section {
@@ -448,15 +551,14 @@ ul{
     border-radius: 5px 5px 5px 5px !important;
     margin-bottom : 10px;
     margin-right : 10px;
-    margin-left: 15px !important;
-
+    margin-left: 15px ;
     position: relative;
 }
 
-
-.timeline-item-content p{
+.timeline-item-content li{
     font-family: PT Sans;
 }
+
 .timeline-item-content  h3{
 
     font-family: PT Sans !important;
@@ -493,22 +595,37 @@ ul{
 
 @media screen and (max-width: 600px){
     .timeline {
-        background: url("../img/line.gif") repeat-y scroll 22px 0 transparent;    
+        /*background: url("../img/line.gif") repeat-y scroll 22px 0 transparent;*/
+        margin: 0;
+
     }
     .timeline-item-content{
-        padding: 5px 15px !important;
+        padding: 5px ;
+        margin: 5px 0;
     }
-    .timeline-item-content p{
-        font-size : 11px;
+    .timeline-item-content li{
+        font-size : 12px;
     }
     .timeline-item-content  h3{
         font-size : 12px;
-        line-height : 30px;
-        padding-top : 5px !important;
-        padding-bottom : 0; 
+        line-height : 20px;
+        padding : 0;
+    }
+    .timeline-item-content .date {
+        font-size: 11px;
     }
     .timeline-head{
-        margin-left: 0;
+        display: none;
+    }
+    .timeline-head-content {
+        width: 100%;
+        padding: 0;
+        margin: 10px 0 0 0;
+    }
+    .timeline-head-content h3{
+        text-align: center;
+        padding: 5px;
+        margin: 0;
     }
     .timeline-item-title span.place, .timeline-item-title span.interests{
         display: block;
@@ -517,7 +634,8 @@ ul{
 
 @media screen and (min-width:600px) and (max-width: 900px){
     .timeline {
-        background: url("../img/line.gif") repeat-y scroll 112px 0 transparent;    
+        /*background: url("../img/line.gif") repeat-y scroll 112px 0 transparent;*/
+        margin-left: 0;
     }
     .timeline-item-content p{
         font-size : 12px;
@@ -532,7 +650,8 @@ ul{
         padding-bottom : 5px; 
     }
     .timeline-head{
-        margin-left: 90px;
+        margin-left: 20px;
+        margin-bottom: 15px;
     }
     .timeline-item-title span.place, .timeline-item-title span.interests{
         display: block;
@@ -544,7 +663,13 @@ ul{
 
 @media screen and (min-width:900px) and (max-width:1200px){
     .timeline {
-        background: url("../img/line.gif") repeat-y scroll 154px 0 transparent;    
+        /*background: url("../img/line.gif") repeat-y scroll 154px 0 transparent;*/
+        margin-left: 0;
+    }
+    .timeline-head-content h3 {
+        margin: 0;
+        padding: 10px 0;
+
     }
     .timeline-head {
         display: none;
@@ -558,6 +683,7 @@ ul{
     }
     .timeline-item-content{
         padding: 10px 10px !important;
+        margin: 10px 0;
     }
     .timeline-item-content  h3{
         font-size : 16px;
@@ -603,98 +729,63 @@ ul{
 /************************************
 *******  NICE SECTIOn
 ************************************/
-.nicesection {
-    background: #FFFFFF;
-    border-left: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    border-top: 1px solid #CCCCCC;
-    padding: 15px 30px;
-    position: relative;
-}
-.nicesection h2{
 
+.md-section {
+    background: #FFFFFF;
+    padding: 15px 30px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.md-section h2 {
     font-weight: 700;
     letter-spacing: 0.3em;
-
-    margin: 0;
+    margin: 20px 0;
     padding: 0;
-    margin-top: 20px;
     text-align: center;
     text-transform: uppercase;
     color: #747474;
     font-family: 'Yanone Kaffeesatz', sans-serif;
-
 }
+
+
 @media screen and (max-width:600px){
-    .nicesection {
+    .md-section {
+        padding: 10px;
         margin-bottom: 20px;
     }
-    .nicesection h2{
-        font-size: 35px;
+    .md-section h2{
+        letter-spacing: 1px;
+        font-size: 30px;
+        padding: 5px 0 5px 0;
+        margin: 0;
+        color: #fff;
+        background-color: #555;
     }
 }
 @media screen and (min-width:600px){
-    .nicesection {
-
-        -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-        -ms-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-        -o-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-        z-index: 9;
-        margin-bottom: 100px;
-    }
-    .nicesection:before {
-        background: #FFFFFF;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-
-        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: -2px;
-
-        -moz-transform: rotate(1deg);
-        -webkit-transform: rotate(1deg);
-        -ms-transform: rotate(1deg);
-        -o-transform: rotate(1deg);
-        transform: rotate(1deg);
-        width: 100%;
-        z-index: -1;
-    }
-    .nicesection:after {
-        background: #FFFFFF;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-
-        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        content: "";
-        height: 100%;
-        left: -2px;
-        position: absolute;
-        top: 1px;
-
-        -moz-transform: rotate(359deg);
-        -webkit-transform: rotate(359deg);
-        -ms-transform: rotate(359deg);
-        -o-transform: rotate(359deg);
-        transform: rotate(359deg);
-        width: 100%;
-        z-index: -2;
-    }
-    .nicesection h2{
+    .md-section h2{
         font-size: 40px;
     }
-
 }
+
+@media screen and (min-width:600px) and (max-width:900px) {
+    .md-section{
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width:900px) and (max-width:1200px) {
+    .md-section{
+        padding: 20px;
+    }
+
+    .md-section h2 {
+        margin: 0;
+    }
+}
+
 /************************************
 *******  TAGS
 ************************************/
@@ -1016,7 +1107,7 @@ ul{
 
 }
 
-@media screen and (min-width:960) and (max-width: 1200px) {
+@media screen and (min-width:960px) and (max-width: 1200px) {
     .my-fancy p{
         font-size: 12px !important;
     }

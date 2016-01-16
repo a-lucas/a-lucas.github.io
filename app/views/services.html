@@ -1,7 +1,7 @@
 
 <!-- heading -->
 <section layout="row"  layout-align="center center">
-    <md-content  flex="90">
+    <md-content  flex="100">
 
         <p style="color: #6C6662;padding:0px 15px;background-color:transparent;font: 14px 'PT Sans',sans-serif;">
             I do full-time and part-time remote jobs online, and I am usually open to use any communication media available (Skype, Hangout, Phone, VoIP).
@@ -9,8 +9,8 @@
 
     </md-content>
 </section>
-<section layout="row"  layout-align="center start" layout-wrap layout-margin style="padding-bottom:30px">
-    <md-content layout-margin ng-repeat="(i, service) in services" flex-gt-md="30" flex-md="80" flex-sm="90" > 
+<section layout="row"  layout-wrap  style="padding-bottom:30px">
+    <md-content  class="service" ng-repeat="(i, service) in services" style="margin-bottom: 20px;" flex-gt-md="30" flex-md="80" flex-sm="100" >
         <flippy
             class="fancy my-fancy"
             ng-click="flip()"

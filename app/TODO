@@ -3,3 +3,16 @@
  - Import (Set) info from LinkedIn
  - Implement Login/Password/Field edition
  - deploy to the cloud (heroku for ex)
+
+
+DESIGN
+
+= mobile
+    service formatting
+    padding
+    landscape menu
+    landscape padding
+
+    
+-normal
+    - face fading

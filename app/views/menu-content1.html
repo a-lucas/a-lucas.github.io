@@ -1,17 +1,16 @@
 
 
 <md-content  md-padding md-margin >
-
+<!--
     <div style="text-align: center;border-bottom: 1px solid #555;padding-bottom: 10px;margin-bottom: 10px;">
         <img  src="img/me.png" alt="Antoine LUCAS" id="photoImg" />
     </div>
-
-
+-->
 
     <md-list style="border-top: 1px solid #555">
         <md-item >
             <md-item-content >
-                <md-button  flex  ng-click="goToAnchor('intro')" >
+                <md-button  flex  ng-click="goToAnchor('intro')" id="intro_btn">
                     <div class="btn-content">
                         <i class="fa fa-lg fa-fire"></i>
                         <span>Intro</span>
@@ -24,7 +23,7 @@
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('resume')" flex>
+                <md-button ng-click="goToAnchor('resume')" flex id="resume_btn">
                     <div class="btn-content">
                         <i class="fa fa-lg fa-book"></i>
                         <span>Resume</span>
@@ -34,10 +33,11 @@
                 </md-button>
             </md-item-content>
         </md-item>
+
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('education')" flex>
+                <md-button ng-click="goToAnchor('education')" flex id="education_btn">
                     <div class="btn-content">
                         <i class="fa fa-graduation-cap fa-book"></i>
                         <span>Education</span>
@@ -47,10 +47,11 @@
                 </md-button>
             </md-item-content>
         </md-item>
+
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('social')" flex>
+                <md-button ng-click="goToAnchor('social')" flex id="social_btn">
                     <div class="btn-content">
                         <i class="fa fa-soccer-ball-o fa-book"></i>
                         <span>Social</span>
@@ -59,12 +60,11 @@
                 </md-button>
             </md-item-content>
         </md-item>
+
         <md-divider></md-divider>
-
-
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('interests')" flex>
+                <md-button ng-click="goToAnchor('interests')" flex id="interests_btn">
                     <div class="btn-content">
                         <i class="fa fa-gamepad fa-book"></i>
                         <span>Interests</span>
@@ -74,10 +74,11 @@
                 </md-button>
             </md-item-content>
         </md-item>
+
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('services')" flex>
+                <md-button ng-click="goToAnchor('services')" flex id="service_btn">
                     <div class="btn-content">
 
                         <i class="fa fa-lg fa-puzzle-piece"></i>
@@ -87,10 +88,11 @@
                 </md-button>
             </md-item-content>
         </md-item>
+
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('skills')" flex>
+                <md-button ng-click="goToAnchor('skills')" flex id="skills_btn">
                     <div class="btn-content">
 
                         <i class="fa fa-lg fa-cogs"></i>
@@ -100,10 +102,11 @@
                 </md-button>
             </md-item-content>
         </md-item>
+
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="goToAnchor('technologies')" flex>
+                <md-button ng-click="goToAnchor('technologies')" flex id="technologies_btn">
                     <div class="btn-content">
 
                         <i class="fa fa-lg fa-terminal"></i>
@@ -116,10 +119,12 @@
         <md-divider></md-divider>
         <md-item>
             <md-item-content>
-                <md-button ng-click="swipeLeft()" flex>
+                <md-button ng-click="swipeLeft()" flex id="contact_btn">
                     <div class="btn-content">
+
                         <i class="fa fal-lg fa-mail-forward"></i>
                         <span>Contact</span>
+
                     </div>
 
                 </md-button>

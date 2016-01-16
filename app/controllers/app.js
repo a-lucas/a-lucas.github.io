@@ -34,23 +34,42 @@
                 }
 
             }
+
             animateSwipe();
 
-
             function checkSideBarsDimension() {
-
-
+                var documentWidth = $window.document.body.clientWidth;
                 if ($mdMedia('min-width: 1600px') ) {
+                    $rootScope.contentStyle= {
+                        width: (documentWidth - 550 - 20) + 'px',
+                        'max-width': (documentWidth - 550 - 20) + 'px'
+                    };
                     $rootScope.size = 'xl';
                 } else if ($mdMedia('min-width: 1200px') ) {
+                    $rootScope.contentStyle= {
+                        width: (documentWidth - 350 - 20) + 'px',
+                        'max-width': (documentWidth - 350 - 20) + 'px'
+                    };
                     $rootScope.size = 'lg';
-                } else if ($mdMedia('min-width: 600px') ) {
+                } else if ($mdMedia('min-width: 900px') ) {
+                    $rootScope.contentStyle= {
+                        width: (documentWidth - 350 - 20) + 'px',
+                        'max-width': (documentWidth - 350 - 20) + 'px'
+                    };
                     $rootScope.size = 'md';
-                } else if ($mdMedia('min-width: 400px') ) {
+                } else if ($mdMedia('min-width: 600px') ) {
+                    $rootScope.contentStyle= {
+                        width: (documentWidth - 40) + 'px',
+                        'max-width': (documentWidth - 40) + 'px',
+                        'margin-left': '20px'
+                    };
                     $rootScope.size = 'sm';
                 } else {
+                    $rootScope.contentStyle= {};
                     $rootScope.size = 'xs';
                 }
+
+                console.log($window);
 
                 if ($mdMedia('max-width: 400px')) {
                     angular.element(document.getElementById('smallLeft'))
@@ -113,12 +132,8 @@
 
 
             $scope.swipeRight = function () {
-                if ($mdMedia('max-width: 600px') === true) {
+                if ($mdMedia('max-width: 900px') === true) {
                     console.log("max-width : <600");
-                    $mdSidenav('smallLeft').toggle();
-                }
-                else {
-                    console.log("max-width > 600");
                     $mdSidenav('largeLeft').toggle();
                 }
 
@@ -127,7 +142,6 @@
 
             $scope.swipeLeft = function () {
                 $mdSidenav('largeLeft').close();
-                $mdSidenav('smallLeft').close();
                 $mdSidenav('right').toggle();
             };
 
@@ -136,8 +150,7 @@
                 var someElement = angular.element(document.getElementById(id));
 
                 $mdSidenav('largeLeft').close();
-                $mdSidenav('smallLeft').close();
-                $document.scrollToElement(someElement, -10, 1000).then(function () {
+                $document.scrollToElement(someElement, 70, 1000).then(function () {
                     /*var scrollaction =  $document.find("[scrollaction]")[0].attributes.scrollaction.value;
                      scrollaction = $parse(scrollaction)($scope);
                      angular.element("#" + scrollaction[id]).css("background-color", "#EBEBEB");*/
@@ -148,15 +161,9 @@
             };
 
             $scope.toggleLeft = function () {
-                $mdSidenav('smallLeft').toggle()
-                    .then(function () {
-                        $log.debug("toggle left is done");
-                    });
-            };
-            $scope.toggleLeft2 = function () {
                 $mdSidenav('largeLeft').toggle()
                     .then(function () {
-                        $log.debug("toggle left2 is done");
+                        $log.debug("toggle left is done");
                     });
             };
 
