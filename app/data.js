@@ -93,7 +93,7 @@ var data  = {
                 {text: "Creation of an organized and consistent multi-level location database from several sources"},
                 {text: "Optimized FullText search with ultra-fast grouping and count "},
                 {text: "Maintenance and implementation of Google DFP - We had the visit of a Google sales representative that told us that we were N1 in CTR in the australian market"}],
-            "tags": ["Ubuntu Server", "MySQL replication", "PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "JQuery", "SASS/Less", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
+            "tags": ["Ubuntu Server", "MySQL replication", "PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP",  "SASS/Less", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
             "website_url": "http://www.webjobz.com/jobs",
             "collapsed": false
         },
