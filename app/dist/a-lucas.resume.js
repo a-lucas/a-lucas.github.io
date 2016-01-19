@@ -194,7 +194,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Sydney"
             },
-            "tags": ["AngularJS", "Team Foundation"],
+            "tags": ["AngularJS", "Team Foundation", "SASS"],
             "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following  chid birth for paents and friends - based on a sketch specification."}],
             "website_url": 'http://theblueroom.bupa.com.au/first-1000-days#/',
             "collapsed": false
@@ -208,7 +208,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Sydney"
             },
-            "tags": ["AngularJS", "Maven", "JBOSS"],
+            "tags": ["AngularJS", "Maven", "JBOSS", "SASS"],
             "description": [{text: "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental sevice provider to speed up processing complex applicationns processing time."}],
             "website_url": 'http://www.sydneywater.com.au/tapin/index.htm',
             "collapsed": false
@@ -222,7 +222,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Sydney"
             },
-            "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7"],
+            "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7", "SASS"],
             "description": [{text: "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time."}],
             "website_url": "http://www.homestolove.com.au",
             "collapsed": false
@@ -236,7 +236,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "tags": ["AngularJS", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack"],
+            "tags": ["AngularJS", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack", "JQuery"],
             "description": [{text: "Online police checks planning, architecture & cutting edge implementation"},
                 {text: "Custom CRM design, architecture & implementation"},
                 {text: "WebServices development"},
@@ -263,7 +263,7 @@ var data  = {
                 {text: "Creation of an organized and consistent multi-level location database from several sources"},
                 {text: "Optimized FullText search with ultra-fast grouping and count "},
                 {text: "Maintenance and implementation of Google DFP - We had the visit of a Google sales representative that told us that we were N1 in CTR in the australian market"}],
-            "tags": ["Ubuntu Server", "MySQL replication", "PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
+            "tags": ["Ubuntu Server", "MySQL replication", "PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP", "JQuery", "SASS/Less", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino"],
             "website_url": "http://www.webjobz.com/jobs",
             "collapsed": false
         },
