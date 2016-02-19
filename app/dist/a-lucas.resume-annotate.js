@@ -179,7 +179,7 @@ var data  = {
         phone: "0424 207 292",
         email: "antoine.lucas.australia@gmail.com",
         headline: "I am a Web DevOps with several years experiences developing complex solutions."
-        + "I have a good knowledge of BA and BI aquired with years of practice."
+        + "I have a good knowledge of BA and BI acquired with years of practice."
         + "I am available for contracts only on site or remotly.",
         info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
         onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the downoad button."
@@ -194,22 +194,22 @@ var data  = {
                 "country": "Australia",
                 "town": "Sydney"
             },
-            "tags": ["AngularJS", "Team Foundation", "SASS", "HTML & CSS"],
-            "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following  chid birth for paents and friends - based on a sketch specification."}],
+            "tags": ["AngularJS", "HTML & CSS3", "SASS", "Bootstrap", "Team Foundation"],
+            "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following  chid birth for parents and friends - based on a sketch specification."}],
             "website_url": 'http://theblueroom.bupa.com.au/first-1000-days#/',
             "collapsed": false
         },
         {
             "title": "FrontEnd Problem Solver",
-            "company_name": "Boomworks",
+            "company_name": "Sydney Water",
             "date_from": {"year": 2015, "month": 7},
             "date_to": {"year": 2015, "month": 8},
             "location": {
                 "country": "Australia",
                 "town": "Sydney"
             },
-            "tags": ["AngularJS", "Maven", "JBOSS", "SASS", "HTML & CSS"],
-            "description": [{text: "BoomWorks needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental sevice provider to speed up processing complex applicationns processing time."}],
+            "tags": ["AngularJS", "Reverse Engineering", "Form Validations", "SASS", "HTML5 & CSS"],
+            "description": [{text: "Sydney Water needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental sevice provider to speed up processing complex applicationns processing time."}],
             "website_url": 'http://www.sydneywater.com.au/tapin/index.htm',
             "collapsed": false
         },
@@ -222,7 +222,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Sydney"
             },
-            "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7", "SASS", "HTML & CSS"],
+            "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7", "SASS", "HTML5 & CSS3"],
             "description": [{text: "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time."}],
             "website_url": "http://www.homestolove.com.au",
             "collapsed": false
@@ -236,7 +236,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "tags": ["AngularJS", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack", "JQuery", "HTML & CSS"],
+            "tags": ["AngularJS", , "HTML & CSS3 Engineering", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack", "JQuery"],
             "description": [{text: "Online police checks planning, architecture & cutting edge implementation"},
                 {text: "Custom CRM design, architecture & implementation"},
                 {text: "WebServices development"},

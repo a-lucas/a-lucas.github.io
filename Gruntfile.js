@@ -186,6 +186,5 @@ module.exports = function (grunt) {
     grunt.registerTask('css', ['csslint', 'concat', 'cssmin', 'exec']);
     grunt.registerTask('default', ['htmlmin', 'html2js', 'concat', 'cssmin', 'ngAnnotate', 'uglify', 'exec']);
 
-
     grunt.registerTask('server',['express','watch']);
 };
