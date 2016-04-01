@@ -8,13 +8,41 @@ var data  = {
         last_name: "LUCAS",
         phone: "0424 207 292",
         email: "antoine.lucas.australia@gmail.com",
-        headline: "I am a Web DevOps with several years experiences developing complex solutions."
+        headline: "I am a Web DevOps with a decade of experiences developing complex solutions."
         + "I have a good knowledge of BA and BI acquired with years of practice."
-        + "I am available for contracts only on site or remotly.",
+        + "I am available for contracts on site or remotly.",
         info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
         onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the downoad button."
     },
     "work_experience" : [
+        {
+            "title": "Accessibility Engineer",
+            "company_name": "Publicis",
+            "date_from": {"year": 2016, "month": 2},
+            "date_to": {},
+            "location": {
+                "country": "Australia",
+                "town": "Sydney"
+            },
+            "tags": ["PHP", "HTML & CSS3", "SASS", "Drupal6", "Aria"],
+            "description": [{text: "Following accessibilityOz reports, we did modify an existing codebase to assess and implement accessibility for the Commonwealth Olympic Games 2018. We met the strict deadline just in time"}],
+            "website_url": 'http://gc2018.com',
+            "collapsed": false
+        },
+        {
+            "title": "FrontEnd Engineer",
+            "company_name": "Holler",
+            "date_from": {"year": 2016, "month": 1},
+            "date_to": {"year": 2016, "month": 2},
+            "location": {
+                "country": "Australia",
+                "town": "Sydney"
+            },
+            "tags": ["ReactJS", "HTML & CSS3", "SASS", "Redux"],
+            "description": [{text: "I help finalizing a complex registtration form for AUDI drive experience."}],
+            "website_url": '',
+            "collapsed": false
+        },
         {
             "title": "FrontEnd Engineer",
             "company_name": "BUPA",
@@ -122,7 +150,7 @@ var data  = {
             },
             "description": [{text: "I did teach Maths Physics & Biology to high school students from diplomatic backgrounds."}],
             "tags": ["Patience", "Kindness", "Authority", "Communication"],
-            "website_url": "",
+            "website_url": "http://www.efik-sd.com/",
             "collapsed": false
         },
         {
