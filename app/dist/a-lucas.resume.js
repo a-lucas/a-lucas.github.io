@@ -200,9 +200,10 @@ var data  = {
             "title": "Redis-url-cache",
             "date": {"year": 2016, "month": 10},
             "tags": ["Node.js", "REDIS", "URL caching", "Regexp", "Typescript"],
-            "description": "Cache URLs into a redis datastore with an extensive felexibility on a per domain, per rule regexp filtering. Supports ttl and instance hsaring between different caching servers",
+            "description": "Cache URLs into a redis datastore with an extensive flexibility on a per domain, per rule regexp filtering. " +
+            "Supports ttl and instance sharing between different caching servers",
             "websites": [{
-                title: "Redis-usr-cache on github",
+                title: "Redis-url-cache on Github",
                 url:"https://github.com/a-lucas/redis-url-cache"
             }]
         }
