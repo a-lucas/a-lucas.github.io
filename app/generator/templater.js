@@ -37,11 +37,13 @@ var templateData = {
     last_name: data.paper.last_name,
     phone:data.paper.phone,
     email: data.paper.email,
+    open_source: [],
     experience: [],
     education: [],
     interests: [],
     social: []
 };
+
 
 for(i in data.work_experience) {
     obj = {}, work = data.work_experience[i];
@@ -61,7 +63,9 @@ for(i in data.work_experience) {
         obj.tags.push({tag: work.tags[j]});
     }
 
-    obj.website_url = work.website_url;
+    console.log(work.websites[0]);
+
+    obj.website_url = typeof work.websites[0] !== 'undefined' ? work.websites[0].url: '';
     obj.technology = work.tags.join(", ");
     templateData.experience.push(obj);
 }

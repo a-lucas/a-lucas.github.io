@@ -36,6 +36,20 @@
     }
 }
 
+ a.website {
+    color: #0b97c4;
+    font-size: 14px;
+    font-weight: 600;
+     text-decoration: none;
+    transition: .5s ease-in-out all;
+     margin-left: 20px;
+     display: block;
+}
+
+a.website:hover {
+    color: #2b81af;
+    text-decoration: dashed;
+}
 
 /********MENU******/
 
@@ -1127,3 +1141,5 @@ ul{
         display: block;
     }
 }
+
+

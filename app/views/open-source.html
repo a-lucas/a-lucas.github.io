@@ -1,0 +1,69 @@
+
+
+<section class="timeline">
+    <div class="timeline-item" style="margin-bottom:0px !important">
+        <div class="timeline-head">
+            <i class="fa fa-lightbulb-o"></i>
+        </div>
+        <div class="timeline-head-content">
+            <h3>Open Source projects</h3>
+        </div>
+    </div>
+</section>
+
+<section layout="row" ng-repeat='(i,os) in openSource' >
+
+    <md-content  flex class='timeline'>
+        <div  ng-if="size=='lg' || size=='xl'">
+            <div class="timeline-item-date" hide show-gt-lg flex>
+                Released {{os.date_from.format('MMM YYYY')}}
+            </div>
+            <div class="timeline-item-date" hide show-lg show-md flex>
+                Released {{os.date_from.format('YYYY')}}
+            </div>
+            <div  class="timeline-item-trigger" slide-toggle="#os{{i}}" >
+                <span >
+                    <i class="fa fa-minus-circle " style="color: white" 
+                       ng-show="os.collapsed" ng-click="os.collapsed = !os.collapsed"></i>
+                    <i class="fa fa-plus-circle "  style="color: white" 
+                       ng-show="!os.collapsed" ng-click="os.collapsed = !os.collapsed"></i>
+                </span>
+            </div>
+
+        </div>
+
+        <md-content flex>
+            <div   ng-if="size=='lg' || size=='xl'" class="timeline-arrow"><i></i></div>
+
+            <md-content class="timeline-item-content"  flex>
+                <h3 
+                    class="timeline-item-title" slide-toggle="#os{{i}}" ng-click="os.collapsed = !os.collapsed" >
+                    {{os.title}}
+
+                    <span class="date" ng-if="size!='lg' && size !='xl'" flex>
+                        Released {{os.date_from.format('MMM YYYY')}}
+                    </span>
+
+
+                </h3>
+
+                <div class="slideable" id="os{{i}}" >
+                    <ul>
+                        <li>{{os.description}}</li>
+                    </ul>
+                     <p ng-show="os.websites.length>0">
+                         <strong>Websites:</strong>
+                         <a ng-repeat="website in os.websites" class="website" ng-href="{{website.url}}" target="_blank" title="{{website.title}}">{{website.title}}</a>
+                     </p>
+
+                    <label ng-repeat="tag in os.tags" class="tag">
+                        {{tag}}
+                    </label>
+
+                </div>
+            </md-content>
+        </md-content>
+    </md-content>
+
+</section>
+<md-divider></md-divider>

@@ -14,6 +14,28 @@ var data  = {
         info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
         onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the downoad button."
     },
+    "open_source": [
+        {
+            "title": "Angular.js-server",
+            "date": {"year": 2016, "month": 10},
+            "tags": ["Node.js", "server rendering", "Angular.js", "JSDOM", "Typescript", "ES6/7"],
+            "description": "This is an ongoing project that allows angular web apps to be pre-rendered on the server and cached to improve rendring performance and SEO",
+            "websites": [{
+                title: "Angular.js-server on Github",
+                url: "https://github.com/a-lucas/angular.js-server"
+            }]
+        },
+        {
+            "title": "Redis-url-cache",
+            "date": {"year": 2016, "month": 10},
+            "tags": ["Node.js", "REDIS", "URL caching", "Regexp", "Typescript"],
+            "description": "Cache URLs into a redis datastore with an extensive felexibility on a per domain, per rule regexp filtering. Supports ttl and instance hsaring between different caching servers",
+            "websites": [{
+                title: "Redis-usr-cache on github",
+                url:"https://github.com/a-lucas/redis-url-cache"
+            }]
+        }
+    ],
     "work_experience" : [
         {
             "title": "Accessibility Engineer",
@@ -26,7 +48,13 @@ var data  = {
             },
             "tags": ["PHP", "HTML & CSS3", "SASS", "Drupal6", "Aria"],
             "description": [{text: "Following accessibilityOz reports, we did modify an existing codebase to assess and implement accessibility for the Commonwealth Olympic Games 2018. We met the strict deadline just in time"}],
-            "website_url": 'http://gc2018.com',
+            "websites": [{
+                title: 'Commonwealth Olympic games 2018',
+                url: 'http://gc2018.com'
+            }, {
+                title: "Queensland Family & Child commission",
+                url: "https://www.qfcc.qld.gov.au/"
+            }],
             "collapsed": false
         },
         {
@@ -40,7 +68,7 @@ var data  = {
             },
             "tags": ["ReactJS", "HTML & CSS3", "SASS", "Redux"],
             "description": [{text: "I help finalizing a complex registtration form for AUDI drive experience."}],
-            "website_url": '',
+            "websites": [],
             "collapsed": false
         },
         {
@@ -54,7 +82,10 @@ var data  = {
             },
             "tags": ["AngularJS", "HTML & CSS3", "SASS", "Bootstrap", "Team Foundation"],
             "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following  chid birth for parents and friends - based on a sketch specification."}],
-            "website_url": 'http://theblueroom.bupa.com.au/first-1000-days#/',
+            "websites": [{
+                title: "The Blue room - the first 1000 days",
+                url: 'http://theblueroom.bupa.com.au/first-1000-days#/'
+            }],
             "collapsed": false
         },
         {
@@ -68,7 +99,10 @@ var data  = {
             },
             "tags": ["AngularJS", "Reverse Engineering", "Form Validations", "SASS", "HTML5 & CSS"],
             "description": [{text: "Sydney Water needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental sevice provider to speed up processing complex applicationns processing time."}],
-            "website_url": 'http://www.sydneywater.com.au/tapin/index.htm',
+            "websites": [{
+                title: "Sydney Water Customer TapIn",
+                url: 'http://www.sydneywater.com.au/tapin/index.htm'
+            }],
             "collapsed": false
         },
         {
@@ -82,7 +116,10 @@ var data  = {
             },
             "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7", "SASS", "HTML5 & CSS3"],
             "description": [{text: "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time."}],
-            "website_url": "http://www.homestolove.com.au",
+            "websites": [{
+                title: "Homes to Love",
+                url: "http://www.homestolove.com.au"
+            }],
             "collapsed": false
         },
         {
@@ -100,7 +137,15 @@ var data  = {
                 {text: "WebServices development"},
                 {text: "UX Design & optimization"},
                 {text: "Analytics & SEO Consulting"}],
-            "website_url": "http://www.veritascheck.com.au",
+            "websites": [{
+                    title: "Veritas Check - online police checks",
+                    url: "http://www.veritascheck.com.au"
+                },
+                {
+                    title: "Federal police check - online police checks",
+                    url: "https://www.afpcheck.com/"
+                },
+            ],
             "collapsed": false
         },
         {
@@ -122,7 +167,10 @@ var data  = {
                 {text: "Optimized FullText search with ultra-fast grouping and count "},
                 {text: "Maintenance and implementation of Google DFP - We had the visit of a Google sales representative that told us that we were N1 in CTR in the australian market"}],
             "tags": ["Ubuntu Server", "MySQL replication", "PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP",  "SASS/Less", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino", "HTML & CSS"],
-            "website_url": "http://www.webjobz.com/jobs",
+            "websites": [{
+                title: "Webjobz.com",
+                url: "http://www.webjobz.com/jobs"
+            }],
             "collapsed": false
         },
         {
@@ -136,7 +184,7 @@ var data  = {
             },
             "description": [{text: "The project was a a clone of AliBaba. I mainly wrote a curl spider engine, a search engine and an admin interface"}],
             "tags": ["PHP5", "Curl", "AliBaba", "MySQL", "JQuery", "HTML & CSS"],
-            "website_url": "",
+            "websites": [],
             "collapsed": false
         },
         {
@@ -150,7 +198,9 @@ var data  = {
             },
             "description": [{text: "I did teach Maths Physics & Biology to high school students from diplomatic backgrounds."}],
             "tags": ["Patience", "Kindness", "Authority", "Communication"],
-            "website_url": "http://www.efik-sd.com/",
+            "websites": [{
+                title: "French School of Khartoum",
+                url: "http://www.efik-sd.com/"}],
             "collapsed": false
         },
         {
@@ -164,7 +214,7 @@ var data  = {
             },
             "description": [{text: "I did learn to code by my own doing some freelance jobs back in France."}],
             "tags": ["PHP", "Accounting Certification", "LAMP", "Flash", "Suze", "Gentoo", "QMail", "HTML & CSS"],
-            "website_url": "",
+            "websites": [],
             "collapsed": false
         }
     ],

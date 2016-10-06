@@ -32,6 +32,16 @@
             return $http(req);
         };
 
+        this.get_open_source = function () {
+
+            var open_source = data.open_source;
+
+            for(var i in open_source) {
+                open_source[i].date_from = moment(open_source[i].date_from);
+            }
+            return open_source;
+        };
+
 
         this.get_work_experience = function () {
 

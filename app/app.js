@@ -14,6 +14,7 @@
         'Antoine_Lucas_CV.interests',
         'Antoine_Lucas_CV.technologies',
         'Antoine_Lucas_CV.menu',
+        'Antoine_Lucas_CV.open',
         'ngMaterial',
         'ngAnimate',
         'angularSlideables',
