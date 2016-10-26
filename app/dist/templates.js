@@ -29,7 +29,7 @@ angular.module("views/interests.min.html", []).run(["$templateCache", function($
 
 angular.module("views/intro.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/intro.min.html",
-    "<md-divider></md-divider><h3>{{paper.intro}} I'm an Australia & Europe based web application developer. I am currently available for remote work.<br>I <span style=\"color:red\">&#x3C;3</span> creating modern web and mobile solutions, for startups or small business.</h3><md-divider></md-divider>");
+    "<md-divider></md-divider><h3 ng-bind-html=\"paper.headline | newlines | trusthtml\"></h3><md-divider></md-divider>");
 }]);
 
 angular.module("views/menu-content-header.min.html", []).run(["$templateCache", function($templateCache) {
