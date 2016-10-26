@@ -3,14 +3,14 @@
  */
 var data  = {
 
-    paper: {
-        first_name: "Antoine",
-        last_name: "LUCAS",
-        phone: "0424 207 292",
-        email: "antoine.lucas.australia@gmail.com",
-        headline: "I am a Web DevOps with a decade of experiences developing complex solutions."
-        + "I have a good knowledge of BA and BI acquired with years of practice."
-        + "I am available for contracts on site or remotly.",
+    "paper": {
+        "first_name": "Antoine",
+        "last_name": "LUCAS",
+        "phone": "0424 207 292",
+        "email": "antoine.lucas.australia@gmail.com",
+        "headline": "I am a Web DevOps with a decade of experience developing complex solutions.\n"
+        + "I have good knowledge of BA and BI acquired with years of practice.\n"
+        + "I am available for contracts on site or remotely.\n",
         info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
         onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the downoad button."
     },
@@ -19,7 +19,8 @@ var data  = {
             "title": "Angular.js-server",
             "date": {"year": 2016, "month": 10},
             "tags": ["Node.js", "server rendering", "Angular.js", "JSDOM", "Typescript", "ES6/7"],
-            "description": "This is an ongoing project that allows angular web apps to be pre-rendered on the server and cached to improve rendring performance and SEO",
+            "description": "This is an ongoing project that allows angular web apps to be pre-rendered on the server and cached to improve rendering"
+            + " performance and SEO",
             "websites": [{
                 title: "Angular.js-server on Github",
                 url: "https://github.com/a-lucas/angular.js-server"
@@ -30,7 +31,7 @@ var data  = {
             "date": {"year": 2016, "month": 10},
             "tags": ["Node.js", "REDIS", "URL caching", "Regexp", "Typescript"],
             "description": "Cache URLs into a redis datastore with an extensive flexibility on a per domain, per rule regexp filtering. " +
-            "Supports ttl and instance sharing between different caching servers",
+            "It supports ttl and instance sharing between different caching servers",
             "websites": [{
                 title: "Redis-url-cache on Github",
                 url:"https://github.com/a-lucas/redis-url-cache"
@@ -48,7 +49,8 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["PHP", "HTML & CSS3", "SASS", "Drupal6", "Aria"],
-            "description": [{text: "Following accessibilityOz reports, we did modify an existing codebase to assess and implement accessibility for the Commonwealth Olympic Games 2018. We met the strict deadline just in time"}],
+            "description": [{text: "Following accessibilityOz reports, we modified an existing codebase to assess and implement accessibility for the Commonwealth "
+            + " Olympic Games 2018. We met the strict deadline just in time. I also implemented the qfcc website responsive front-end following design specs."}],
             "websites": [{
                 title: 'Commonwealth Olympic games 2018',
                 url: 'http://gc2018.com'
@@ -68,7 +70,7 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["ReactJS", "HTML & CSS3", "SASS", "Redux"],
-            "description": [{text: "I help finalizing a complex registtration form for AUDI drive experience."}],
+            "description": [{text: "I help finalizing a complex registration form for AUDI drive experience."}],
             "websites": [],
             "collapsed": false
         },
@@ -82,7 +84,8 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["AngularJS", "HTML & CSS3", "SASS", "Bootstrap", "Team Foundation"],
-            "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following  chid birth for parents and friends - based on a sketch specification."}],
+            "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following chid birth for parents and friends - "
+            + " based on a sketch specification."}],
             "websites": [{
                 title: "The Blue room - the first 1000 days",
                 url: 'http://theblueroom.bupa.com.au/first-1000-days#/'
@@ -99,7 +102,8 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["AngularJS", "Reverse Engineering", "Form Validations", "SASS", "HTML5 & CSS"],
-            "description": [{text: "Sydney Water needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental sevice provider to speed up processing complex applicationns processing time."}],
+            "description": [{text: "Sydney Water needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer "
+            +"  - which helps a well known governmental service provider to speed up processing complex applicationns."}],
             "websites": [{
                 title: "Sydney Water Customer TapIn",
                 url: 'http://www.sydneywater.com.au/tapin/index.htm'
@@ -116,7 +120,9 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7", "SASS", "HTML5 & CSS3"],
-            "description": [{text: "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time."}],
+            "description": [{text: "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, "
+            + "I helped integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. "
+            + "I was part of a team of 5 and we all together managed to finish the project in time."}],
             "websites": [{
                 title: "Homes to Love",
                 url: "http://www.homestolove.com.au"
@@ -132,7 +138,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "tags": ["AngularJS", , "HTML & CSS3 Engineering", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack", "JQuery"],
+            "tags": ["AngularJS", "HTML & CSS3 Engineering", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack", "JQuery"],
             "description": [{text: "Online police checks planning, architecture & cutting edge implementation"},
                 {text: "Custom CRM design, architecture & implementation"},
                 {text: "WebServices development"},
@@ -160,13 +166,15 @@ var data  = {
             },
             "description": [{text: "JQUERY based mail client with ACL Mail basex linked to a custom CRM."},
                 {text: "Ten years of electronic correspondence have been imported from a domino legacy system to this new CRM"},
-                {text: "3 Linux dedicated server setup strategy with backup server (MySQL replication & Rsync), Database server (MySQL + Sphinx) and file&API server (Apache XML / PHP / SOAP / REST)"},
+                {text: "3 Linux dedicated server setup strategy with backup server (MySQL replication & Rsync), Database server (MySQL + Sphinx) and "
+                    + " file&API server (Apache XML / PHP / SOAP / REST)"},
                 {text: "Linux SysADMIN and maintenance"},
-                {text: "SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder to cite a few"},
+                {text: "SOAP and REST integration with different Job Feeds providers such as JobG8, Monster, JobRapido and JobAdder to cite a few"},
                 {text: "XML job feeds"},
                 {text: "Creation of an organized and consistent multi-level location database from several sources"},
                 {text: "Optimized FullText search with ultra-fast grouping and count "},
-                {text: "Maintenance and implementation of Google DFP - We had the visit of a Google sales representative that told us that we were N1 in CTR in the australian market"}],
+                {text: "Maintenance and implementation of Google DFP - We had the visit of a Google sales representative that told us that we were Number1 in CTR in "
+                + " the australian market"}],
             "tags": ["Ubuntu Server", "MySQL replication", "PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP",  "SASS/Less", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino", "HTML & CSS"],
             "websites": [{
                 title: "Webjobz.com",
@@ -183,7 +191,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "description": [{text: "The project was a a clone of AliBaba. I mainly wrote a curl spider engine, a search engine and an admin interface"}],
+            "description": [{text: "The project was a a clone of Ali-baba. I mainly wrote a curl spider engine, a search engine and an admin interface"}],
             "tags": ["PHP5", "Curl", "AliBaba", "MySQL", "JQuery", "HTML & CSS"],
             "websites": [],
             "collapsed": false
@@ -197,7 +205,7 @@ var data  = {
                 "country": "Sudan",
                 "town": "Kartoum"
             },
-            "description": [{text: "I did teach Maths Physics & Biology to high school students from diplomatic backgrounds."}],
+            "description": [{text: "I taught Maths Physics & Biology to high school students from diplomatic backgrounds."}],
             "tags": ["Patience", "Kindness", "Authority", "Communication"],
             "websites": [{
                 title: "French School of Khartoum",
@@ -213,7 +221,7 @@ var data  = {
                 "country": "France",
                 "town": "Montpellier"
             },
-            "description": [{text: "I did learn to code by my own doing some freelance jobs back in France."}],
+            "description": [{text: "I learned to code by my own doing some freelance jobs back in France."}],
             "tags": ["PHP", "Accounting Certification", "LAMP", "Flash", "Suze", "Gentoo", "QMail", "HTML & CSS"],
             "websites": [],
             "collapsed": false
@@ -249,12 +257,12 @@ var data  = {
         {
             "title": "PhoneGap / Cordova",
             "description": "You have an existing web application running AngularJs, EmberJs or written in any javascript web-application framework and you want to transform it into a phone or tablet native application. Migration from an existing <b>web</b> application to an IOS, Android , Windows or Blackberry platform needs some optimization. <a ng-click='swipeLeft()'>Contact me</a>",
-            "image": "img/phone-gap-icon.png"
+            "image": "app/img/phone-gap-icon.png"
         },
         {
             "title": "Responsive Design",
             "description": "Do you need to make your website responsive? A responsive design is a great cost saver. Most of the code doesn;t need any change, only the front-end css & html needs to be modified. The result will be a website that looks great on all platforms : TV, Desktop, Laptops, Tablets and phones. ",
-            "image": "img/responsive.png"
+            "image": "app/img/responsive.png"
         },
         {
             "title": "Web Development",
@@ -264,23 +272,23 @@ var data  = {
         {
             "title": "Web Architect",
             "description": "Are you looking to design a complexe web based application. Whatever SASS, Public internet or private  Intranet, it is crucial to take the correct decisions upfront. I have build from scratch many complex web-based system, and I am really passionate to discuss about challenging new concepts",
-            "image": "img/architect.png"
+            "image": "app/img/architect.png"
         },
         {
             "title": "Databases",
             "description": "Database restoration, Maintenance, MIgration, Design, Replication. The only thing I don't know about is Database Scalability.",
-            "image": "img/database.png"
+            "image": "app/img/database.png"
         },
         {
             "title": "Crawlers",
             "description": "A crawler is a bot that automatically scrap web content following a strict specification. A crawler can authenticate, save cookies & session, parse HTML and extract relevant informations. Internet data is HUGE, a good massive crawler engine needs several dedicated servers.",
-            "image": "img/crawler.png"
+            "image": "app/img/crawler.png"
         }
     ],
     "skills" : {
         "coding": [
             {
-                "logo": "img/PHP_logo.png",
+                "logo": "app/img/PHP_logo.png",
                 "bgColor": "#6082BB",
                 "name": "PHP",
                 "languages": [
@@ -295,7 +303,7 @@ var data  = {
                 ]
             },
             {
-                "logo": "img/ecma5_logo.png",
+                "logo": "app/img/ecma5_logo.png",
                 "bgColor": "#fff",
                 "name": "Javascript",
                 "languages": [
@@ -314,7 +322,7 @@ var data  = {
                     {"name": "ember.js", "percentage": 1}
                 ]
             }, {
-                "logo": "img/perl_logo2.png",
+                "logo": "app/img/perl_logo2.png",
                 "bgColor": "#fff",
                 "name": "Perl",
                 "languages": [
@@ -347,7 +355,7 @@ var data  = {
                 ]
             },
             {
-                "logo": "img/java-oracle.png",
+                "logo": "app/img/java-oracle.png",
                 "bgColor": "#fff",
                 "name": "JAVA",
                 "languages": [
@@ -358,7 +366,7 @@ var data  = {
                 ]
             },
             {
-                "logo": "img/mslogo.png",
+                "logo": "app/img/mslogo.png",
                 "bgColor": "#fff",
                 "name": "Microsoft",
                 "languages": [
@@ -445,15 +453,15 @@ var data  = {
     "interests" : [{
             "name": "Kite Surfing",
             "description": "“The best surfer out there is the one having the most fun.“ – Phil Edwards",
-            "photo": "img/kiteSurf.jpg"
+            "photo": "app/img/kiteSurf.jpg"
         }, {
             "name": "Traveling",
             "description": "“You don’t have to be rich to travel well.” – Eugene Fodor",
-            "photo": "img/travelling.jpg"
+            "photo": "app/img/travelling.jpg"
         }, {
             "name": "Friends",
             "description": "Two persons cannot long be friends if they cannot forgive each other's little failings.",
-            "photo": "img/friendship.jpg"
+            "photo": "app/img/friendship.jpg"
         }],
 
     "travels": [

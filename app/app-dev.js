@@ -27,12 +27,12 @@
     ])
             .config(['$routeProvider', function ($routeProvider) {
                     $routeProvider.when('/AntoineLucas', {
-                        templateUrl: 'views/menu.html',
+                        templateUrl: 'app/views/menu.html',
                         controller: 'AppCtrl'
                     }).otherwise({redirectTo: '/AntoineLucas'});
                 }])
             .run(function ($http, $templateCache) {
-                var templates = ['views/skype.html', 'views/hangout.html'];
+                var templates = ['app/views/skype.html', 'app/views/hangout.html'];
 
                 angular.forEach(templates, function (templateUrl) {
                     $http({method: 'GET', url: templateUrl}).success(function (data) {

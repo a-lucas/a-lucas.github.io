@@ -4,6 +4,7 @@
 // Declare app level module which depends on views, and components
     angular.module('Antoine_Lucas_CV', [
         'ngRoute',
+        'Antoine_Lucas_CV.intro',
         'Antoine_Lucas_CV.pro',
         'Antoine_Lucas_CV.social',
         'Antoine_Lucas_CV.education',
@@ -28,12 +29,12 @@
     ])
             .config(['$routeProvider', function ($routeProvider) {
                     $routeProvider.when('/AntoineLucas', {
-                        templateUrl: 'views/menu.html',
+                        templateUrl: 'app/views/menu.html',
                         controller: 'AppCtrl'
                     }).otherwise({redirectTo: '/AntoineLucas'});
                 }])
             .run(function ($http, $templateCache) {
-                var templates = ['views/skype.html', 'views/hangout.html'];
+                var templates = ['app/views/skype.html', 'app/views/hangout.html'];
 
                 angular.forEach(templates, function (templateUrl) {
                     $http({method: 'GET', url: templateUrl}).success(function (data) {

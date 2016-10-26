@@ -20,6 +20,7 @@ module.exports = function (grunt) {
                     "app/controllers/portfolio.js",
                     "app/controllers/social.js",
                     "app/controllers/open.js",
+                    "app/controllers/intro.js",
                     "app/controllers/professional.js",
                     "app/controllers/services.js",
                     "app/controllers/skills.js",
@@ -105,7 +106,7 @@ module.exports = function (grunt) {
             permissions: {
                 command: 'chmod -R 777 app'
             }
-        }, 
+        },
         htmlmin: {
             dist: {
                 options: {
@@ -116,7 +117,7 @@ module.exports = function (grunt) {
                     removeStyleLinkTypeAttributes: false
                 },
                 files: {
-                    'app/views/contact.min.html': 'app/views/contact.html', 
+                    'app/views/contact.min.html': 'app/views/contact.html',
                     'app/views/education.min.html' : 'app/views/education.html',
                     'app/views/form.min.html' : 'app/views/form.html',
                     'app/views/hangout.min.html' : 'app/views/hangout.html',
@@ -133,7 +134,7 @@ module.exports = function (grunt) {
                     'app/views/services.min.html' : 'app/views/services.html',
                     //'app/views/skills.min.html' : 'app/views/skills.html',
                     'app/views/skype.min.html' : 'app/views/skype.html',
-                    'app/index.html' : 'app/index.prod.html'
+                    'index.html' : 'index.prod.html'
                 }
             }
         },
@@ -164,7 +165,7 @@ module.exports = function (grunt) {
                 options:{
                     port:3000,
                     hostname:'localhost',
-                    bases:['./app'],
+                    bases:['./'],
                     livereload:true
                 }
             }

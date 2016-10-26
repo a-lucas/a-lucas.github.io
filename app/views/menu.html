@@ -28,8 +28,8 @@
         <md-content class="md-sidenav-left md-whiteframe-z2 large-sidenav"
                     ng-if="size=='xl'"
                     layout="row">
-            <div ng-include="'views/menu-content-header.html'" flex="50"   style="background-color: #747474"></div>
-            <div ng-include=" 'views/menu-content1.html'" flex="50" ></div>
+            <div ng-include="'app/views/menu-content-header.html'" flex="50"   style="background-color: #747474"></div>
+            <div ng-include=" 'app/views/menu-content1.html'" flex="50" ></div>
         </md-content>
 
         <!--Small menu left -->
@@ -37,16 +37,16 @@
                     ng-if="size=='lg' || size=='md'"
 
                     layout="column">
-            <div ng-include="'views/menu-content-header.html'"   style="background-color: #fff"></div>
-            <div ng-include=" 'views/menu-content1.html'"  ></div>
+            <div ng-include="'app/views/menu-content-header.html'"   style="background-color: #fff"></div>
+            <div ng-include=" 'app/views/menu-content1.html'"  ></div>
         </md-content>
 
         <!--Contact right -->
-        <md-sidenav class="md-sidenav-right md-whiteframe-z3" 
-                    md-component-id="right" 
+        <md-sidenav class="md-sidenav-right md-whiteframe-z3"
+                    md-component-id="right"
                     id="right">
 
-            <div ng-include=" 'views/contact.html'" ng-controller="ContactCtrl"></div>                    
+            <div ng-include=" 'app/views/contact.html'" ng-controller="ContactCtrl"></div>
 
         </md-sidenav>
 
@@ -59,7 +59,7 @@
                     layout="row"
                     ng-if="size=='sm' || size=='xs'"
                     >
-            <div ng-include=" 'views/menu-content2.html'" ></div>
+            <div ng-include=" 'app/views/menu-content2.html'" ></div>
         </md-sidenav>
 
 
@@ -74,14 +74,13 @@
                     <div id="intro-name" ng-if="size != 'xl' && size!='sm' && size!='xs'">
                         <span>Antoine</span>
                         <div class="fade-show-container">
-                            <img style="vertical-align:middle" class="fade-show" src="img/Slide.png" id="slideImg" ng-show="showSlide"/>
-                            <img style="vertical-align:middle" class="fade-show" src="img/me.png" alt="Antoine LUCAS" id="photoImg" ng-show="showFace"/>
+                            <img style="vertical-align:middle" class="fade-show" src="app/img/Slide.png" id="slideImg" ng-show="showSlide"/>
+                            <img style="vertical-align:middle" class="fade-show" src="app/img/me.png" alt="Antoine LUCAS" id="photoImg" ng-show="showFace"/>
                         </div>
                         <span >Lucas</span>
                         <div style="clear:both"></div>
                     </div>
-
-                    <div ng-include=" 'views/intro.html'"></div>
+                    <div ng-include=" 'app/views/intro.html'" ng-controller="IntroCtrl"></div>
                 </section>
 
 
@@ -89,10 +88,10 @@
                     <div >
                         <h2 class="mtcon-title">Resume</h2>
                     </div>
-                    <div id="openSource" ng-include=" 'views/open-source.html'" ng-controller="OpenCtrl"></div>
-                    <div id="resume" ng-include=" 'views/professional.html'" ng-controller="ProCtrl"></div>
-                    <div id="education" ng-include=" 'views/education.html'" ng-controller="EducationCtrl"></div>
-                    <div id="interests" ng-include=" 'views/interests.html'" ng-controller="InterestsCtrl"></div>
+                    <div id="osource" ng-include=" 'app/views/open-source.html'" ng-controller="OpenCtrl"></div>
+                    <div id="resume" ng-include=" 'app/views/professional.html'" ng-controller="ProCtrl"></div>
+                    <div id="education" ng-include=" 'app/views/education.html'" ng-controller="EducationCtrl"></div>
+                    <div id="interests" ng-include=" 'app/views/interests.html'" ng-controller="InterestsCtrl"></div>
                 </md-whiteframe>
 
 
@@ -102,29 +101,29 @@
                         <h2 class="mtcon-title">Social Links</h2>
                     </div>
 
-                    <div id="social" ng-include="'views/social.html'" ng-controller="SocialCtrl"></div>
+                    <div id="social" ng-include="'app/views/social.html'" ng-controller="SocialCtrl"></div>
 
                 </md-whiteframe>
 
                 <md-whiteframe class="md-section md-whiteframe-z1" id="services">
                     <div >
                         <h2 class="mtcon-title">Services</h2>
-                    </div>	
-                    <div ng-include=" 'views/services.html'" ng-controller="ServiceCtrl"></div>                    
+                    </div>
+                    <div ng-include=" 'app/views/services.html'" ng-controller="ServiceCtrl"></div>
                 </md-whiteframe>
 
                 <md-whiteframe class="md-section md-whiteframe-z1" id="skills">
                     <div >
                         <h2 class="mtcon-title">Skills</h2>
-                    </div>	
-                    <div ng-include=" 'views/skills.html'" ng-controller="SkillsCtrl"></div>                    
+                    </div>
+                    <div ng-include=" 'app/views/skills.html'" ng-controller="SkillsCtrl"></div>
                 </md-whiteframe>
 
                 <md-whiteframe class="md-section md-whiteframe-z1" id="technologies">
                     <div >
                         <h2 class="mtcon-title">Technology used for this page</h2>
-                    </div>	
-                    <div ng-include=" 'views/technologies.html'" ng-controller="TechnologiesCtrl"></div>                    
+                    </div>
+                    <div ng-include=" 'app/views/technologies.html'" ng-controller="TechnologiesCtrl"></div>
                 </md-whiteframe>
 
 

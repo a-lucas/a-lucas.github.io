@@ -20,7 +20,7 @@
             timing-function="ease-in-out">
 
             <flippy-front>
-                <img ng-if="service.image !== false" src="{{service.image}}" />
+                <img ng-if="service.image !== false" ng-src="{{service.image}}" />
                 <div ng-if="service.image === false">
                     <canvas width="138" height="138" id="myCanvas" style="background-color: #000;border-radius : 75px;">
                         <p>Anything in here will be replaced on browsers that support the canvas element</p>
@@ -45,7 +45,7 @@
                         <a href="" weight="18">Sphinx</a>
                         <a href="" weight="10">Code Igniter</a>
                         <a href="" weight="18">REST</a>
-                        <a href="" weight="15">SOAP</a>                        
+                        <a href="" weight="15">SOAP</a>
                         <a href="" weight="18">CSS3</a>
                         <a href="" weight="12">Jasmine</a>
                         <a href="" weight="12">Karma</a>
@@ -54,12 +54,12 @@
 
                     </div>
                 </div>
-                <h2 style="font-size : 20px;">{{service.title}}</h2>        
+                <h2 style="font-size : 20px;">{{service.title}}</h2>
 
             </flippy-front>
 
             <flippy-back>
-                <h2 style="font-size : 20px;" >{{service.title}}</h2>  
+                <h2 style="font-size : 20px;" >{{service.title}}</h2>
                 <p ng-bind-html="service.description | unsafe"></p>
 
             </flippy-back>

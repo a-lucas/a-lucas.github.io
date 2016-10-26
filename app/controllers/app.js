@@ -5,13 +5,23 @@
     'use strict';
 
 // Declare app level module which depends on views, and components
-    angular.module('Antoine_Lucas_CV').controller("AppCtrl", function ($scope, $rootScope, $mdMedia, $timeout, $document, $window, $mdSidenav, $parse, $log) {
+    angular.module('Antoine_Lucas_CV')
+        .filter('newlines', function () {
+            return function (text) {
+                return text.replace(/\n/g, '<br/>');
+            };
+        })
+        .filter('trusthtml', function($sce) {
+            return function(text) {
+                return $sce.trustAsHtml(text);
+            };
+        })
+        .controller("AppCtrl", function ($scope, $rootScope, $mdMedia, $timeout, $document, $window, $mdSidenav, $parse, $log) {
             $scope.customQuery = $mdMedia('(min-width: 500px)');
             $scope.anotherCustom = $mdMedia('max-width: 400px');
 
 
-            if ("ontouchstart" in window || navigator.msMaxTouchPoints)
-            {
+            if ("ontouchstart" in window || navigator.msMaxTouchPoints) {
                 $scope.isTouch = true;
                 $scope.flex_small_content = 100;
             } else {
@@ -39,33 +49,33 @@
 
             function checkSideBarsDimension() {
                 var documentWidth = $window.document.body.clientWidth;
-                if ($mdMedia('min-width: 1600px') ) {
-                    $rootScope.contentStyle= {
+                if ($mdMedia('min-width: 1600px')) {
+                    $rootScope.contentStyle = {
                         width: (documentWidth - 550 - 20) + 'px',
                         'max-width': (documentWidth - 550 - 20) + 'px'
                     };
                     $rootScope.size = 'xl';
-                } else if ($mdMedia('min-width: 1200px') ) {
-                    $rootScope.contentStyle= {
+                } else if ($mdMedia('min-width: 1200px')) {
+                    $rootScope.contentStyle = {
                         width: (documentWidth - 350 - 20) + 'px',
                         'max-width': (documentWidth - 350 - 20) + 'px'
                     };
                     $rootScope.size = 'lg';
-                } else if ($mdMedia('min-width: 900px') ) {
-                    $rootScope.contentStyle= {
+                } else if ($mdMedia('min-width: 900px')) {
+                    $rootScope.contentStyle = {
                         width: (documentWidth - 350 - 20) + 'px',
                         'max-width': (documentWidth - 350 - 20) + 'px'
                     };
                     $rootScope.size = 'md';
-                } else if ($mdMedia('min-width: 600px') ) {
-                    $rootScope.contentStyle= {
+                } else if ($mdMedia('min-width: 600px')) {
+                    $rootScope.contentStyle = {
                         width: (documentWidth - 40) + 'px',
                         'max-width': (documentWidth - 40) + 'px',
                         'margin-left': '20px'
                     };
                     $rootScope.size = 'sm';
                 } else {
-                    $rootScope.contentStyle= {};
+                    $rootScope.contentStyle = {};
                     $rootScope.size = 'xs';
                 }
 

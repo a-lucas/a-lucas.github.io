@@ -131,6 +131,7 @@
 // Declare app level module which depends on views, and components
     angular.module('Antoine_Lucas_CV', [
         'ngRoute',
+        'Antoine_Lucas_CV.intro',
         'Antoine_Lucas_CV.pro',
         'Antoine_Lucas_CV.social',
         'Antoine_Lucas_CV.education',
@@ -155,12 +156,12 @@
     ])
             .config(['$routeProvider', function ($routeProvider) {
                     $routeProvider.when('/AntoineLucas', {
-                        templateUrl: 'views/menu.html',
+                        templateUrl: 'app/views/menu.html',
                         controller: 'AppCtrl'
                     }).otherwise({redirectTo: '/AntoineLucas'});
                 }])
             .run(function ($http, $templateCache) {
-                var templates = ['views/skype.html', 'views/hangout.html'];
+                var templates = ['app/views/skype.html', 'app/views/hangout.html'];
 
                 angular.forEach(templates, function (templateUrl) {
                     $http({method: 'GET', url: templateUrl}).success(function (data) {
@@ -174,14 +175,14 @@
  */
 var data  = {
 
-    paper: {
-        first_name: "Antoine",
-        last_name: "LUCAS",
-        phone: "0424 207 292",
-        email: "antoine.lucas.australia@gmail.com",
-        headline: "I am a Web DevOps with a decade of experiences developing complex solutions."
-        + "I have a good knowledge of BA and BI acquired with years of practice."
-        + "I am available for contracts on site or remotly.",
+    "paper": {
+        "first_name": "Antoine",
+        "last_name": "LUCAS",
+        "phone": "0424 207 292",
+        "email": "antoine.lucas.australia@gmail.com",
+        "headline": "I am a Web DevOps with a decade of experience developing complex solutions.\n"
+        + "I have good knowledge of BA and BI acquired with years of practice.\n"
+        + "I am available for contracts on site or remotely.\n",
         info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
         onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the downoad button."
     },
@@ -190,7 +191,8 @@ var data  = {
             "title": "Angular.js-server",
             "date": {"year": 2016, "month": 10},
             "tags": ["Node.js", "server rendering", "Angular.js", "JSDOM", "Typescript", "ES6/7"],
-            "description": "This is an ongoing project that allows angular web apps to be pre-rendered on the server and cached to improve rendring performance and SEO",
+            "description": "This is an ongoing project that allows angular web apps to be pre-rendered on the server and cached to improve rendering"
+            + " performance and SEO",
             "websites": [{
                 title: "Angular.js-server on Github",
                 url: "https://github.com/a-lucas/angular.js-server"
@@ -201,7 +203,7 @@ var data  = {
             "date": {"year": 2016, "month": 10},
             "tags": ["Node.js", "REDIS", "URL caching", "Regexp", "Typescript"],
             "description": "Cache URLs into a redis datastore with an extensive flexibility on a per domain, per rule regexp filtering. " +
-            "Supports ttl and instance sharing between different caching servers",
+            "It supports ttl and instance sharing between different caching servers",
             "websites": [{
                 title: "Redis-url-cache on Github",
                 url:"https://github.com/a-lucas/redis-url-cache"
@@ -219,7 +221,8 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["PHP", "HTML & CSS3", "SASS", "Drupal6", "Aria"],
-            "description": [{text: "Following accessibilityOz reports, we did modify an existing codebase to assess and implement accessibility for the Commonwealth Olympic Games 2018. We met the strict deadline just in time"}],
+            "description": [{text: "Following accessibilityOz reports, we modified an existing codebase to assess and implement accessibility for the Commonwealth "
+            + " Olympic Games 2018. We met the strict deadline just in time. I also implemented the qfcc website responsive front-end following design specs."}],
             "websites": [{
                 title: 'Commonwealth Olympic games 2018',
                 url: 'http://gc2018.com'
@@ -239,7 +242,7 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["ReactJS", "HTML & CSS3", "SASS", "Redux"],
-            "description": [{text: "I help finalizing a complex registtration form for AUDI drive experience."}],
+            "description": [{text: "I help finalizing a complex registration form for AUDI drive experience."}],
             "websites": [],
             "collapsed": false
         },
@@ -253,7 +256,8 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["AngularJS", "HTML & CSS3", "SASS", "Bootstrap", "Team Foundation"],
-            "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following  chid birth for parents and friends - based on a sketch specification."}],
+            "description": [{text: "I created from scratch a new website addressing issues about the first 2 years following chid birth for parents and friends - "
+            + " based on a sketch specification."}],
             "websites": [{
                 title: "The Blue room - the first 1000 days",
                 url: 'http://theblueroom.bupa.com.au/first-1000-days#/'
@@ -270,7 +274,8 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["AngularJS", "Reverse Engineering", "Form Validations", "SASS", "HTML5 & CSS"],
-            "description": [{text: "Sydney Water needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer  - which helps a well known governmental sevice provider to speed up processing complex applicationns processing time."}],
+            "description": [{text: "Sydney Water needed a fast AngularJS coder to help meet a private client MVP deadline. The product is an industry game changer "
+            +"  - which helps a well known governmental service provider to speed up processing complex applicationns."}],
             "websites": [{
                 title: "Sydney Water Customer TapIn",
                 url: 'http://www.sydneywater.com.au/tapin/index.htm'
@@ -287,7 +292,9 @@ var data  = {
                 "town": "Sydney"
             },
             "tags": ["ReactJS", "FLUX", "Fluxible", "NodeJS", "JSX Harmony", "ES6/7", "SASS", "HTML5 & CSS3"],
-            "description": [{text: "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, I help integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. I was part of a team of 5 and we all manage to finish the project in time."}],
+            "description": [{text: "Bauer Media needed the help of some extra contractors to help start & finish their new MVP website. In this role, "
+            + "I helped integrate Bauer innovative Fluxible based custom framework with a lot of ReactJS and continuous delivery workflow. "
+            + "I was part of a team of 5 and we all together managed to finish the project in time."}],
             "websites": [{
                 title: "Homes to Love",
                 url: "http://www.homestolove.com.au"
@@ -303,7 +310,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "tags": ["AngularJS", , "HTML & CSS3 Engineering", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack", "JQuery"],
+            "tags": ["AngularJS", "HTML & CSS3 Engineering", "Foundation", "PHP5", "Zend1", "MySQL", "SLIM Framework", "Propel ORM", "LAMP stack", "JQuery"],
             "description": [{text: "Online police checks planning, architecture & cutting edge implementation"},
                 {text: "Custom CRM design, architecture & implementation"},
                 {text: "WebServices development"},
@@ -331,13 +338,15 @@ var data  = {
             },
             "description": [{text: "JQUERY based mail client with ACL Mail basex linked to a custom CRM."},
                 {text: "Ten years of electronic correspondence have been imported from a domino legacy system to this new CRM"},
-                {text: "3 Linux dedicated server setup strategy with backup server (MySQL replication & Rsync), Database server (MySQL + Sphinx) and file&API server (Apache XML / PHP / SOAP / REST)"},
+                {text: "3 Linux dedicated server setup strategy with backup server (MySQL replication & Rsync), Database server (MySQL + Sphinx) and "
+                    + " file&API server (Apache XML / PHP / SOAP / REST)"},
                 {text: "Linux SysADMIN and maintenance"},
-                {text: "SOAP and REST integration with different Job Feeds providers such as JobG8, MOnster, JObRapido and JobAdder to cite a few"},
+                {text: "SOAP and REST integration with different Job Feeds providers such as JobG8, Monster, JobRapido and JobAdder to cite a few"},
                 {text: "XML job feeds"},
                 {text: "Creation of an organized and consistent multi-level location database from several sources"},
                 {text: "Optimized FullText search with ultra-fast grouping and count "},
-                {text: "Maintenance and implementation of Google DFP - We had the visit of a Google sales representative that told us that we were N1 in CTR in the australian market"}],
+                {text: "Maintenance and implementation of Google DFP - We had the visit of a Google sales representative that told us that we were Number1 in CTR in "
+                + " the australian market"}],
             "tags": ["Ubuntu Server", "MySQL replication", "PHP5", "Yii", "Google Webmaster", "Google Analytics", "SOAP",  "SASS/Less", "XML Feeds", "SEO", "DoubleClick", "Mysql", "SPHINX search", "JQuery", "IMAP protocol", "Domino", "HTML & CSS"],
             "websites": [{
                 title: "Webjobz.com",
@@ -354,7 +363,7 @@ var data  = {
                 "country": "Australia",
                 "town": "Perth"
             },
-            "description": [{text: "The project was a a clone of AliBaba. I mainly wrote a curl spider engine, a search engine and an admin interface"}],
+            "description": [{text: "The project was a a clone of Ali-baba. I mainly wrote a curl spider engine, a search engine and an admin interface"}],
             "tags": ["PHP5", "Curl", "AliBaba", "MySQL", "JQuery", "HTML & CSS"],
             "websites": [],
             "collapsed": false
@@ -368,7 +377,7 @@ var data  = {
                 "country": "Sudan",
                 "town": "Kartoum"
             },
-            "description": [{text: "I did teach Maths Physics & Biology to high school students from diplomatic backgrounds."}],
+            "description": [{text: "I taught Maths Physics & Biology to high school students from diplomatic backgrounds."}],
             "tags": ["Patience", "Kindness", "Authority", "Communication"],
             "websites": [{
                 title: "French School of Khartoum",
@@ -384,7 +393,7 @@ var data  = {
                 "country": "France",
                 "town": "Montpellier"
             },
-            "description": [{text: "I did learn to code by my own doing some freelance jobs back in France."}],
+            "description": [{text: "I learned to code by my own doing some freelance jobs back in France."}],
             "tags": ["PHP", "Accounting Certification", "LAMP", "Flash", "Suze", "Gentoo", "QMail", "HTML & CSS"],
             "websites": [],
             "collapsed": false
@@ -420,12 +429,12 @@ var data  = {
         {
             "title": "PhoneGap / Cordova",
             "description": "You have an existing web application running AngularJs, EmberJs or written in any javascript web-application framework and you want to transform it into a phone or tablet native application. Migration from an existing <b>web</b> application to an IOS, Android , Windows or Blackberry platform needs some optimization. <a ng-click='swipeLeft()'>Contact me</a>",
-            "image": "img/phone-gap-icon.png"
+            "image": "app/img/phone-gap-icon.png"
         },
         {
             "title": "Responsive Design",
             "description": "Do you need to make your website responsive? A responsive design is a great cost saver. Most of the code doesn;t need any change, only the front-end css & html needs to be modified. The result will be a website that looks great on all platforms : TV, Desktop, Laptops, Tablets and phones. ",
-            "image": "img/responsive.png"
+            "image": "app/img/responsive.png"
         },
         {
             "title": "Web Development",
@@ -435,23 +444,23 @@ var data  = {
         {
             "title": "Web Architect",
             "description": "Are you looking to design a complexe web based application. Whatever SASS, Public internet or private  Intranet, it is crucial to take the correct decisions upfront. I have build from scratch many complex web-based system, and I am really passionate to discuss about challenging new concepts",
-            "image": "img/architect.png"
+            "image": "app/img/architect.png"
         },
         {
             "title": "Databases",
             "description": "Database restoration, Maintenance, MIgration, Design, Replication. The only thing I don't know about is Database Scalability.",
-            "image": "img/database.png"
+            "image": "app/img/database.png"
         },
         {
             "title": "Crawlers",
             "description": "A crawler is a bot that automatically scrap web content following a strict specification. A crawler can authenticate, save cookies & session, parse HTML and extract relevant informations. Internet data is HUGE, a good massive crawler engine needs several dedicated servers.",
-            "image": "img/crawler.png"
+            "image": "app/img/crawler.png"
         }
     ],
     "skills" : {
         "coding": [
             {
-                "logo": "img/PHP_logo.png",
+                "logo": "app/img/PHP_logo.png",
                 "bgColor": "#6082BB",
                 "name": "PHP",
                 "languages": [
@@ -466,7 +475,7 @@ var data  = {
                 ]
             },
             {
-                "logo": "img/ecma5_logo.png",
+                "logo": "app/img/ecma5_logo.png",
                 "bgColor": "#fff",
                 "name": "Javascript",
                 "languages": [
@@ -485,7 +494,7 @@ var data  = {
                     {"name": "ember.js", "percentage": 1}
                 ]
             }, {
-                "logo": "img/perl_logo2.png",
+                "logo": "app/img/perl_logo2.png",
                 "bgColor": "#fff",
                 "name": "Perl",
                 "languages": [
@@ -518,7 +527,7 @@ var data  = {
                 ]
             },
             {
-                "logo": "img/java-oracle.png",
+                "logo": "app/img/java-oracle.png",
                 "bgColor": "#fff",
                 "name": "JAVA",
                 "languages": [
@@ -529,7 +538,7 @@ var data  = {
                 ]
             },
             {
-                "logo": "img/mslogo.png",
+                "logo": "app/img/mslogo.png",
                 "bgColor": "#fff",
                 "name": "Microsoft",
                 "languages": [
@@ -616,15 +625,15 @@ var data  = {
     "interests" : [{
             "name": "Kite Surfing",
             "description": "“The best surfer out there is the one having the most fun.“ – Phil Edwards",
-            "photo": "img/kiteSurf.jpg"
+            "photo": "app/img/kiteSurf.jpg"
         }, {
             "name": "Traveling",
             "description": "“You don’t have to be rich to travel well.” – Eugene Fodor",
-            "photo": "img/travelling.jpg"
+            "photo": "app/img/travelling.jpg"
         }, {
             "name": "Friends",
             "description": "Two persons cannot long be friends if they cannot forgive each other's little failings.",
-            "photo": "img/friendship.jpg"
+            "photo": "app/img/friendship.jpg"
         }],
 
     "travels": [
@@ -745,7 +754,7 @@ var data  = {
             "comment": "Generate a docx from a template - using angularJS parser."
         }
     ]
-};;/* 
+};;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -835,6 +844,10 @@ var data  = {
         this.get_technology_used = function(){
             return data.technology_used;
         };
+
+        this.get_paper  = function() {
+            return data.paper;
+        };
     });
 })();;/**
  * Created by antoine on 29/10/15.
@@ -843,13 +856,23 @@ var data  = {
     'use strict';
 
 // Declare app level module which depends on views, and components
-    angular.module('Antoine_Lucas_CV').controller("AppCtrl", function ($scope, $rootScope, $mdMedia, $timeout, $document, $window, $mdSidenav, $parse, $log) {
+    angular.module('Antoine_Lucas_CV')
+        .filter('newlines', function () {
+            return function (text) {
+                return text.replace(/\n/g, '<br/>');
+            };
+        })
+        .filter('trusthtml', function($sce) {
+            return function(text) {
+                return $sce.trustAsHtml(text);
+            };
+        })
+        .controller("AppCtrl", function ($scope, $rootScope, $mdMedia, $timeout, $document, $window, $mdSidenav, $parse, $log) {
             $scope.customQuery = $mdMedia('(min-width: 500px)');
             $scope.anotherCustom = $mdMedia('max-width: 400px');
 
 
-            if ("ontouchstart" in window || navigator.msMaxTouchPoints)
-            {
+            if ("ontouchstart" in window || navigator.msMaxTouchPoints) {
                 $scope.isTouch = true;
                 $scope.flex_small_content = 100;
             } else {
@@ -877,33 +900,33 @@ var data  = {
 
             function checkSideBarsDimension() {
                 var documentWidth = $window.document.body.clientWidth;
-                if ($mdMedia('min-width: 1600px') ) {
-                    $rootScope.contentStyle= {
+                if ($mdMedia('min-width: 1600px')) {
+                    $rootScope.contentStyle = {
                         width: (documentWidth - 550 - 20) + 'px',
                         'max-width': (documentWidth - 550 - 20) + 'px'
                     };
                     $rootScope.size = 'xl';
-                } else if ($mdMedia('min-width: 1200px') ) {
-                    $rootScope.contentStyle= {
+                } else if ($mdMedia('min-width: 1200px')) {
+                    $rootScope.contentStyle = {
                         width: (documentWidth - 350 - 20) + 'px',
                         'max-width': (documentWidth - 350 - 20) + 'px'
                     };
                     $rootScope.size = 'lg';
-                } else if ($mdMedia('min-width: 900px') ) {
-                    $rootScope.contentStyle= {
+                } else if ($mdMedia('min-width: 900px')) {
+                    $rootScope.contentStyle = {
                         width: (documentWidth - 350 - 20) + 'px',
                         'max-width': (documentWidth - 350 - 20) + 'px'
                     };
                     $rootScope.size = 'md';
-                } else if ($mdMedia('min-width: 600px') ) {
-                    $rootScope.contentStyle= {
+                } else if ($mdMedia('min-width: 600px')) {
+                    $rootScope.contentStyle = {
                         width: (documentWidth - 40) + 'px',
                         'max-width': (documentWidth - 40) + 'px',
                         'margin-left': '20px'
                     };
                     $rootScope.size = 'sm';
                 } else {
-                    $rootScope.contentStyle= {};
+                    $rootScope.contentStyle = {};
                     $rootScope.size = 'xs';
                 }
 
@@ -1052,6 +1075,17 @@ var data  = {
 
             });
 })();;(function () {
+    'use strict';
+
+    angular.module('Antoine_Lucas_CV.intro', ['Antoine_Lucas_CV.services'])
+        .controller('IntroCtrl', function ($scope, DataSource) {
+
+            $scope.paper = DataSource.get_paper();
+
+        })
+       ;
+})();
+;(function () {
     'use strict';
     angular.module('Antoine_Lucas_CV.pro', ['Antoine_Lucas_CV.services'])
             .controller('ProCtrl', function ($scope, DataSource) {
@@ -1236,7 +1270,7 @@ var data  = {
 
 angular.module("views/contact.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/contact.min.html",
-    "<div class=\"tabsdemoStaticTabs sample\"><md-tabs class=\"md-accent\" md-selected=\"data.selectedIndex\"><md-tab id=\"tab1\" aria-controls=\"tab1-content\"><img src=\"img/form-ico.png\" hide-gt-md> <span hide show-gt-md>Contact Form</span></md-tab><md-tab id=\"tab2\" aria-controls=\"tab2-content\"><img src=\"img/hangout.png\" hide-gt-md> <span hide show-gt-md>Hangout</span></md-tab><md-tab id=\"tab3\" aria-controls=\"tab3-content\"><img src=\"img/skype.png\" hide-gt-md> <span hide show-gt-md>Skype</span></md-tab></md-tabs><ng-switch on=\"data.selectedIndex\" class=\"tabpanel-container\"><div role=\"tabpanel\" id=\"tab1-content\" aria-labelledby=\"tab1\" ng-switch-when=\"0\" md-swipe-left=\"next()\" md-swipe-right=\"previous()\"><div ng-include=\" 'views/form.html'\" ng-controller=\"FormCtrl\"></div></div><div role=\"tabpanel\" id=\"tab2-content\" aria-labelledby=\"tab2\" ng-switch-when=\"1\" md-swipe-left=\"next()\" md-swipe-right=\"previous()\"><div ng-include=\" 'views/hangout.html'\" ng-controller=\"HangoutCtrl\"></div></div><div role=\"tabpanel\" id=\"tab3-content\" aria-labelledby=\"tab3\" ng-switch-when=\"2\" md-swipe-left=\"next()\" md-swipe-right=\"previous()\"><div ng-include=\" 'views/skype.html' \" ng-controller=\"SkypeCtrl\" style=\"margin-top: -40px\"></div></div></ng-switch></div>");
+    "<div class=\"tabsdemoStaticTabs sample\"><md-tabs class=\"md-accent\" md-selected=\"data.selectedIndex\"><md-tab id=\"tab1\" aria-controls=\"tab1-content\"><img src=\"app/img/form-ico.png\" hide-gt-md> <span hide show-gt-md>Contact Form</span></md-tab><md-tab id=\"tab2\" aria-controls=\"tab2-content\"><img src=\"app/img/hangout.png\" hide-gt-md> <span hide show-gt-md>Hangout</span></md-tab><md-tab id=\"tab3\" aria-controls=\"tab3-content\"><img src=\"app/img/skype.png\" hide-gt-md> <span hide show-gt-md>Skype</span></md-tab></md-tabs><ng-switch on=\"data.selectedIndex\" class=\"tabpanel-container\"><div role=\"tabpanel\" id=\"tab1-content\" aria-labelledby=\"tab1\" ng-switch-when=\"0\" md-swipe-left=\"next()\" md-swipe-right=\"previous()\"><div ng-include=\" 'app/views/form.html'\" ng-controller=\"FormCtrl\"></div></div><div role=\"tabpanel\" id=\"tab2-content\" aria-labelledby=\"tab2\" ng-switch-when=\"1\" md-swipe-left=\"next()\" md-swipe-right=\"previous()\"><div ng-include=\" 'app/views/hangout.html'\" ng-controller=\"HangoutCtrl\"></div></div><div role=\"tabpanel\" id=\"tab3-content\" aria-labelledby=\"tab3\" ng-switch-when=\"2\" md-swipe-left=\"next()\" md-swipe-right=\"previous()\"><div ng-include=\" 'app/views/skype.html' \" ng-controller=\"SkypeCtrl\" style=\"margin-top: -40px\"></div></div></ng-switch></div>");
 }]);
 
 angular.module("views/education.min.html", []).run(["$templateCache", function($templateCache) {
@@ -1258,12 +1292,12 @@ angular.module("views/hangout.min.html", []).run(["$templateCache", function($te
 
 angular.module("views/interests.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/interests.min.html",
-    "<section class=\"timeline\"><div class=\"timeline-item\" style=\"margin-bottom:0px !important\"><div class=\"timeline-head\"><i class=\"fa fa-lightbulb-o\"></i></div><div class=\"timeline-head-content\"><h3>Interests</h3></div></div></section><section layout=\"row\" ng-repeat=\"(i,int) in interests\"><md-content flex class=\"timeline\"><div><div class=\"timeline-item-date\" ng-if=\"size=='lg' || size=='xl'\" flex></div><div class=\"timeline-item-trigger\" slide-toggle=\"#edu{{i}}\" ng-if=\"size=='lg' || size=='xl'\"><span><i class=\"fa fa-minus-circle\" style=\"color: white\" ng-show=\"int.collapsed\" ng-click=\"int.collapsed = !int.collapsed\"></i> <i class=\"fa fa-plus-circle\" style=\"color: white\" ng-show=\"!int.collapsed\" ng-click=\"int.collapsed = !int.collapsed\"></i></span></div></div><md-content flex><div ng-if=\"size=='lg' || size=='xl'\" class=\"timeline-arrow\"><i></i></div><md-content class=\"timeline-item-content\" slide-toggle=\"#int{{i}}\" flex><h3 class=\"timeline-item-title\" data-toggle=\"collapse\" ng-click=\"int.collapsed = !int.collapsed\" data-target=\"#int{{i}}\">{{int.name}} <span class=\"interests\">{{int.description}}</span></h3><div class=\"slideable\" id=\"int{{i}}\"><img src=\"{{int.photo}}\" class=\"interest-img\"></div></md-content></md-content></md-content></section><md-divider></md-divider>");
+    "<section class=\"timeline\"><div class=\"timeline-item\" style=\"margin-bottom:0px !important\"><div class=\"timeline-head\"><i class=\"fa fa-lightbulb-o\"></i></div><div class=\"timeline-head-content\"><h3>Interests</h3></div></div></section><section layout=\"row\" ng-repeat=\"(i,int) in interests\"><md-content flex class=\"timeline\"><div><div class=\"timeline-item-date\" ng-if=\"size=='lg' || size=='xl'\" flex></div><div class=\"timeline-item-trigger\" slide-toggle=\"#edu{{i}}\" ng-if=\"size=='lg' || size=='xl'\"><span><i class=\"fa fa-minus-circle\" style=\"color: white\" ng-show=\"int.collapsed\" ng-click=\"int.collapsed = !int.collapsed\"></i> <i class=\"fa fa-plus-circle\" style=\"color: white\" ng-show=\"!int.collapsed\" ng-click=\"int.collapsed = !int.collapsed\"></i></span></div></div><md-content flex><div ng-if=\"size=='lg' || size=='xl'\" class=\"timeline-arrow\"><i></i></div><md-content class=\"timeline-item-content\" slide-toggle=\"#int{{i}}\" flex><h3 class=\"timeline-item-title\" data-toggle=\"collapse\" ng-click=\"int.collapsed = !int.collapsed\" data-target=\"#int{{i}}\">{{int.name}} <span class=\"interests\">{{int.description}}</span></h3><div class=\"slideable\" id=\"int{{i}}\"><img ng-src=\"{{int.photo}}\" class=\"interest-img\"></div></md-content></md-content></md-content></section><md-divider></md-divider>");
 }]);
 
 angular.module("views/intro.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/intro.min.html",
-    "<md-divider></md-divider><h3>I'm an Australia & Europe based web application developer. I am currently available for remote work.<br>I <span style=\"color:red\">&#x3C;3</span> creating modern web and mobile solutions, for startups or small business.</h3><md-divider></md-divider>");
+    "<md-divider></md-divider><h3>{{paper.intro}} I'm an Australia & Europe based web application developer. I am currently available for remote work.<br>I <span style=\"color:red\">&#x3C;3</span> creating modern web and mobile solutions, for startups or small business.</h3><md-divider></md-divider>");
 }]);
 
 angular.module("views/menu-content-header.min.html", []).run(["$templateCache", function($templateCache) {
@@ -1273,17 +1307,17 @@ angular.module("views/menu-content-header.min.html", []).run(["$templateCache", 
 
 angular.module("views/menu-content1.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/menu-content1.min.html",
-    "<md-content md-padding md-margin><md-list style=\"border-top: 1px solid #555\"><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\" id=\"intro_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex id=\"resume_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex id=\"education_btn\"><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('social')\" flex id=\"social_btn\"><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex id=\"interests_btn\"><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex id=\"service_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex id=\"skills_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex id=\"technologies_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex id=\"contact_btn\"><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button href=\"generator/ANTOINE_LUCAS_RESUME.doc\" class=\"md-primary\" target=\"_blank\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></div></md-button></md-item-content></md-item><md-divider></md-divider></md-list></md-content>");
+    "<md-content md-padding md-margin><md-list style=\"border-top: 1px solid #555\"><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\" id=\"intro_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('osource')\" flex id=\"osource_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Open Source</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex id=\"resume_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex id=\"education_btn\"><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('social')\" flex id=\"social_btn\"><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex id=\"interests_btn\"><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex id=\"service_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex id=\"skills_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex id=\"technologies_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex id=\"contact_btn\"><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button href=\"generator/ANTOINE_LUCAS_RESUME.doc\" class=\"md-primary\" target=\"_blank\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></div></md-button></md-item-content></md-item><md-divider></md-divider></md-list></md-content>");
 }]);
 
 angular.module("views/menu-content2.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/menu-content2.min.html",
-    "<div class=\"menu\" md-padding md-margin><div class=\"logo\" flex><h2>Antoine LUCAS <span>Web Application Developer</span></h2></div><md-button class=\"md-raised\" flex ng-click=\"goToAnchor('intro')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('resume')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('education')\" flex><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('social')\" flex><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('interests')\" flex><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('services')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('skills')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('technologies')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button><md-button class=\"md-raised\" ng-click=\"swipeLeft()\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button><md-button class=\"md-primary md-raised\" flex><div class=\"btn-content\"><a ng-href=\"generator/ANTOINE_LUCAS_RESUME.doc\" target=\"_blank\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></a></div></md-button></div>");
+    "<div class=\"menu\" md-padding md-margin><div class=\"logo\" flex><h2>Antoine LUCAS <span>Web Application Developer</span></h2></div><md-button class=\"md-raised\" flex ng-click=\"goToAnchor('intro')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('osource')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Open Source</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('resume')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('education')\" flex><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('social')\" flex><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('interests')\" flex><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('services')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('skills')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('technologies')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button><md-button class=\"md-raised\" ng-click=\"swipeLeft()\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button><md-button class=\"md-primary md-raised\" flex><div class=\"btn-content\"><a ng-href=\"generator/ANTOINE_LUCAS_RESUME.doc\" target=\"_blank\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></a></div></md-button></div>");
 }]);
 
 angular.module("views/menu.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/menu.min.html",
-    "<div ng-controller=\"AppCtrl\" layout=\"column\" style=\"min-height:100%\" ng-swipe-right=\"swipeRight()\" ng-swipe-left=\"swipeLeft()\"><div class=\"topBanner\" ng-if=\"size=='sm' || size=='xs'\"><h1>Antoine LUCAS</h1><div ng-if=\"size=='sm' || size=='xs'\" class=\"toggleBtn\"><i class=\"fa fa-2x fa-bars\" ng-if=\"size=='sm' || size=='xs'\" ng-click=\"toggleLeft()\"></i></div></div><md-whiteframe layout=\"row\" layout-align=\"start end\"><md-content class=\"md-sidenav-left md-whiteframe-z2 large-sidenav\" ng-if=\"size=='xl'\" layout=\"row\"><div ng-include=\"'views/menu-content-header.html'\" flex=\"50\" style=\"background-color: #747474\"></div><div ng-include=\" 'views/menu-content1.html'\" flex=\"50\"></div></md-content><md-content class=\"md-sidenav-left md-whiteframe-z3 small-sidenav\" ng-if=\"size=='lg' || size=='md'\" layout=\"column\"><div ng-include=\"'views/menu-content-header.html'\" style=\"background-color: #fff\"></div><div ng-include=\" 'views/menu-content1.html'\"></div></md-content><md-sidenav class=\"md-sidenav-right md-whiteframe-z3\" md-component-id=\"right\" id=\"right\"><div ng-include=\" 'views/contact.html'\" ng-controller=\"ContactCtrl\"></div></md-sidenav><md-sidenav class=\"md-sidenav-left md-whiteframe-z2\" md-component-id=\"largeLeft\" id=\"largeLeft\" layout=\"row\" ng-if=\"size=='sm' || size=='xs'\"><div ng-include=\" 'views/menu-content2.html'\"></div></md-sidenav><md-content class=\"content md-padding\" ng-style=\"contentStyle\"><div layout=\"column\" layout-fill layout-align=\"top center\"><section class=\"intro\" id=\"intro\"><div id=\"intro-name\" ng-if=\"size != 'xl' && size!='sm' && size!='xs'\"><span>Antoine</span><div class=\"fade-show-container\"><img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/Slide.png\" id=\"slideImg\" ng-show=\"showSlide\"> <img style=\"vertical-align:middle\" class=\"fade-show\" src=\"img/me.png\" alt=\"Antoine LUCAS\" id=\"photoImg\" ng-show=\"showFace\"></div><span>Lucas</span><div style=\"clear:both\"></div></div><div ng-include=\" 'views/intro.html'\"></div></section><md-whiteframe class=\"md-section md-whiteframe-z1\" layout=\"column\" layout-align=\"left center\"><div><h2 class=\"mtcon-title\">Resume</h2></div><div id=\"openSource\" ng-include=\" 'views/open-source.html'\" ng-controller=\"OpenCtrl\"></div><div id=\"resume\" ng-include=\" 'views/professional.html'\" ng-controller=\"ProCtrl\"></div><div id=\"education\" ng-include=\" 'views/education.html'\" ng-controller=\"EducationCtrl\"></div><div id=\"interests\" ng-include=\" 'views/interests.html'\" ng-controller=\"InterestsCtrl\"></div></md-whiteframe><md-whiteframe class=\"md-section md-whiteframe-z1\" layout=\"column\" layout-align=\"left center\"><div><h2 class=\"mtcon-title\">Social Links</h2></div><div id=\"social\" ng-include=\"'views/social.html'\" ng-controller=\"SocialCtrl\"></div></md-whiteframe><md-whiteframe class=\"md-section md-whiteframe-z1\" id=\"services\"><div><h2 class=\"mtcon-title\">Services</h2></div><div ng-include=\" 'views/services.html'\" ng-controller=\"ServiceCtrl\"></div></md-whiteframe><md-whiteframe class=\"md-section md-whiteframe-z1\" id=\"skills\"><div><h2 class=\"mtcon-title\">Skills</h2></div><div ng-include=\" 'views/skills.html'\" ng-controller=\"SkillsCtrl\"></div></md-whiteframe><md-whiteframe class=\"md-section md-whiteframe-z1\" id=\"technologies\"><div><h2 class=\"mtcon-title\">Technology used for this page</h2></div><div ng-include=\" 'views/technologies.html'\" ng-controller=\"TechnologiesCtrl\"></div></md-whiteframe></div><div flex></div></md-content></md-whiteframe></div>");
+    "<div ng-controller=\"AppCtrl\" layout=\"column\" style=\"min-height:100%\" ng-swipe-right=\"swipeRight()\" ng-swipe-left=\"swipeLeft()\"><div class=\"topBanner\" ng-if=\"size=='sm' || size=='xs'\"><h1>Antoine LUCAS</h1><div ng-if=\"size=='sm' || size=='xs'\" class=\"toggleBtn\"><i class=\"fa fa-2x fa-bars\" ng-if=\"size=='sm' || size=='xs'\" ng-click=\"toggleLeft()\"></i></div></div><md-whiteframe layout=\"row\" layout-align=\"start end\"><md-content class=\"md-sidenav-left md-whiteframe-z2 large-sidenav\" ng-if=\"size=='xl'\" layout=\"row\"><div ng-include=\"'app/views/menu-content-header.html'\" flex=\"50\" style=\"background-color: #747474\"></div><div ng-include=\" 'app/views/menu-content1.html'\" flex=\"50\"></div></md-content><md-content class=\"md-sidenav-left md-whiteframe-z3 small-sidenav\" ng-if=\"size=='lg' || size=='md'\" layout=\"column\"><div ng-include=\"'app/views/menu-content-header.html'\" style=\"background-color: #fff\"></div><div ng-include=\" 'app/views/menu-content1.html'\"></div></md-content><md-sidenav class=\"md-sidenav-right md-whiteframe-z3\" md-component-id=\"right\" id=\"right\"><div ng-include=\" 'app/views/contact.html'\" ng-controller=\"ContactCtrl\"></div></md-sidenav><md-sidenav class=\"md-sidenav-left md-whiteframe-z2\" md-component-id=\"largeLeft\" id=\"largeLeft\" layout=\"row\" ng-if=\"size=='sm' || size=='xs'\"><div ng-include=\" 'app/views/menu-content2.html'\"></div></md-sidenav><md-content class=\"content md-padding\" ng-style=\"contentStyle\"><div layout=\"column\" layout-fill layout-align=\"top center\"><section class=\"intro\" id=\"intro\"><div id=\"intro-name\" ng-if=\"size != 'xl' && size!='sm' && size!='xs'\"><span>Antoine</span><div class=\"fade-show-container\"><img style=\"vertical-align:middle\" class=\"fade-show\" src=\"app/img/Slide.png\" id=\"slideImg\" ng-show=\"showSlide\"> <img style=\"vertical-align:middle\" class=\"fade-show\" src=\"app/img/me.png\" alt=\"Antoine LUCAS\" id=\"photoImg\" ng-show=\"showFace\"></div><span>Lucas</span><div style=\"clear:both\"></div></div><div ng-include=\" 'app/views/intro.html'\" ng-controller=\"IntroCtrl\"></div></section><md-whiteframe class=\"md-section md-whiteframe-z1\" layout=\"column\" layout-align=\"left center\"><div><h2 class=\"mtcon-title\">Resume</h2></div><div id=\"osource\" ng-include=\" 'app/views/open-source.html'\" ng-controller=\"OpenCtrl\"></div><div id=\"resume\" ng-include=\" 'app/views/professional.html'\" ng-controller=\"ProCtrl\"></div><div id=\"education\" ng-include=\" 'app/views/education.html'\" ng-controller=\"EducationCtrl\"></div><div id=\"interests\" ng-include=\" 'app/views/interests.html'\" ng-controller=\"InterestsCtrl\"></div></md-whiteframe><md-whiteframe class=\"md-section md-whiteframe-z1\" layout=\"column\" layout-align=\"left center\"><div><h2 class=\"mtcon-title\">Social Links</h2></div><div id=\"social\" ng-include=\"'app/views/social.html'\" ng-controller=\"SocialCtrl\"></div></md-whiteframe><md-whiteframe class=\"md-section md-whiteframe-z1\" id=\"services\"><div><h2 class=\"mtcon-title\">Services</h2></div><div ng-include=\" 'app/views/services.html'\" ng-controller=\"ServiceCtrl\"></div></md-whiteframe><md-whiteframe class=\"md-section md-whiteframe-z1\" id=\"skills\"><div><h2 class=\"mtcon-title\">Skills</h2></div><div ng-include=\" 'app/views/skills.html'\" ng-controller=\"SkillsCtrl\"></div></md-whiteframe><md-whiteframe class=\"md-section md-whiteframe-z1\" id=\"technologies\"><div><h2 class=\"mtcon-title\">Technology used for this page</h2></div><div ng-include=\" 'app/views/technologies.html'\" ng-controller=\"TechnologiesCtrl\"></div></md-whiteframe></div><div flex></div></md-content></md-whiteframe></div>");
 }]);
 
 angular.module("views/open-source.min.html", []).run(["$templateCache", function($templateCache) {
@@ -1293,7 +1327,7 @@ angular.module("views/open-source.min.html", []).run(["$templateCache", function
 
 angular.module("views/portfolio.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/portfolio.min.html",
-    "<section id=\"works\" class=\"section mtcon\"><div class=\"row\"><h2 class=\"mtcon-title\">Works</h2><div class=\"span8 short-dec\"><p>The Sky People have sent us a message... that they can take whatever they want. That no one can stop them. Well, we will send them a message. You ride out as fast as the wind can carry you. You tell the other clans to come. Tell them Toruk Macto calls to them! You fly now, with me! My brothers! Sisters! And we will show the Sky People... that they cannot take whatever they want! And that this... this is our land!</p></div></div><div class=\"row\"><div id=\"options\" class=\"clearfix\"><ul id=\"filters\" class=\"option-set clearfix\" data-option-key=\"filter\"><li><a href=\"#filter\" data-option-value=\"*\" class=\"selected\">all works</a></li><li ng-repeat=\"folio in portfolio\"><a href=\"#filter\" data-option-value=\"{{folio.name}}\">{{folio.name}}</a></li></ul></div><div id=\"portfolio\" class=\"clearfix\"><div ng-repeat=\"folio in portfolio\" class=\"block {{folio.name}}\"><div class=\"view view-first\"><div class=\"tringle\"></div><img src=\"img/work/1/1.jpg\" alt=\"\"><div class=\"mask\"><a class=\"info\" data-rel=\"prettyPhoto\" href=\"img/big/1.jpg\"></a> <a class=\"link\" href=\"#\"></a></div></div><div class=\"des\"><h4>{{folio.title}}</h4><p>{{folio.description}}</p></div></div></div></div></section>");
+    "<section id=\"works\" class=\"section mtcon\"><div class=\"row\"><h2 class=\"mtcon-title\">Works</h2><div class=\"span8 short-dec\"><p>The Sky People have sent us a message... that they can take whatever they want. That no one can stop them. Well, we will send them a message. You ride out as fast as the wind can carry you. You tell the other clans to come. Tell them Toruk Macto calls to them! You fly now, with me! My brothers! Sisters! And we will show the Sky People... that they cannot take whatever they want! And that this... this is our land!</p></div></div><div class=\"row\"><div id=\"options\" class=\"clearfix\"><ul id=\"filters\" class=\"option-set clearfix\" data-option-key=\"filter\"><li><a href=\"#filter\" data-option-value=\"*\" class=\"selected\">all works</a></li><li ng-repeat=\"folio in portfolio\"><a href=\"#filter\" data-option-value=\"{{folio.name}}\">{{folio.name}}</a></li></ul></div><div id=\"portfolio\" class=\"clearfix\"><div ng-repeat=\"folio in portfolio\" class=\"block {{folio.name}}\"><div class=\"view view-first\"><div class=\"tringle\"></div><img src=\"app/img/work/1/1.jpg\" alt=\"\"><div class=\"mask\"><a class=\"info\" data-rel=\"prettyPhoto\" href=\"img/big/1.jpg\"></a> <a class=\"link\" href=\"#\"></a></div></div><div class=\"des\"><h4>{{folio.title}}</h4><p>{{folio.description}}</p></div></div></div></div></section>");
 }]);
 
 angular.module("views/professional.min.html", []).run(["$templateCache", function($templateCache) {
@@ -1303,7 +1337,7 @@ angular.module("views/professional.min.html", []).run(["$templateCache", functio
 
 angular.module("views/services.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/services.min.html",
-    "<section layout=\"row\" layout-align=\"center center\"><md-content flex=\"100\"><p style=\"color: #6C6662;padding:0px 15px;background-color:transparent;font: 14px 'PT Sans',sans-serif\">I do full-time and part-time remote jobs online, and I am usually open to use any communication media available (Skype, Hangout, Phone, VoIP).</p></md-content></section><section layout=\"row\" layout-wrap style=\"padding-bottom:30px\"><md-content class=\"service\" ng-repeat=\"(i, service) in services\" style=\"margin-bottom: 20px\" flex-gt-md=\"30\" flex-md=\"80\" flex-sm=\"100\"><flippy class=\"fancy my-fancy\" ng-click=\"flip()\" ng-mouseenter=\"flip()\" ng-mouseleave=\"flip()\" flip-duration=\"800\" timing-function=\"ease-in-out\"><flippy-front><img ng-if=\"service.image !== false\" src=\"{{service.image}}\"><div ng-if=\"service.image === false\"><canvas width=\"138\" height=\"138\" id=\"myCanvas\" style=\"background-color: #000;border-radius : 75px\"><p>Anything in here will be replaced on browsers that support the canvas element</p></canvas><div id=\"tags\"><a href=\"\" weight=\"20\">PHP5</a> <a href=\"\" weight=\"10\">Zend1</a> <a href=\"\" weight=\"20\">AngularJS</a> <a href=\"\" weight=\"5\">EmberJS</a> <a href=\"\" weight=\"15\">Javascript</a> <a href=\"\" weight=\"15\">HTML5</a> <a href=\"\" weight=\"15\">Foundation</a> <a href=\"\" weight=\"15\">Bootstrap</a> <a href=\"\" weight=\"18\">Apache2</a> <a href=\"\" weight=\"18\">MySQL</a> <a href=\"\" weight=\"15\">MariaDB</a> <a href=\"\" weight=\"12\">MongoDB</a> <a href=\"\" weight=\"15\">MEAN.js</a> <a href=\"\" weight=\"10\">NodeJS</a> <a href=\"\" weight=\"8\">Java</a> <a href=\"\" weight=\"12\">Yii</a> <a href=\"\" weight=\"18\">Sphinx</a> <a href=\"\" weight=\"10\">Code Igniter</a> <a href=\"\" weight=\"18\">REST</a> <a href=\"\" weight=\"15\">SOAP</a> <a href=\"\" weight=\"18\">CSS3</a> <a href=\"\" weight=\"12\">Jasmine</a> <a href=\"\" weight=\"12\">Karma</a> <a href=\"\" weight=\"5\">Python</a> <a href=\"\" weight=\"10\">Meteor</a></div></div><h2 style=\"font-size : 20px\">{{service.title}}</h2></flippy-front><flippy-back><h2 style=\"font-size : 20px\">{{service.title}}</h2><p ng-bind-html=\"service.description | unsafe\"></p></flippy-back></flippy></md-content></section>");
+    "<section layout=\"row\" layout-align=\"center center\"><md-content flex=\"100\"><p style=\"color: #6C6662;padding:0px 15px;background-color:transparent;font: 14px 'PT Sans',sans-serif\">I do full-time and part-time remote jobs online, and I am usually open to use any communication media available (Skype, Hangout, Phone, VoIP).</p></md-content></section><section layout=\"row\" layout-wrap style=\"padding-bottom:30px\"><md-content class=\"service\" ng-repeat=\"(i, service) in services\" style=\"margin-bottom: 20px\" flex-gt-md=\"30\" flex-md=\"80\" flex-sm=\"100\"><flippy class=\"fancy my-fancy\" ng-click=\"flip()\" ng-mouseenter=\"flip()\" ng-mouseleave=\"flip()\" flip-duration=\"800\" timing-function=\"ease-in-out\"><flippy-front><img ng-if=\"service.image !== false\" ng-src=\"{{service.image}}\"><div ng-if=\"service.image === false\"><canvas width=\"138\" height=\"138\" id=\"myCanvas\" style=\"background-color: #000;border-radius : 75px\"><p>Anything in here will be replaced on browsers that support the canvas element</p></canvas><div id=\"tags\"><a href=\"\" weight=\"20\">PHP5</a> <a href=\"\" weight=\"10\">Zend1</a> <a href=\"\" weight=\"20\">AngularJS</a> <a href=\"\" weight=\"5\">EmberJS</a> <a href=\"\" weight=\"15\">Javascript</a> <a href=\"\" weight=\"15\">HTML5</a> <a href=\"\" weight=\"15\">Foundation</a> <a href=\"\" weight=\"15\">Bootstrap</a> <a href=\"\" weight=\"18\">Apache2</a> <a href=\"\" weight=\"18\">MySQL</a> <a href=\"\" weight=\"15\">MariaDB</a> <a href=\"\" weight=\"12\">MongoDB</a> <a href=\"\" weight=\"15\">MEAN.js</a> <a href=\"\" weight=\"10\">NodeJS</a> <a href=\"\" weight=\"8\">Java</a> <a href=\"\" weight=\"12\">Yii</a> <a href=\"\" weight=\"18\">Sphinx</a> <a href=\"\" weight=\"10\">Code Igniter</a> <a href=\"\" weight=\"18\">REST</a> <a href=\"\" weight=\"15\">SOAP</a> <a href=\"\" weight=\"18\">CSS3</a> <a href=\"\" weight=\"12\">Jasmine</a> <a href=\"\" weight=\"12\">Karma</a> <a href=\"\" weight=\"5\">Python</a> <a href=\"\" weight=\"10\">Meteor</a></div></div><h2 style=\"font-size : 20px\">{{service.title}}</h2></flippy-front><flippy-back><h2 style=\"font-size : 20px\">{{service.title}}</h2><p ng-bind-html=\"service.description | unsafe\"></p></flippy-back></flippy></md-content></section>");
 }]);
 
 angular.module("views/skype.min.html", []).run(["$templateCache", function($templateCache) {
