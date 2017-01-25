@@ -47,7 +47,7 @@ var data  = {
             "title": "Github small contribution to",
             "date": {"year": 2015, "month": 01},
             "tags": ["Buyan", "Sockey.io", "Zend", "Angular-foundation", "Typescript"],
-            "description": "When I find a bug in a 3d party library, I don't stand on my chair waiting someone fixes it, I first check the source code to see if I can hack it, and if I can, I submit a PR." +
+            "description": "When I find a bug in a 3d party library, I don't stand on my chair waiting someone fixes it, I first check the source code to see if I can hack it, and if I can, I submit a PR." 
         }
     ],
     "work_experience" : [

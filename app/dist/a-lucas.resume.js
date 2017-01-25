@@ -180,12 +180,18 @@ var data  = {
         "last_name": "LUCAS",
         "phone": "0424 207 292",
         "email": "antoine.lucas.australia@gmail.com",
-        "headline": "I am a Web DevOps with a decade of experience developing complex solutions.\n"
-        + "I have good knowledge of BA and BI acquired with years of practice.\n"
-        + "I am available for contracts on site or remotely.\n",
+        "headline": "Web DevOps with a decade of experience developing complex solutions.\n"
+        + "Good knowledge of BA and BI acquired with years of practice.\n"
+        + "Available for contracts on site or remotely.\n"
+        + "I really don’t need hand held supervision in order to perform my job at a high level. ",
         info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
-        onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the downoad button."
+        onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the download button."
     },
+    "skill": [
+        "Web architecture",
+        "Development",
+        "Business intelligence"
+    ],
     "open_source": [
         {
             "title": "Angular.js-server",
@@ -208,9 +214,33 @@ var data  = {
                 title: "Redis-url-cache on Github",
                 url:"https://github.com/a-lucas/redis-url-cache"
             }]
+        },
+        {
+            "title": "Github small contribution to",
+            "date": {"year": 2015, "month": 01},
+            "tags": ["Buyan", "Sockey.io", "Zend", "Angular-foundation", "Typescript"],
+            "description": "When I find a bug in a 3d party library, I don't stand on my chair waiting someone fixes it, I first check the source code to see if I can hack it, and if I can, I submit a PR." 
         }
     ],
     "work_experience" : [
+        {
+            "title": "Mapping Engineer",
+            "company_name": "GeoScience Australia",
+            "date_from": {"year": 2016, "month": 11},
+            "date_to": {"year": 2017, "month": 06},
+            "location": {
+                "country": "Australia",
+                "town": "Canberra"
+            },
+            "tags": ["Angular", "Three.js", "Mapping design", "WMC and WFS", "Innovation", "Critical", "Geology", "GLSL"],
+            "description": [{text: "I am (solo) designing and implementing a 3D visualization of subsurface structure - which allows researchers to have a straight visualization of boreholes location and results."
+            + " While being new with the 3D technology stack and the advanced mapping world, I am kicking it so hard that the BAs are calling me 'epic'."}],
+            "websites": [{
+                title: 'Geoscience Australia',
+                url: 'http://www.ga.gov.au/'
+            }],
+            "collapsed": false
+        },
         {
             "title": "Accessibility Engineer",
             "company_name": "Publicis",
