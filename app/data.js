@@ -8,17 +8,21 @@ var data  = {
         "last_name": "LUCAS",
         "phone": "0424 207 292",
         "email": "antoine.lucas.australia@gmail.com",
-        "headline": "Web DevOps with a decade of experience developing complex solutions.\n"
-        + "Good knowledge of BA and BI acquired with years of practice.\n"
+        "headline": "Web DevOps with a decade + of experience developing complex solutions.\n"
+        + "I have a good knowledge of BA and BI acquired with years of practice.\n"
         + "Available for contracts on site or remotely.\n"
         + "I really don’t need hand held supervision in order to perform my job at a high level. ",
         info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
         onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the download button."
     },
     "skill": [
+        "Master Web Development",
         "Web architecture",
-        "Development",
-        "Business intelligence"
+        "Database design",
+        "Web Service implementation",
+        "UX optimization",
+        "Business intelligence",
+        "Web Analytics & Data Analysis"
     ],
     "open_source": [
         {
@@ -52,20 +56,22 @@ var data  = {
     ],
     "work_experience" : [
         {
-            "title": "Mapping Engineer",
+            "title": "3D Mapping Engineer",
             "company_name": "GeoScience Australia",
             "date_from": {"year": 2016, "month": 11},
-            "date_to": {"year": 2017, "month": 06},
+            "date_to": {"year": 2017, "month": 03},
             "location": {
                 "country": "Australia",
                 "town": "Canberra"
             },
-            "tags": ["Angular", "Three.js", "Mapping design", "WMC and WFS", "Innovation", "Critical", "Geology", "GLSL"],
-            "description": [{text: "I am (solo) designing and implementing a 3D visualization of subsurface structure - which allows researchers to have a straight visualization of boreholes location and results."
-            + " While being new with the 3D technology stack and the advanced mapping world, I am kicking it so hard that the BAs are calling me 'epic'."}],
+            "tags": ["Angular", "Three.js", "Mapping design", "WMC and WFS Web services", "Innovation", "Mission Critical", "Geology", "GLSL"],
+            "description": [{text: "I am (solo) designing and implementing a 3D visualization of subsurface structure - which allows researchers to have "
+            + "a straight visualization of 3D topography - bathymetry, sub surface Rock properties - Water layers and boreholes location ."
+            + " While being new with the 3D technology stack and the advanced mapping world, I delivered that product in 2 months instead of the six months originally planned. "
+            + "I also re-wrote the build process of the mapping web-app to add live-reload capabilities and on the fly compilation while reducing the compilation time by 80% on save. "}],
             "websites": [{
-                title: 'Geoscience Australia',
-                url: 'http://www.ga.gov.au/'
+                title: 'COSSAP - Geoscience Australia - DEV prototype ',
+                url: 'http://dev.cossap.gadevs.ga/'
             }],
             "collapsed": false
         },

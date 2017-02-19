@@ -180,17 +180,21 @@ var data  = {
         "last_name": "LUCAS",
         "phone": "0424 207 292",
         "email": "antoine.lucas.australia@gmail.com",
-        "headline": "Web DevOps with a decade of experience developing complex solutions.\n"
-        + "Good knowledge of BA and BI acquired with years of practice.\n"
+        "headline": "Web DevOps with a decade + of experience developing complex solutions.\n"
+        + "I have a good knowledge of BA and BI acquired with years of practice.\n"
         + "Available for contracts on site or remotely.\n"
         + "I really don’t need hand held supervision in order to perform my job at a high level. ",
         info: "This page is generated from a word document generator I build. For more info, visit: https://github.com/a-lucas/resume",
         onlineVersion: "To get an up to date version, visit: http://a-lucas.github.io/resume/app/#/AntoineLucas and click the download button."
     },
     "skill": [
+        "Master Web Development",
         "Web architecture",
-        "Development",
-        "Business intelligence"
+        "Database design",
+        "Web Service implementation",
+        "UX optimization",
+        "Business intelligence",
+        "Web Analytics & Data Analysis"
     ],
     "open_source": [
         {
@@ -224,20 +228,22 @@ var data  = {
     ],
     "work_experience" : [
         {
-            "title": "Mapping Engineer",
+            "title": "3D Mapping Engineer",
             "company_name": "GeoScience Australia",
             "date_from": {"year": 2016, "month": 11},
-            "date_to": {"year": 2017, "month": 06},
+            "date_to": {"year": 2017, "month": 03},
             "location": {
                 "country": "Australia",
                 "town": "Canberra"
             },
-            "tags": ["Angular", "Three.js", "Mapping design", "WMC and WFS", "Innovation", "Critical", "Geology", "GLSL"],
-            "description": [{text: "I am (solo) designing and implementing a 3D visualization of subsurface structure - which allows researchers to have a straight visualization of boreholes location and results."
-            + " While being new with the 3D technology stack and the advanced mapping world, I am kicking it so hard that the BAs are calling me 'epic'."}],
+            "tags": ["Angular", "Three.js", "Mapping design", "WMC and WFS Web services", "Innovation", "Mission Critical", "Geology", "GLSL"],
+            "description": [{text: "I am (solo) designing and implementing a 3D visualization of subsurface structure - which allows researchers to have "
+            + "a straight visualization of 3D topography - bathymetry, sub surface Rock properties - Water layers and boreholes location ."
+            + " While being new with the 3D technology stack and the advanced mapping world, I delivered that product in 2 months instead of the six months originally planned. "
+            + "I also re-wrote the build process of the mapping web-app to add live-reload capabilities and on the fly compilation while reducing the compilation time by 80% on save. "}],
             "websites": [{
-                title: 'Geoscience Australia',
-                url: 'http://www.ga.gov.au/'
+                title: 'COSSAP - Geoscience Australia - DEV prototype ',
+                url: 'http://dev.cossap.gadevs.ga/'
             }],
             "collapsed": false
         },
@@ -792,7 +798,7 @@ var data  = {
 (function () {
     'use strict';
 
-    var myModule = angular.module('Antoine_Lucas_CV.services', []).service('DataSource', function ($http) {
+    angular.module('Antoine_Lucas_CV.services', []).service('DataSource', function ($http) {
         var now = moment({year: 2012, month: 2});
         this.contact_me = function (contact) {
 
@@ -859,6 +865,10 @@ var data  = {
         };
         this.get_skills = function () {
             return data.skills;
+        };
+
+        this.get_summary = function () {
+            return data.skill;
         };
 
         this.get_interests = function () {
@@ -1112,6 +1122,8 @@ var data  = {
 
             $scope.paper = DataSource.get_paper();
 
+            $scope.summary = DataSource.get_summary();
+            console.log($scope.summary);
         })
        ;
 })();
@@ -1327,7 +1339,7 @@ angular.module("views/interests.min.html", []).run(["$templateCache", function($
 
 angular.module("views/intro.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/intro.min.html",
-    "<md-divider></md-divider><h3 ng-bind-html=\"paper.headline | newlines | trusthtml\"></h3><md-divider></md-divider>");
+    "<md-divider></md-divider><md-content><h3 ng-bind-html=\"paper.headline | newlines | trusthtml\"></h3></md-content><md-divider></md-divider>");
 }]);
 
 angular.module("views/menu-content-header.min.html", []).run(["$templateCache", function($templateCache) {
@@ -1337,12 +1349,12 @@ angular.module("views/menu-content-header.min.html", []).run(["$templateCache", 
 
 angular.module("views/menu-content1.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/menu-content1.min.html",
-    "<md-content md-padding md-margin><md-list style=\"border-top: 1px solid #555\"><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\" id=\"intro_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('osource')\" flex id=\"osource_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Open Source</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex id=\"resume_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex id=\"education_btn\"><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('social')\" flex id=\"social_btn\"><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex id=\"interests_btn\"><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex id=\"service_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex id=\"skills_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex id=\"technologies_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex id=\"contact_btn\"><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button href=\"generator/ANTOINE_LUCAS_RESUME.doc\" class=\"md-primary\" target=\"_blank\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></div></md-button></md-item-content></md-item><md-divider></md-divider></md-list></md-content>");
+    "<md-content md-padding md-margin><md-list style=\"border-top: 1px solid #555\"><md-item><md-item-content><md-button flex ng-click=\"goToAnchor('intro')\" id=\"intro_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('osource')\" flex id=\"osource_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Open Source</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('resume')\" flex id=\"resume_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('education')\" flex id=\"education_btn\"><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('social')\" flex id=\"social_btn\"><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('interests')\" flex id=\"interests_btn\"><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('services')\" flex id=\"service_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('skills')\" flex id=\"skills_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"goToAnchor('technologies')\" flex id=\"technologies_btn\"><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button ng-click=\"swipeLeft()\" flex id=\"contact_btn\"><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button></md-item-content></md-item><md-divider></md-divider><md-item><md-item-content><md-button href=\"app/generator/ANTOINE_LUCAS_RESUME.doc\" class=\"md-primary\" target=\"_blank\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></div></md-button></md-item-content></md-item><md-divider></md-divider></md-list></md-content>");
 }]);
 
 angular.module("views/menu-content2.min.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/menu-content2.min.html",
-    "<div class=\"menu\" md-padding md-margin><div class=\"logo\" flex><h2>Antoine LUCAS <span>Web Application Developer</span></h2></div><md-button class=\"md-raised\" flex ng-click=\"goToAnchor('intro')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('osource')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Open Source</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('resume')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('education')\" flex><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('social')\" flex><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('interests')\" flex><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('services')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('skills')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('technologies')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button><md-button class=\"md-raised\" ng-click=\"swipeLeft()\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button><md-button class=\"md-primary md-raised\" flex><div class=\"btn-content\"><a ng-href=\"generator/ANTOINE_LUCAS_RESUME.doc\" target=\"_blank\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></a></div></md-button></div>");
+    "<div class=\"menu\" md-padding md-margin><div class=\"logo\" flex><h2>Antoine LUCAS <span>Web Application Developer</span></h2></div><md-button class=\"md-raised\" flex ng-click=\"goToAnchor('intro')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-fire\"></i> <span>Intro</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('osource')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Open Source</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('resume')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-book\"></i> <span>Resume</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('education')\" flex><div class=\"btn-content\"><i class=\"fa fa-graduation-cap fa-book\"></i> <span>Education</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('social')\" flex><div class=\"btn-content\"><i class=\"fa fa-soccer-ball-o fa-book\"></i> <span>Social</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('interests')\" flex><div class=\"btn-content\"><i class=\"fa fa-gamepad fa-book\"></i> <span>Interests</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('services')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-puzzle-piece\"></i> <span>Services</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('skills')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-cogs\"></i> <span>Skills</span></div></md-button><md-button class=\"md-raised\" ng-click=\"goToAnchor('technologies')\" flex><div class=\"btn-content\"><i class=\"fa fa-lg fa-terminal\"></i> <span>Tech</span></div></md-button><md-button class=\"md-raised\" ng-click=\"swipeLeft()\" flex><div class=\"btn-content\"><i class=\"fa fal-lg fa-mail-forward\"></i> <span>Contact</span></div></md-button><md-button class=\"md-primary md-raised\" flex><div class=\"btn-content\"><a ng-href=\"app/generator/ANTOINE_LUCAS_RESUME.doc\" target=\"_blank\"><i class=\"fa fal-lg fa-file-word-o\"></i> <span>Download</span></a></div></md-button></div>");
 }]);
 
 angular.module("views/menu.min.html", []).run(["$templateCache", function($templateCache) {

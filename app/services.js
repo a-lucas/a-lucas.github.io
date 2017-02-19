@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    var myModule = angular.module('Antoine_Lucas_CV.services', []).service('DataSource', function ($http) {
+    angular.module('Antoine_Lucas_CV.services', []).service('DataSource', function ($http) {
         var now = moment({year: 2012, month: 2});
         this.contact_me = function (contact) {
 
@@ -73,6 +73,10 @@
         };
         this.get_skills = function () {
             return data.skills;
+        };
+
+        this.get_summary = function () {
+            return data.skill;
         };
 
         this.get_interests = function () {

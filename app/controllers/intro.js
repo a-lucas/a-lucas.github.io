@@ -6,6 +6,8 @@
 
             $scope.paper = DataSource.get_paper();
 
+            $scope.summary = DataSource.get_summary();
+            console.log($scope.summary);
         })
        ;
 })();
